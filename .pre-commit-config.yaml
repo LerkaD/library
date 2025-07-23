@@ -2,22 +2,26 @@ repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v5.0.0
     hooks:
-      - id: trailing-whitespace      # удаление лишних пробелов в конце строк
-      - id: end-of-file-fixer        # добавление пустой строки в конце файла
-      - id: check-yaml               # базовая проверка YAML-файлов
-      - id: check-added-large-files  # предупреждение о добавлении больших файлов
-
+      - id: trailing-whitespace
+      - id: end-of-file-fixer
+      - id: check-yaml
+      - id: check-added-large-files
   - repo: https://github.com/psf/black
     rev: 24.4.2
     hooks:
-      - id: black                   # автоформатирование Python кода
-
+      - id: black
+        args:
+          - --line-length=79
   - repo: https://github.com/pycqa/flake8.git
     rev: 7.1.0
     hooks:
-      - id: flake8                  # запуск линтера flake8 для проверки стиля
-
-  - repo: https://github.com/PyCQA/isort
-    rev: 5.12.0
-    hooks:
-      - id: isort                   # сортировка импортов в Python
+      - id: flake8
+        args:
+            - --exclude=**/migrations/**
+  # - repo: https://github.com/PyCQA/isort
+  #   rev: 5.12.0
+  #   hooks:
+  #     - id: isort
+  #       args:
+  #         - --profile
+  #         - black
