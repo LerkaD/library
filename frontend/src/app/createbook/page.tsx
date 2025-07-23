@@ -1,6 +1,6 @@
-'use client'
-import React, { useEffect, useState } from "react";
-import axios from "axios";
+'use client';
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 
 type Publisher = {
   id: number;
@@ -17,17 +17,19 @@ export default function AddBookPage() {
   const [publishers, setPublishers] = useState<Publisher[]>([]);
   const [authors, setAuthors] = useState<Author[]>([]);
 
-  const [title, setTitle] = useState("");
-  const [selectedPublisherId, setSelectedPublisherId] = useState<number | "">("");
+  const [title, setTitle] = useState('');
+  const [selectedPublisherId, setSelectedPublisherId] = useState<number | ''>(
+    '',
+  );
   const [selectedAuthorIds, setSelectedAuthorIds] = useState<number[]>([]);
 
   // Автор, имя которого вводит пользователь
-  const [authorNameInput, setAuthorNameInput] = useState("");
+  const [authorNameInput, setAuthorNameInput] = useState('');
 
   // Форма создания нового автора и её данные
   const [showNewAuthorForm, setShowNewAuthorForm] = useState(false);
-  const [newAuthorName, setNewAuthorName] = useState("");
-  const [newAuthorBirthdate, setNewAuthorBirthdate] = useState("");
+  const [newAuthorName, setNewAuthorName] = useState('');
+  const [newAuthorBirthdate, setNewAuthorBirthdate] = useState('');
 
   const [formError, setFormError] = useState<string | null>(null);
   const [successMessage, setSuccessMessage] = useState<string | null>(null);
@@ -36,13 +38,13 @@ export default function AddBookPage() {
     async function fetchData() {
       try {
         const [pubRes, authRes] = await Promise.all([
-          axios.get<Publisher[]>("http://localhost:8000/api/publishers/"),
-          axios.get<Author[]>("http://localhost:8000/api/authors/"),
+          axios.get<Publisher[]>('http://localhost:8000/api/publishers/'),
+          axios.get<Author[]>('http://localhost:8000/api/authors/'),
         ]);
         setPublishers(pubRes.data);
         setAuthors(authRes.data);
       } catch (e) {
-        setFormError("Data load error");
+        setFormError('Data load error');
         console.error(e);
       }
     }
@@ -53,13 +55,13 @@ export default function AddBookPage() {
   function handleAddAuthor() {
     const nameTrimmed = authorNameInput.trim();
     if (!nameTrimmed) {
-      alert("Enter autor name");
+      alert('Enter autor name');
       return;
     }
 
     // Проверяем, есть ли автор с таким именем (регистр игнорируем)
     const existing = authors.find(
-      (a) => a.name.toLowerCase() === nameTrimmed.toLowerCase()
+      (a) => a.name.toLowerCase() === nameTrimmed.toLowerCase(),
     );
 
     if (existing) {
@@ -70,11 +72,11 @@ export default function AddBookPage() {
         // Добавляем существующего автора в выбранные
         setSelectedAuthorIds((prev) => [...prev, existing.id]);
       }
-      setAuthorNameInput("");
+      setAuthorNameInput('');
     } else {
       // Открываем форму создания нового автора с уже заполненным именем
       setNewAuthorName(nameTrimmed);
-      setNewAuthorBirthdate("");
+      setNewAuthorBirthdate('');
       setShowNewAuthorForm(true);
     }
   }
@@ -83,14 +85,17 @@ export default function AddBookPage() {
   async function createNewAuthor() {
     const nameTrimmed = newAuthorName.trim();
     if (!nameTrimmed) {
-      alert("Enter author name");
+      alert('Enter author name');
       return;
     }
     try {
-      const res = await axios.post<Author>("http://localhost:8000/api/authors/", {
-        name: nameTrimmed,
-        birthdate: newAuthorBirthdate || null,
-      });
+      const res = await axios.post<Author>(
+        'http://localhost:8000/api/authors/',
+        {
+          name: nameTrimmed,
+          birthdate: newAuthorBirthdate || null,
+        },
+      );
 
       // Обновляем список всех авторов, добавляем нового, и сразу выбираем
       setAuthors((prev) => [...prev, res.data]);
@@ -98,11 +103,11 @@ export default function AddBookPage() {
 
       // Закрываем форму создания
       setShowNewAuthorForm(false);
-      setNewAuthorName("");
-      setNewAuthorBirthdate("");
-      setAuthorNameInput(""); // Очищаем поле ввода имени
+      setNewAuthorName('');
+      setNewAuthorBirthdate('');
+      setAuthorNameInput(''); // Очищаем поле ввода имени
     } catch (e) {
-      alert("Author creation error");
+      alert('Author creation error');
       console.error(e);
     }
   }
@@ -119,28 +124,28 @@ export default function AddBookPage() {
     setSuccessMessage(null);
 
     if (!title.trim()) {
-      setFormError("Enter book name");
+      setFormError('Enter book name');
       return;
     }
 
     try {
-      await axios.post("http://localhost:8000/api/books/", {
+      await axios.post('http://localhost:8000/api/books/', {
         title: title.trim(),
-        publisher_id: selectedPublisherId === "" ? null : selectedPublisherId,
+        publisher_id: selectedPublisherId === '' ? null : selectedPublisherId,
         authors_ids: selectedAuthorIds,
       });
-      setSuccessMessage("Book sucsessfully created!");
-      setTitle("");
-      setSelectedPublisherId("");
+      setSuccessMessage('Book sucsessfully created!');
+      setTitle('');
+      setSelectedPublisherId('');
       setSelectedAuthorIds([]);
-      setAuthorNameInput("");
+      setAuthorNameInput('');
     } catch (error) {
       if (axios.isAxiosError(error)) {
         const data = error.response?.data;
-        if (data && typeof data === "object") {
+        if (data && typeof data === 'object') {
           const msg = Object.entries(data)
             .map(([field, val]) => `${field}: ${JSON.stringify(val)}`)
-            .join("\n");
+            .join('\n');
           setFormError(msg);
         } else {
           setFormError(error.message);
@@ -153,14 +158,16 @@ export default function AddBookPage() {
   }
 
   return (
-    <main style={{ maxWidth: 600, margin: "auto", padding: 20 }}>
+    <main style={{ maxWidth: 600, margin: 'auto', padding: 20 }}>
       <h1>New book adding</h1>
 
       {formError && (
-        <p style={{ color: "red", whiteSpace: "pre-wrap" }}>{formError}</p>
+        <p style={{ color: 'red', whiteSpace: 'pre-wrap' }}>{formError}</p>
       )}
       {successMessage && (
-        <p style={{ color: "green", whiteSpace: "pre-wrap" }}>{successMessage}</p>
+        <p style={{ color: 'green', whiteSpace: 'pre-wrap' }}>
+          {successMessage}
+        </p>
       )}
 
       <form onSubmit={handleSubmit}>
@@ -172,7 +179,7 @@ export default function AddBookPage() {
               value={title}
               onChange={(e) => setTitle(e.target.value)}
               required
-              style={{ width: "100%", padding: "8px" }}
+              style={{ width: '100%', padding: '8px' }}
               placeholder="Enter title"
             />
           </label>
@@ -185,10 +192,10 @@ export default function AddBookPage() {
               value={selectedPublisherId}
               onChange={(e) =>
                 setSelectedPublisherId(
-                  e.target.value === "" ? "" : Number(e.target.value)
+                  e.target.value === '' ? '' : Number(e.target.value),
                 )
               }
-              style={{ width: "100%", padding: "8px" }}
+              style={{ width: '100%', padding: '8px' }}
             >
               <option value="">— Not selected —</option>
               {publishers.map((pub) => (
@@ -208,9 +215,9 @@ export default function AddBookPage() {
               value={authorNameInput}
               onChange={(e) => setAuthorNameInput(e.target.value)}
               placeholder="Enter author name"
-              style={{ width: "80%", padding: "8px" }}
+              style={{ width: '80%', padding: '8px' }}
               onKeyDown={(e) => {
-                if (e.key === "Enter") {
+                if (e.key === 'Enter') {
                   e.preventDefault();
                   handleAddAuthor();
                 }
@@ -219,7 +226,7 @@ export default function AddBookPage() {
             <button
               type="button"
               onClick={handleAddAuthor}
-              style={{ padding: "8px 12px", marginLeft: 8 }}
+              style={{ padding: '8px 12px', marginLeft: 8 }}
             >
               Add author
             </button>
@@ -236,7 +243,7 @@ export default function AddBookPage() {
                 const a = authors.find((author) => author.id === id);
                 return (
                   <li key={id}>
-                    {a?.name ?? "Автор"}{" "}
+                    {a?.name ?? 'Автор'}{' '}
                     <button type="button" onClick={() => removeAuthor(id)}>
                       Delete
                     </button>
@@ -251,11 +258,11 @@ export default function AddBookPage() {
         {showNewAuthorForm && (
           <div
             style={{
-              border: "1px solid #999",
+              border: '1px solid #999',
               padding: 15,
               marginTop: 10,
               borderRadius: 6,
-              backgroundColor: "#f7f7f7",
+              backgroundColor: '#f7f7f7',
             }}
           >
             <h3>Create new author</h3>
@@ -265,7 +272,7 @@ export default function AddBookPage() {
                 type="text"
                 value={newAuthorName}
                 onChange={(e) => setNewAuthorName(e.target.value)}
-                style={{ width: "100%", padding: "6px" }}
+                style={{ width: '100%', padding: '6px' }}
               />
             </label>
             <br />
@@ -275,7 +282,7 @@ export default function AddBookPage() {
                 type="date"
                 value={newAuthorBirthdate}
                 onChange={(e) => setNewAuthorBirthdate(e.target.value)}
-                style={{ width: "100%", padding: "6px", marginTop: 5 }}
+                style={{ width: '100%', padding: '6px', marginTop: 5 }}
               />
             </label>
             <br />
@@ -290,7 +297,7 @@ export default function AddBookPage() {
               type="button"
               onClick={() => {
                 setShowNewAuthorForm(false);
-                setNewAuthorName("");
+                setNewAuthorName('');
               }}
               style={{ marginTop: 10 }}
             >
@@ -299,7 +306,7 @@ export default function AddBookPage() {
           </div>
         )}
 
-        <button type="submit" style={{ padding: "10px 20px", fontSize: 16 }}>
+        <button type="submit" style={{ padding: '10px 20px', fontSize: 16 }}>
           Create book
         </button>
       </form>

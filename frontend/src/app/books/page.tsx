@@ -1,6 +1,6 @@
-"use client"
-import React, { useEffect, useState } from "react";
-import axios from "axios";
+'use client';
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 
 type Publisher = {
   id: number;
@@ -27,11 +27,13 @@ export default function BooksList() {
   useEffect(() => {
     async function fetchBooks() {
       try {
-        const response = await axios.get<Book[]>("http://localhost:8000/api/books/");
+        const response = await axios.get<Book[]>(
+          'http://localhost:8000/api/books/',
+        );
         setBooks(response.data);
         setError(null);
       } catch (e) {
-        setError("Loading data error");
+        setError('Loading data error');
         console.error(e);
       }
     }
@@ -39,7 +41,7 @@ export default function BooksList() {
     fetchBooks();
   }, []);
 
-  if (error) return <p style={{ color: "red" }}>{error}</p>;
+  if (error) return <p style={{ color: 'red' }}>{error}</p>;
 
   return (
     <div>
@@ -50,9 +52,15 @@ export default function BooksList() {
         <ul>
           {books.map((book) => (
             <li key={book.id} style={{ marginBottom: 10 }}>
-              <strong>{book.title}</strong><br />
-              Publisher: {book.publisher ? book.publisher.name : "-no bublisher -"}<br />
-              Authors: {book.authors.length > 0 ? book.authors.map(a => a.name).join(", ") : "-no authors -"}
+              <strong>{book.title}</strong>
+              <br />
+              Publisher:{' '}
+              {book.publisher ? book.publisher.name : '-no bublisher -'}
+              <br />
+              Authors:{' '}
+              {book.authors.length > 0
+                ? book.authors.map((a) => a.name).join(', ')
+                : '-no authors -'}
             </li>
           ))}
         </ul>

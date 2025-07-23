@@ -35,18 +35,18 @@
     "semi": true,
     "singleQuote": true,
     "tabWidth": 2,
-    "trailingComma": "all"
+    "trailingComma": "all",
+    "endOfLine": "lf"
   },
   "lint-staged": {
-  "*.{js,jsx,ts,tsx}": [
-    "prettier --write",
-    "eslint --fix",
-    "git add"
-  ],
-  "*.{json,css,md}": [
-    "prettier --write",
-    "git add"
-  ]
-}
-
+    "*.{js,jsx,ts,tsx}": [
+      "prettier --write",
+      "eslint --fix",
+      "git add"
+    ],
+    "*.{json,css,md}": [
+      "prettier --write",
+      "git add"
+    ]
+  }
 }

@@ -1,117 +1,140 @@
-'use client'
+'use client';
 
-import { useEffect, useState } from 'react'
-import axios from 'axios'
+import { useEffect, useState } from 'react';
+import axios from 'axios';
 
 type Author = {
-  id: number
-  name: string
-  birthdate: string | null
-}
+  id: number;
+  name: string;
+  birthdate: string | null;
+};
 
 type AuthorProfile = {
-  id: number
-  author_id: number
-  author_name: string
-  author_birthdate: string | null
-  biography: string
-}
+  id: number;
+  author_id: number;
+  author_name: string;
+  author_birthdate: string | null;
+  biography: string;
+};
 
 export default function Home() {
-  const [profiles, setProfiles] = useState<AuthorProfile[]>([])
-  const [authors, setAuthors] = useState<Author[]>([])
-  const [loading, setLoading] = useState(true)
-  const [formVisible, setFormVisible] = useState(false)
+  const [profiles, setProfiles] = useState<AuthorProfile[]>([]);
+  const [authors, setAuthors] = useState<Author[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [formVisible, setFormVisible] = useState(false);
 
-  const [selectedAuthorId, setSelectedAuthorId] = useState<number | ''>('')
-  const [biography, setBiography] = useState('')
-  const [formError, setFormError] = useState<string | null>(null)
-
+  const [selectedAuthorId, setSelectedAuthorId] = useState<number | ''>('');
+  const [biography, setBiography] = useState('');
+  const [formError, setFormError] = useState<string | null>(null);
 
   useEffect(() => {
     async function fetchData() {
       try {
         const [profilesRes, authorsRes] = await Promise.all([
-          axios.get<AuthorProfile[]>('http://localhost:8000/api/authorprofiles/'),
+          axios.get<AuthorProfile[]>(
+            'http://localhost:8000/api/authorprofiles/',
+          ),
           axios.get<Author[]>('http://localhost:8000/api/authors/'),
-        ])
-        setProfiles(profilesRes.data)
-        setAuthors(authorsRes.data)
+        ]);
+        setProfiles(profilesRes.data);
+        setAuthors(authorsRes.data);
       } catch (e) {
-        setFormError('Ошибка загрузки данных с сервера')
-        console.error(e)
+        setFormError('Ошибка загрузки данных с сервера');
+        console.error(e);
       } finally {
-        setLoading(false)
+        setLoading(false);
       }
     }
-    fetchData()
-  }, [])
+    fetchData();
+  }, []);
 
   async function handleCreateProfile() {
-    setFormError(null)
+    setFormError(null);
 
     if (selectedAuthorId === '') {
-      setFormError('Пожалуйста, выберите автора')
-      return
+      setFormError('Пожалуйста, выберите автора');
+      return;
     }
-    if (!biography.trim()) { // trim - del spaces from l-r
-      setFormError('Биография не может быть пустой')
-      return
+    if (!biography.trim()) {
+      // trim - del spaces from l-r
+      setFormError('Биография не может быть пустой');
+      return;
     }
 
     try {
       await axios.post('http://localhost:8000/api/authorprofiles/', {
         author_id: selectedAuthorId,
         biography,
-      })
+      });
 
-      const profilesRes = await axios.get<AuthorProfile[]>('http://localhost:8000/api/authorprofiles/')
-      setProfiles(profilesRes.data)
+      const profilesRes = await axios.get<AuthorProfile[]>(
+        'http://localhost:8000/api/authorprofiles/',
+      );
+      setProfiles(profilesRes.data);
 
-      setSelectedAuthorId('')
-      setBiography('')
-      setFormVisible(false)
+      setSelectedAuthorId('');
+      setBiography('');
+      setFormVisible(false);
     } catch (error: unknown) {
       if (axios.isAxiosError(error)) {
         if (error.response && typeof error.response.data === 'object') {
-          const errors = error.response.data
+          const errors = error.response.data;
           if ('author_id' in errors) {
-            setFormError(Array.isArray(errors.author_id) ? errors.author_id.join(', ') : String(errors.author_id))
+            setFormError(
+              Array.isArray(errors.author_id)
+                ? errors.author_id.join(', ')
+                : String(errors.author_id),
+            );
           } else if ('detail' in errors) {
-            setFormError(String(errors.detail))
+            setFormError(String(errors.detail));
           } else {
-            setFormError(JSON.stringify(errors))
+            setFormError(JSON.stringify(errors));
           }
         } else {
-          setFormError(error.message)
+          setFormError(error.message);
         }
       } else if (error instanceof Error) {
-        setFormError(error.message)
+        setFormError(error.message);
       } else {
-        setFormError('Произошла неизвестная ошибка')
+        setFormError('Произошла неизвестная ошибка');
       }
     }
   }
 
-  if (loading) return <p>Загрузка профилей...</p>
+  if (loading) return <p>Загрузка профилей...</p>;
 
   return (
     <main style={{ padding: 20 }}>
       <h1>Профили авторов</h1>
 
-      <button onClick={() => setFormVisible((prev) => !prev)} style={{ marginBottom: 20 }}>
+      <button
+        onClick={() => setFormVisible((prev) => !prev)}
+        style={{ marginBottom: 20 }}
+      >
         {formVisible ? 'Отменить' : 'Добавить профиль'}
       </button>
 
       {formVisible && (
-        <div style={{ marginBottom: 30, border: '1px solid #ccc', padding: 15, maxWidth: 400 }}>
+        <div
+          style={{
+            marginBottom: 30,
+            border: '1px solid #ccc',
+            padding: 15,
+            maxWidth: 400,
+          }}
+        >
           <h2>Создать профиль автора</h2>
 
           <label>
-            Выберите автора:<br />
+            Выберите автора:
+            <br />
             <select
               value={selectedAuthorId}
-              onChange={(e) => setSelectedAuthorId(e.target.value === '' ? '' : Number(e.target.value))}
+              onChange={(e) =>
+                setSelectedAuthorId(
+                  e.target.value === '' ? '' : Number(e.target.value),
+                )
+              }
               style={{ width: '100%', padding: 4 }}
             >
               <option value="">-- выбрать автора --</option>
@@ -126,7 +149,8 @@ export default function Home() {
           <br />
 
           <label>
-            Биография:<br />
+            Биография:
+            <br />
             <textarea
               rows={4}
               value={biography}
@@ -151,12 +175,13 @@ export default function Home() {
         <ul>
           {profiles.map((p) => (
             <li key={p.id}>
-              <b>{p.author_name}</b> ({p.author_birthdate ?? 'неизвестно'})<br />
+              <b>{p.author_name}</b> ({p.author_birthdate ?? 'неизвестно'})
+              <br />
               <i>{p.biography}</i>
             </li>
           ))}
         </ul>
       )}
     </main>
-  )
+  );
 }
