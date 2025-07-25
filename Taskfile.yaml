@@ -1,0 +1,43 @@
+version: '3'
+vars:
+  compose_file: "docker-compose.yml"
+tasks:
+
+  build:
+    desc: "Build Docker-images"
+    cmds:
+      - docker-compose -f {{.compose_file}} build
+
+  start:
+    desc: "Run all servises (detached mode)"
+    cmds:
+      - docker-compose -f {{.compose_file}} up
+
+  stop:
+    desc: "Stop all running containers from docker-compose"
+    cmds:
+      - docker-compose -f {{.compose_file}} down
+
+  restart:
+    desc: "Restart library manager"
+    cmds:
+      - task: stop
+      - task: build
+      - task: start
+      
+  shell-django:
+    desc: "Bash terminal django"
+    cmds:
+      - docker-compose -f {{.compose_file}} exec django /bin/bash
+
+  test-parallel:
+    desc: "Ran pallel tests"
+    cmds:
+      - docker-compose -f {{.compose_file}} exec django poetry run python manage.py test --parallel 2
+
+  logs:
+    desc: "Check logs"
+    vars:
+      container_name: "django"
+    cmds:
+      - docker-compose logs -f {{.container_name}}

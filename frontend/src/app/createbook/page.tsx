@@ -23,10 +23,9 @@ export default function AddBookPage() {
   );
   const [selectedAuthorIds, setSelectedAuthorIds] = useState<number[]>([]);
 
-  // Автор, имя которого вводит пользователь
+
   const [authorNameInput, setAuthorNameInput] = useState('');
 
-  // Форма создания нового автора и её данные
   const [showNewAuthorForm, setShowNewAuthorForm] = useState(false);
   const [newAuthorName, setNewAuthorName] = useState('');
   const [newAuthorBirthdate, setNewAuthorBirthdate] = useState('');
@@ -51,37 +50,29 @@ export default function AddBookPage() {
     fetchData();
   }, []);
 
-  // Добавить автора вручную по введенному имени
   function handleAddAuthor() {
     const nameTrimmed = authorNameInput.trim();
     if (!nameTrimmed) {
       alert('Enter autor name');
       return;
     }
-
-    // Проверяем, есть ли автор с таким именем (регистр игнорируем)
     const existing = authors.find(
       (a) => a.name.toLowerCase() === nameTrimmed.toLowerCase(),
     );
-
     if (existing) {
-      // Если автор уже выбран - не добавляем второй раз
       if (selectedAuthorIds.includes(existing.id)) {
         alert(`Author "${existing.name}" already entered`);
       } else {
-        // Добавляем существующего автора в выбранные
         setSelectedAuthorIds((prev) => [...prev, existing.id]);
       }
       setAuthorNameInput('');
     } else {
-      // Открываем форму создания нового автора с уже заполненным именем
       setNewAuthorName(nameTrimmed);
       setNewAuthorBirthdate('');
       setShowNewAuthorForm(true);
     }
   }
-
-  // Создать нового автора на сервере
+  
   async function createNewAuthor() {
     const nameTrimmed = newAuthorName.trim();
     if (!nameTrimmed) {
@@ -97,27 +88,23 @@ export default function AddBookPage() {
         },
       );
 
-      // Обновляем список всех авторов, добавляем нового, и сразу выбираем
       setAuthors((prev) => [...prev, res.data]);
       setSelectedAuthorIds((prev) => [...prev, res.data.id]);
 
-      // Закрываем форму создания
       setShowNewAuthorForm(false);
       setNewAuthorName('');
       setNewAuthorBirthdate('');
-      setAuthorNameInput(''); // Очищаем поле ввода имени
+      setAuthorNameInput('');
     } catch (e) {
       alert('Author creation error');
       console.error(e);
     }
   }
 
-  // Удалить автора из выбранных
   function removeAuthor(id: number) {
     setSelectedAuthorIds((prev) => prev.filter((a) => a !== id));
   }
 
-  // Отправка формы создания книги
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     setFormError(null);

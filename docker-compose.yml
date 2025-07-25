@@ -1,0 +1,50 @@
+x-environment: &db_env
+  - DATABASE_HOST=db_lib
+  - DATABASE_NAME=lib_db
+  - DATABASE_USER=root
+  - DATABASE_PASSWORD=root
+services:
+  db_lib:
+    image: mysql:8
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: lib_db
+    ports:
+      - "3306:3306"
+    volumes:
+      - db_data:/var/lib/mysql
+    restart: always
+  django:
+    build:
+      context: ./back
+      dockerfile: Dockerfile
+    container_name: backend
+    command: poetry run python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - ./back:/app
+    ports:
+      - "8000:8000"
+    environment:
+      - DATABASE_HOST=db_lib
+      - DATABASE_NAME=lib_db
+      - DATABASE_USER=root
+      - DATABASE_PASSWORD=root
+    depends_on:
+      - db_lib
+  nextjs:
+    build:
+      context: ./frontend
+    container_name: frontend
+    command: sh -c "npm install && npm run dev"
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+    ports:
+      - "3000:3000"
+    depends_on:
+      - django
+    environment:
+      - NODE_ENV=development
+      - NEXT_PUBLIC_API_URL=http://localhost:3000
+volumes:
+  db_data:
