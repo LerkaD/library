@@ -24,7 +24,7 @@ tasks:
       - task: stop
       - task: build
       - task: start
-      
+
   shell-django:
     desc: "Bash terminal django"
     cmds:

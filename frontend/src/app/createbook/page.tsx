@@ -72,7 +72,7 @@ export default function AddBookPage() {
       setShowNewAuthorForm(true);
     }
   }
-  
+
   async function createNewAuthor() {
     const nameTrimmed = newAuthorName.trim();
     if (!nameTrimmed) {
