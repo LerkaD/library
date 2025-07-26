@@ -6,15 +6,33 @@ repos:
       - id: end-of-file-fixer
       - id: check-yaml
       - id: check-added-large-files
+
   - repo: https://github.com/psf/black
     rev: 24.4.2
     hooks:
       - id: black
         args:
           - --line-length=79
+
   - repo: https://github.com/pycqa/flake8.git
     rev: 7.1.0
     hooks:
       - id: flake8
         args:
-            - --exclude=**/migrations/**
+          - --exclude=**/migrations/**
+
+  - repo: https://github.com/hadolint/hadolint
+    rev: v2.12.0
+    hooks:
+      - id: hadolint
+        files: ^Dockerfile$|.*\.Dockerfile$
+
+  - repo: https://github.com/compose-spec/compose-spec
+    rev: v1.0.0
+    hooks:
+      - id: docker-compose-lint
+        name: docker-compose lint
+        entry: docker-compose config -q
+        language: system
+        types: [yaml]
+        files: ^docker-compose\.(yml|yaml)$
