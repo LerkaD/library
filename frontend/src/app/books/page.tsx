@@ -54,7 +54,7 @@ export default function BooksList() {
             <li key={book.id} style={{ marginBottom: 10 }}>
               <strong>{book.title}</strong>
               <br />
-              Publisher:{' '}
+              Publisheалпьилr:{' '}
               {book.publisher ? book.publisher.name : '-no bublisher -'}
               <br />
               Authors:{' '}
