@@ -45,7 +45,7 @@ export default function BooksList() {
 
   return (
     <div>
-      <h1>Books попопоамуамуакмуакмп</h1>
+      <h1>Books</h1>
       {!books.length ? (
         <p>No books</p>
       ) : (
