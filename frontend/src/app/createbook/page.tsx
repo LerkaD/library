@@ -121,7 +121,7 @@ export default function AddBookPage() {
         publisher_id: selectedPublisherId === '' ? null : selectedPublisherId,
         authors_ids: selectedAuthorIds,
       });
-      setSuccessMessage('Book sucsessfully created!');
+      setSuccessMessage('Book sucsessfully created! check eslint');
       setTitle('');
       setSelectedPublisherId('');
       setSelectedAuthorIds([]);
