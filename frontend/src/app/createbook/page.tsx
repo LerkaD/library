@@ -1,6 +1,6 @@
 'use client';
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+import axios, { AxiosError } from 'axios';
 
 type Publisher = {
   id: number;
@@ -13,16 +13,17 @@ type Author = {
   birthdate: string | null;
 };
 
+function isAPIErrorData(value: unknown): value is Record<string, unknown> {
+  return typeof value === 'object' && value !== null;
+}
+
 export default function AddBookPage() {
   const [publishers, setPublishers] = useState<Publisher[]>([]);
   const [authors, setAuthors] = useState<Author[]>([]);
 
   const [title, setTitle] = useState('');
-  const [selectedPublisherId, setSelectedPublisherId] = useState<number | ''>(
-    '',
-  );
+  const [selectedPublisherId, setSelectedPublisherId] = useState<number | ''>('');
   const [selectedAuthorIds, setSelectedAuthorIds] = useState<number[]>([]);
-
 
   const [authorNameInput, setAuthorNameInput] = useState('');
 
@@ -42,22 +43,23 @@ export default function AddBookPage() {
         ]);
         setPublishers(pubRes.data);
         setAuthors(authRes.data);
+        setFormError(null);
       } catch (e) {
         setFormError('Data load error');
         console.error(e);
       }
     }
-    fetchData();
+    void fetchData();
   }, []);
 
   function handleAddAuthor() {
     const nameTrimmed = authorNameInput.trim();
     if (!nameTrimmed) {
-      alert('Enter autor name');
+      alert('Enter author name');
       return;
     }
     const existing = authors.find(
-      (a) => a.name.toLowerCase() === nameTrimmed.toLowerCase(),
+      (a) => a.name.toLowerCase() === nameTrimmed.toLowerCase()
     );
     if (existing) {
       if (selectedAuthorIds.includes(existing.id)) {
@@ -85,7 +87,7 @@ export default function AddBookPage() {
         {
           name: nameTrimmed,
           birthdate: newAuthorBirthdate || null,
-        },
+        }
       );
 
       setAuthors((prev) => [...prev, res.data]);
@@ -121,24 +123,31 @@ export default function AddBookPage() {
         publisher_id: selectedPublisherId === '' ? null : selectedPublisherId,
         authors_ids: selectedAuthorIds,
       });
-      setSuccessMessage('Book sucsessfully created! check ');
+      setSuccessMessage('Book successfully created! Check it out.');
       setTitle('');
       setSelectedPublisherId('');
       setSelectedAuthorIds([]);
       setAuthorNameInput('');
     } catch (error) {
       if (axios.isAxiosError(error)) {
-        const data = error.response?.data;
-        if (data && typeof data === 'object') {
+        const err = error as AxiosError;
+        if (isAPIErrorData(err.response?.data)) {
+          const data = err.response.data;
           const msg = Object.entries(data)
-            .map(([field, val]) => `${field}: ${JSON.stringify(val)}`)
+            .map(([field, val]) => {
+              if (Array.isArray(val)) return `${field}: ${val.join(', ')}`;
+              if (typeof val === 'string') return `${field}: ${val}`;
+              return `${field}: ${JSON.stringify(val)}`;
+            })
             .join('\n');
           setFormError(msg);
         } else {
-          setFormError(error.message);
+          setFormError(err.message || 'Unknown API error occurred');
         }
+      } else if (error instanceof Error) {
+        setFormError(error.message);
       } else {
-        setFormError(String(error));
+        setFormError('Unknown error occurred');
       }
       console.error(error);
     }
@@ -157,7 +166,7 @@ export default function AddBookPage() {
         </p>
       )}
 
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={(e) => void handleSubmit(e)}>
         <div style={{ marginBottom: 15 }}>
           <label>
             Book title: <br />
@@ -179,7 +188,7 @@ export default function AddBookPage() {
               value={selectedPublisherId}
               onChange={(e) =>
                 setSelectedPublisherId(
-                  e.target.value === '' ? '' : Number(e.target.value),
+                  e.target.value === '' ? '' : Number(e.target.value)
                 )
               }
               style={{ width: '100%', padding: '8px' }}
@@ -221,7 +230,7 @@ export default function AddBookPage() {
         </div>
 
         <div style={{ marginBottom: 15 }}>
-          <label>Choosen authors:</label>
+          <label>Chosen authors:</label>
           {selectedAuthorIds.length === 0 ? (
             <p>No authors</p>
           ) : (
@@ -230,7 +239,7 @@ export default function AddBookPage() {
                 const a = authors.find((author) => author.id === id);
                 return (
                   <li key={id}>
-                    {a?.name ?? 'Автор'}{' '}
+                    {a?.name ?? 'Author'}{' '}
                     <button type="button" onClick={() => removeAuthor(id)}>
                       Delete
                     </button>
@@ -241,7 +250,6 @@ export default function AddBookPage() {
           )}
         </div>
 
-        {/* Форма создания нового автора */}
         {showNewAuthorForm && (
           <div
             style={{
@@ -275,7 +283,7 @@ export default function AddBookPage() {
             <br />
             <button
               type="button"
-              onClick={createNewAuthor}
+              onClick={() => void createNewAuthor()}
               style={{ marginRight: 12, marginTop: 10 }}
             >
               Save author
@@ -288,7 +296,7 @@ export default function AddBookPage() {
               }}
               style={{ marginTop: 10 }}
             >
-              Cansle
+              Cancel
             </button>
           </div>
         )}

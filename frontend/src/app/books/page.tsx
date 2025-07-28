@@ -38,16 +38,16 @@ export default function BooksList() {
       }
     }
 
-    fetchBooks();
+    void fetchBooks();
   }, []);
 
   if (error) return <p style={{ color: 'red' }}>{error}</p>;
 
   return (
     <div>
-      <h1>Books</h1>
+      <h1>Books зщзщ</h1>
       {!books.length ? (
-        <p>No books</p>
+        <p>No boo    ks</p>
       ) : (
         <ul>
           {books.map((book) => (

@@ -29,10 +29,11 @@ export default function PublisherPage() {
         console.log(e);
       }
     }
-    fetchPublishers();
+
+    void fetchPublishers(); 
   }, []);
 
-  async function handleCratePublisher() {
+  async function handleCreatePublisher() {
     if (name.trim() === '') {
       setFormError('Enter publisher name');
       return;
@@ -45,12 +46,14 @@ export default function PublisherPage() {
     } catch (e) {
       setFormError('Posting data error');
       console.log(e);
+      return;
     }
     try {
       const publishersData = await axios.get<Publisher[]>(
         'http://localhost:8000/api/publishers/',
       );
       setPublishers(publishersData.data);
+      setFormError(null); 
     } catch (e) {
       setFormError('Loading data error');
       console.log(e);
@@ -65,7 +68,7 @@ export default function PublisherPage() {
         onClick={() => setFormVisible((prev) => !prev)}
         style={{ marginBottom: 20 }}
       >
-        {formVisible ? 'Cansel' : 'Add profile'}
+        {formVisible ? 'Cancel' : 'Add profile'}
       </button>
       {formVisible && (
         <div
@@ -84,7 +87,7 @@ export default function PublisherPage() {
             onChange={(e) => setName(e.target.value)}
             required
             style={{ width: '100%', padding: 8, boxSizing: 'border-box' }}
-          ></input>
+          />
           <textarea
             placeholder="Enter publisher address"
             value={address}
@@ -97,7 +100,12 @@ export default function PublisherPage() {
               boxSizing: 'border-box',
             }}
           />
-          <button onClick={handleCratePublisher} style={{ marginTop: 10 }}>
+          <button
+            onClick={() => {
+              void handleCreatePublisher();
+            }}
+            style={{ marginTop: 10 }}
+          >
             Create
           </button>
         </div>

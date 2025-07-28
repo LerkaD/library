@@ -41,3 +41,10 @@ tasks:
       container_name: "django"
     cmds:
       - docker-compose logs -f {{.container_name}}
+  
+  ckeck-lint:
+    desc: "Check lint"
+    cmds:
+      - npm --prefix ./frontend run lint
+
+      
