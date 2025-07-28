@@ -45,7 +45,7 @@ export default function Home() {
         setLoading(false);
       }
     }
-    fetchData();
+    void fetchData();
   }, []);
 
   async function handleCreateProfile() {

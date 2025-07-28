@@ -30,7 +30,7 @@ export default function PublisherPage() {
       }
     }
 
-    void fetchPublishers(); 
+    void fetchPublishers();
   }, []);
 
   async function handleCreatePublisher() {
@@ -53,7 +53,7 @@ export default function PublisherPage() {
         'http://localhost:8000/api/publishers/',
       );
       setPublishers(publishersData.data);
-      setFormError(null); 
+      setFormError(null);
     } catch (e) {
       setFormError('Loading data error');
       console.log(e);

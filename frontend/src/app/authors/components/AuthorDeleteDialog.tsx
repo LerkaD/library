@@ -18,7 +18,7 @@ export default function AuthorDeleteDialog({ author, onConfirm, onCancel }: Prop
   }
 
   return (
-    <div 
+    <div
       className="bg-white p-4 rounded-3 shadow-sm mb-4"
       style={{
         border: '1px solid rgba(0, 0, 0, 0.1)',
@@ -26,20 +26,20 @@ export default function AuthorDeleteDialog({ author, onConfirm, onCancel }: Prop
         margin: '0 auto'
       }}
     >
-      <h2 
+      <h2
         className="h5 mb-3 fw-bold"
         style={{ color: '#dc3545' }}
       >
         Удалить автора?
       </h2>
-      
-      <p 
+
+      <p
         className="mb-4"
         style={{ color: '#495057' }}
       >
         Вы действительно хотите удалить <b>{author.name}</b>?
       </p>
-      
+
       <div className="d-flex justify-content-end gap-2">
         <button
           className="btn btn-danger btn-sm fw-semibold py-2 px-3"
@@ -57,7 +57,7 @@ export default function AuthorDeleteDialog({ author, onConfirm, onCancel }: Prop
             </>
           ) : 'Удалить'}
         </button>
-        
+
         <button
           className="btn btn-outline-secondary btn-sm fw-semibold py-2 px-3"
           style={{

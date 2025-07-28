@@ -36,11 +36,11 @@ ENV PYTHONUNBUFFERED=1
 ENV POETRY_VERSION=1.6.1
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
-    gcc \
-    default-libmysqlclient-dev \
-    build-essential \
-    pkg-config \
-    default-mysql-client \
+    gcc=4:13.2.0-7ubuntu1 \
+    default-libmysqlclient-dev=8.0.36-0ubuntu0.24.04.1 \
+    build-essential=12.10ubuntu1 \
+    pkg-config=1.8.1-1ubuntu2 \
+    default-mysql-client=8.0.36-0ubuntu0.24.04.1 \
     && rm -rf /var/lib/apt/lists/*
 
 RUN python3 -m venv /venv \

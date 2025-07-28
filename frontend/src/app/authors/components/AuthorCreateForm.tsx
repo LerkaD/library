@@ -15,7 +15,7 @@ export default function AuthorCreateForm({ onSave, onCancel }: Props) {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError(null);
-    
+
     if (!name.trim()) {
       setError('Имя не может быть пустым');
       return;
@@ -40,7 +40,7 @@ export default function AuthorCreateForm({ onSave, onCancel }: Props) {
   };
 
   return (
-    <div 
+    <div
       className="modal-backdrop d-flex justify-content-center align-items-center"
       style={{
         position: 'fixed',
@@ -52,7 +52,7 @@ export default function AuthorCreateForm({ onSave, onCancel }: Props) {
         zIndex: 1050
       }}
     >
-      <div 
+      <div
         className="bg-white rounded-3 p-4"
         style={{
           width: '100%',
@@ -60,7 +60,7 @@ export default function AuthorCreateForm({ onSave, onCancel }: Props) {
           boxShadow: '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)'
         }}
       >
-        <h2 
+        <h2
           className="text-center mb-4 fw-semibold"
           style={{
             fontSize: '1.5rem',
@@ -69,10 +69,10 @@ export default function AuthorCreateForm({ onSave, onCancel }: Props) {
         >
           Добавить автора
         </h2>
-        
+
         <form onSubmit={onSubmitWrapper} noValidate>
           {error && (
-            <div 
+            <div
               className="alert alert-danger mb-3 text-center"
               style={{
                 backgroundColor: '#fee2e2',

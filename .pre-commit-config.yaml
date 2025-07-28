@@ -21,8 +21,25 @@ repos:
         args:
           - --exclude=**/migrations/**
 
-  - repo: https://github.com/hadolint/hadolint
-    rev: v2.12.0
+  # - repo: https://github.com/hadolint/hadolint
+    # rev: v2.12.0
+    # entry: /home/valeri/library/back/hadolint
+    # hooks:
+    #   - id: hadolint
+    #     files: Dockerfile
+
+  - repo: local
     hooks:
-      - id: hadolint
-        files: ^Dockerfile$|.*\.Dockerfile$
+
+        #ghcr.io/hadolint/hadolint - образ докер из гит хаб,где лежит hadolint.
+      - id: hadolint-back
+        name: hadolint (back)
+        entry: bash -c "docker run --rm -i ghcr.io/hadolint/hadolint < back/Dockerfile"
+        language: system
+        files: back/Dockerfile
+
+      - id: hadolint-frontend
+        name: hadolint (frontend)
+        entry: bash -c "docker run --rm -i ghcr.io/hadolint/hadolint < frontend/Dockerfile"
+        language: system
+        files: frontend/Dockerfile

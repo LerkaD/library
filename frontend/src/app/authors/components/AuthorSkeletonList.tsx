@@ -5,7 +5,7 @@ export default function AuthorSkeletonList() {
   return (
     <div className="d-flex flex-column gap-3">
       {[...Array<undefined>(4)].map((_, idx) => (
-        <div 
+        <div
           key={idx}
           className="p-4 rounded-3 d-flex flex-column flex-md-row justify-content-between align-items-md-center bg-white shadow-sm skeleton-card"
         >
@@ -24,7 +24,7 @@ export default function AuthorSkeletonList() {
         .skeleton-card {
           animation: pulse 1.5s infinite ease-in-out;
         }
-        
+
         @keyframes pulse {
           40%, 100% {
             opacity: 1;

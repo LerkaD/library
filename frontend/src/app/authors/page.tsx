@@ -90,7 +90,7 @@ export default function AuthorsPage() {
       {/* Шапка */}
       <div className="bg-light rounded-3 p-4 mb-4 text-center shadow-sm">
         <h1 className="mb-3" style={{ fontSize: '28px', color: '#1e293b' }}>Авторы</h1>
-        <button 
+        <button
           className="btn btn-primary fw-semibold py-2 px-4"
           style={{
             borderRadius: '8px',
@@ -108,7 +108,7 @@ export default function AuthorsPage() {
 
       {/* Сообщения */}
       {formError && (
-        <div 
+        <div
           className="mb-3 p-3 text-center rounded"
           style={{
             backgroundColor: '#fee2e2',
@@ -119,7 +119,7 @@ export default function AuthorsPage() {
         </div>
       )}
       {successMessage && (
-        <div 
+        <div
           className="mb-3 p-3 text-center rounded"
           style={{
             backgroundColor: '#dcfce7',

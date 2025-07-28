@@ -11,7 +11,7 @@ type Props = {
 export default function AuthorList({ authors, onEdit, onDelete }: Props) {
   if (authors.length === 0) {
     return (
-      <div 
+      <div
         className="text-center py-5"
         style={{ color: '#94a3b8' }}
       >
@@ -23,7 +23,7 @@ export default function AuthorList({ authors, onEdit, onDelete }: Props) {
   return (
     <div className="d-flex flex-column gap-3">
       {authors.map(author => (
-        <div 
+        <div
           key={author.id}
           className="p-3 rounded-3"
           style={{
@@ -33,7 +33,7 @@ export default function AuthorList({ authors, onEdit, onDelete }: Props) {
           }}
         >
           <div className="mb-3">
-            <h3 
+            <h3
               className="m-0"
               style={{
                 fontSize: '1.125rem',
@@ -43,7 +43,7 @@ export default function AuthorList({ authors, onEdit, onDelete }: Props) {
             >
               {author.name}
             </h3>
-            <p 
+            <p
               className="m-0 mt-1"
               style={{
                 fontSize: '0.875rem',

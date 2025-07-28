@@ -42,7 +42,7 @@ export default function AuthorEditForm({ author, onSave, onCancel }: Props) {
   };
 
   return (
-    <div 
+    <div
       className="d-flex justify-content-center p-3"
       style={{
         position: 'fixed',
@@ -55,7 +55,7 @@ export default function AuthorEditForm({ author, onSave, onCancel }: Props) {
         alignItems: 'center'
       }}
     >
-      <div 
+      <div
         className="bg-light rounded-3 p-4"
         style={{
           width: '100%',
@@ -63,7 +63,7 @@ export default function AuthorEditForm({ author, onSave, onCancel }: Props) {
           boxShadow: '0 20px 25px -5px rgba(0,0,0,0.1), 0 10px 10px -5px rgba(0,0,0,0.04)'
         }}
       >
-        <h2 
+        <h2
           className="text-center mb-4 fw-semibold"
           style={{
             fontSize: '1.5rem',
@@ -72,10 +72,10 @@ export default function AuthorEditForm({ author, onSave, onCancel }: Props) {
         >
           Редактировать автора
         </h2>
-        
+
         <form onSubmit={handleFormSubmit} noValidate>
           {error && (
-            <div 
+            <div
               className="mb-3 p-3 text-center rounded"
               style={{
                 backgroundColor: '#fee2e2',
@@ -85,7 +85,7 @@ export default function AuthorEditForm({ author, onSave, onCancel }: Props) {
               {error}
             </div>
           )}
-          
+
           <div className="mb-4">
             <label className="form-label fw-medium" style={{ color: '#374151' }}>
               Имя автора:
@@ -106,7 +106,7 @@ export default function AuthorEditForm({ author, onSave, onCancel }: Props) {
               spellCheck={false}
             />
           </div>
-          
+
           <div className="mb-4">
             <label className="form-label fw-medium" style={{ color: '#374151' }}>
               Дата рождения:
@@ -124,7 +124,7 @@ export default function AuthorEditForm({ author, onSave, onCancel }: Props) {
               disabled={saving}
             />
           </div>
-          
+
           <div className="d-flex justify-content-end gap-3 mt-4">
             <button
               type="button"

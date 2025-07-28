@@ -128,26 +128,3 @@ body {
 .card {
   border: none;
 }
-
-/* Темная тема */
-@media (prefers-color-scheme: dark) {
-  body {
-    background-color: #0f172a;
-    color: #f8fafc;
-  }
-  
-  .custom-card {
-    background-color: #1e293b;
-    border-color: #334155;
-  }
-  
-  .custom-title {
-    color: #f8fafc;
-  }
-  
-  .form-custom-input {
-    background-color: #1e293b;
-    border-color: #334155;
-    color: white;
-  }
-}

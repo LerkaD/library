@@ -54,8 +54,8 @@ services:
     environment:
       - NODE_ENV=development
       - NEXT_PUBLIC_API_URL=http://backend:8000/api
-      - CHOKIDAR_USEPOLLING=true 
-      - WATCHPACK_POLLING=true   
+      - CHOKIDAR_USEPOLLING=true
+      - WATCHPACK_POLLING=true
     restart: on-failure
 
 volumes:
