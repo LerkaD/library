@@ -4,14 +4,14 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #091420;
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
+    --background: #091420;
     --foreground: #ededed;
   }
 }
@@ -21,110 +21,26 @@ body {
   color: #1e293b;
 }
 
-/* Кастомные карточки */
-.custom-card {
-  border-radius: 12px;
-  border: 1px solid #e2e8f0;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  padding: 24px;
-  background-color: white;
-  margin-bottom: 24px;
-}
-
-/* Заголовки */
-.custom-title {
-  font-size: 28px;
-  color: #1e293b;
-  margin-bottom: 16px;
-  text-align: center;
-}
-
-/* Кнопки */
-.btn-custom-primary {
-  background-color: #2563eb;
-  color: white;
-  border: none;
-  padding: 12px 24px;
-  border-radius: 8px;
-  font-size: 16px;
-  font-weight: 600;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  transition: background-color 0.2s;
-}
-
-.btn-custom-primary:hover {
-  background-color: #1d4ed8;
-  color: white;
-}
-
-.btn-custom-edit {
-  background-color: #2563eb;
-  color: white;
-  padding: 10px 20px;
-  border-radius: 6px;
-  font-weight: 600;
-}
-
-.btn-custom-delete {
-  background-color: #dc2626;
-  color: white;
-  padding: 10px 20px;
-  border-radius: 6px;
-  font-weight: 600;
-}
-
-/* Формы */
-.form-custom-input {
-  border-radius: 8px;
-  border: 1px solid #e2e8f0;
-  padding: 12px;
-  width: 100%;
-}
-
-.form-custom-input:focus {
-  border-color: #2563eb;
-  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.2);
-}
-
-/* Сообщения */
-.custom-alert-error {
-  background-color: #fee2e2;
-  color: #b91c1c;
-  padding: 12px;
-  border-radius: 6px;
-  margin-bottom: 16px;
-}
-
-.custom-alert-success {
-  background-color: #dcfce7;
-  color: #166534;
-  padding: 12px;
-  border-radius: 6px;
-  margin-bottom: 16px;
-}
-
-/* Список авторов */
-.author-item-custom {
-  padding: 20px;
-  border-bottom: 1px solid #e2e8f0;
-}
-
-.author-name-custom {
-  font-size: 18px;
-  color: #1e293b;
-  margin-bottom: 8px;
-}
-
-.author-birthdate-custom {
-  font-size: 14px;
-  color: #64748b;
-}
-
-/* Адаптация Bootstrap компонентов */
-.navbar {
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
 .card {
-  border: none;
+  border: none !important;
+  border-radius: 12px !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+}
+
+.search-bar-container {
+  width: 50%; /* Ширина половины страницы */
+}
+
+.search-input {
+  border-width: 2px !important; /* Более жирная рамка */
+  border-radius: 20px !important; /* Округленные края */
+  padding: 10px 20px !important; /* Больший внутренний отступ */
+  font-size: 1.1rem !important; /* Увеличенный размер шрифта */
+}
+
+.search-button {
+  border-width: 2px !important; /* Более жирная рамка */
+  border-radius: 20px !important; /* Округленные края */
+  padding: 10px 20px !important; /* Больший внутренний отступ */
+  font-weight: 500 !important; /* Полужирный текст */
 }

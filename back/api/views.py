@@ -1,7 +1,8 @@
 from rest_framework import status, viewsets
 from rest_framework.exceptions import ValidationError
 from rest_framework.response import Response
-
+from django_filters.rest_framework import DjangoFilterBackend
+from  .filtters import AuthorFilter, BookFilter
 from .models import Author, AuthorProfile, Book, Publisher
 from .serializers import (
     AuthorProfileSerializer,
@@ -19,7 +20,9 @@ class PublisherViewSet(viewsets.ModelViewSet):
 class AuthorViewSet(viewsets.ModelViewSet):
     queryset = Author.objects.all()
     serializer_class = AuthorSerializer
-
+    filter_backends = [DjangoFilterBackend]
+    # filterset_fields = ['^name'] # ^ means finding from the begining
+    filterset_class = AuthorFilter
 
 class AuthorProfileViewSet(viewsets.ModelViewSet):
     queryset = AuthorProfile.objects.select_related("author").all()
@@ -63,3 +66,7 @@ class BookViewSet(viewsets.ModelViewSet):
         .all()
     )  # prefetch_related for n-n relations
     serializer_class = BookSerializer
+    #filter to find book by patrt of title
+    filter_backends = [DjangoFilterBackend]
+    # filterset_fields = ['^name'] # ^ means finding from the begining
+    filterset_class = BookFilter

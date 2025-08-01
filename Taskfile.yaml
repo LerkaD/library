@@ -8,6 +8,11 @@ tasks:
     cmds:
       - docker-compose -f {{.compose_file}} build
 
+  build-nc:
+    desc: "Build Docker-images"
+    cmds:
+      - docker-compose -f {{.compose_file}} build --no-cache
+
   start:
     desc: "Run all servises (detached mode)"
     cmds:
@@ -46,3 +51,19 @@ tasks:
     desc: "Check lint"
     cmds:
       - npm --prefix ./frontend run lint
+  
+  check-prietter:
+    desc: "Check prietter"
+    cmds:
+      - npm --prefix ./frontend run prietter
+
+  run-front:
+    desc: "Run frontend"
+    cmds:
+      - docker compose run --service-ports nextjs
+  
+  curl:
+    desc: Curl request from frontend to backend(when docker compose up)
+    cmds:
+      - docker exec - it frontend bash 
+      - curl -i http://django:8000/api/authors/

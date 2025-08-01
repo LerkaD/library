@@ -1,187 +1,149 @@
+// 'use client';
+// import { useState, useEffect } from 'react';
+// import axios from 'axios';
+// import LibraryNavBar from '../libraryNavBar';
+// import AuthorSearchComponent from './components/AuthorSearchComponent/AuthorSearchComponent';
+// import AuthorsDropdownComponent from './components/AuthorDropdownComponent/AuthorsDropdownComponent';
+// import { useRouter } from 'next/navigation';
+// import { Author } from './types';
+
+// export default function AuthorProfilePage() {
+//   const [authors, setAuthors] = useState<Author[]>([]);
+//   const [searchTerm, setSearchTerm] = useState('');
+//   const [error, setError] = useState<string | null>(null);
+//   const router = useRouter();
+
+
+//   useEffect(() => {
+//     const handler = setTimeout(async () => {
+//       if (searchTerm.trim()) {
+//         try {
+//           setError(null);
+//           const response = await axios.get<Author[]>(
+//             `http://localhost:8000/api/authors/?name=${encodeURIComponent(searchTerm)}`,
+//           );
+//           setAuthors(response.data);
+//         } catch (err) {
+//           setError('Failed to fetch authors');
+//           console.error('Search error:', err);
+//         }
+//       }
+//     }, 600);
+
+//     return () => clearTimeout(handler);
+//   }, [searchTerm]);
+
+
+//   const handleSelectAuthor = (id: number) => {
+//     router.push(`authorprofiles/${id}`);
+//   };
+
+//   return (
+//     <>
+//       <LibraryNavBar />
+
+//       <AuthorSearchComponent
+//         onSearch={setSearchTerm}
+//         placeholder="Search authors..."
+//       />
+
+//       {error && <div style={{ color: 'red' }}>{error}</div>}
+
+//       <AuthorsDropdownComponent
+//         authors={authors}
+//         onSelect={handleSelectAuthor}
+//       />
+//     </>
+//   );
+// }
+/*eslint-disable  */
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useState, useEffect } from 'react';
 import axios from 'axios';
+import LibraryNavBar from '../libraryNavBar';
+import AuthorSearchComponent from './components/AuthorSearchComponent/AuthorSearchComponent';
+import AuthorsDropdownComponent from './components/AuthorDropdownComponent/AuthorsDropdownComponent';
+import { useRouter } from 'next/navigation';
+import { Author } from './types';
 
-type Author = {
-  id: number;
-  name: string;
-  birthdate: string | null;
-};
-
-type AuthorProfile = {
-  id: number;
-  author_id: number;
-  author_name: string;
-  author_birthdate: string | null;
-  biography: string;
-};
-
-export default function Home() {
-  const [profiles, setProfiles] = useState<AuthorProfile[]>([]);
+export default function AuthorProfilePage() {
   const [authors, setAuthors] = useState<Author[]>([]);
-  const [loading, setLoading] = useState(true);
-  const [formVisible, setFormVisible] = useState(false);
-
-  const [selectedAuthorId, setSelectedAuthorId] = useState<number | ''>('');
-  const [biography, setBiography] = useState('');
-  const [formError, setFormError] = useState<string | null>(null);
+  const [searchTerm, setSearchTerm] = useState('');
+  const [error, setError] = useState<string | null>(null);
+  const [isLoading, setIsLoading] = useState(false);
+  const router = useRouter();
 
   useEffect(() => {
-    async function fetchData() {
+    const controller = new AbortController();
+
+    const fetchAuthors = async () => {
+      if (!searchTerm.trim()) {
+        setAuthors([]);
+        return;
+      }
+
       try {
-        const [profilesRes, authorsRes] = await Promise.all([
-          axios.get<AuthorProfile[]>(
-            'http://localhost:8000/api/authorprofiles/',
-          ),
-          axios.get<Author[]>('http://localhost:8000/api/authors/'),
-        ]);
-        setProfiles(profilesRes.data);
-        setAuthors(authorsRes.data);
-      } catch (e) {
-        setFormError('Ошибка загрузки данных с сервера');
-        console.error(e);
-      } finally {
-        setLoading(false);
-      }
-    }
-    void fetchData();
-  }, []);
+        setIsLoading(true);
+        setError(null);
 
-  async function handleCreateProfile() {
-    setFormError(null);
-
-    if (selectedAuthorId === '') {
-      setFormError('Пожалуйста, выберите автора');
-      return;
-    }
-    if (!biography.trim()) {
-      // trim - del spaces from l-r
-      setFormError('Биография не может быть пустой');
-      return;
-    }
-
-    try {
-      await axios.post('http://localhost:8000/api/authorprofiles/', {
-        author_id: selectedAuthorId,
-        biography,
-      });
-
-      const profilesRes = await axios.get<AuthorProfile[]>(
-        'http://localhost:8000/api/authorprofiles/',
-      );
-      setProfiles(profilesRes.data);
-
-      setSelectedAuthorId('');
-      setBiography('');
-      setFormVisible(false);
-    } catch (error: unknown) {
-      if (axios.isAxiosError(error)) {
-        if (error.response && typeof error.response.data === 'object') {
-          const errors = error.response.data;
-          if ('author_id' in errors) {
-            setFormError(
-              Array.isArray(errors.author_id)
-                ? errors.author_id.join(', ')
-                : String(errors.author_id),
-            );
-          } else if ('detail' in errors) {
-            setFormError(String(errors.detail));
-          } else {
-            setFormError(JSON.stringify(errors));
+        const response = await axios.get<Author[]>(
+          `http://localhost:8000/api/authors`,
+          {
+            params: { name: searchTerm },
+            signal: controller.signal
           }
-        } else {
-          setFormError(error.message);
-        }
-      } else if (error instanceof Error) {
-        setFormError(error.message);
-      } else {
-        setFormError('Произошла неизвестная ошибка');
-      }
-    }
-  }
+        );
 
-  if (loading) return <p>Загрузка профилей...</p>;
+        setAuthors(response.data);
+      } catch (err) {
+        if (!axios.isCancel(err)) {
+          setError('Failed to fetch authors');
+          console.error('Search error:', err);
+        }
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    const handler = setTimeout(() => {
+      fetchAuthors();
+    }, 600);
+
+    return () => {
+      controller.abort();
+      clearTimeout(handler);
+    };
+  }, [searchTerm]);
+
+  const handleSelectAuthor = (id: number) => {
+    router.push(`authorprofiles/${id}`);
+  };
 
   return (
-    <main style={{ padding: 20 }}>
-      <h1>Профили авторов</h1>
+    <>
+      <LibraryNavBar />
 
-      <button
-        onClick={() => setFormVisible((prev) => !prev)}
-        style={{ marginBottom: 20 }}
-      >
-        {formVisible ? 'Отменить' : 'Добавить профиль'}
-      </button>
+      <div className="container mt-4">
+        <AuthorSearchComponent
+          onSearch={setSearchTerm}
+          placeholder="Search authors..."
+        />
 
-      {formVisible && (
-        <div
-          style={{
-            marginBottom: 30,
-            border: '1px solid #ccc',
-            padding: 15,
-            maxWidth: 400,
-          }}
-        >
-          <h2>Создать профиль автора</h2>
+        {isLoading && <div className="mt-3">Loading...</div>}
+        {error && (
+          <div className="alert alert-danger mt-3">
+            {error}
+          </div>
+        )}
 
-          <label>
-            Выберите автора:
-            <br />
-            <select
-              value={selectedAuthorId}
-              onChange={(e) =>
-                setSelectedAuthorId(
-                  e.target.value === '' ? '' : Number(e.target.value),
-                )
-              }
-              style={{ width: '100%', padding: 4 }}
-            >
-              <option value="">-- выбрать автора --</option>
-              {authors.map((a) => (
-                <option key={a.id} value={a.id}>
-                  {a.name} ({a.birthdate ?? 'Дата рождения неизвестна'})
-                </option>
-              ))}
-            </select>
-          </label>
-          <br />
-          <br />
-
-          <label>
-            Биография:
-            <br />
-            <textarea
-              rows={4}
-              value={biography}
-              onChange={(e) => setBiography(e.target.value)}
-              placeholder="Введите биографию"
-              style={{ width: '100%' }}
-            />
-          </label>
-          <br />
-
-          {formError && <p style={{ color: 'red' }}>{formError}</p>}
-
-          <button onClick={handleCreateProfile} style={{ marginTop: 10 }}>
-            Создать
-          </button>
-        </div>
-      )}
-
-      {profiles.length === 0 ? (
-        <p>Профили авторов не найдены.</p>
-      ) : (
-        <ul>
-          {profiles.map((p) => (
-            <li key={p.id}>
-              <b>{p.author_name}</b> ({p.author_birthdate ?? 'неизвестно'})
-              <br />
-              <i>{p.biography}</i>
-            </li>
-          ))}
-        </ul>
-      )}
-    </main>
+        {authors.length > 0 && (
+          <AuthorsDropdownComponent
+            authors={authors}
+            onSelect={handleSelectAuthor}
+          />
+        )}
+      </div>
+    </>
   );
 }

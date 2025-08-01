@@ -1,0 +1,31 @@
+/* AuthorsDropdownComponent.module.css */
+.container {
+  display: flex;
+  justify-content: center;
+  width: 45%;
+}
+
+.card {
+  display: flex;
+  width: 50%;
+}
+
+.listGroupItem {
+  padding: 0.5rem 0;
+  cursor: pointer;
+}
+
+.authorInfo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.authorName {
+  font-weight: 500;
+}
+
+.yearText {
+  color: #6c757d;
+  font-size: 0.875rem;
+}

@@ -1,70 +1,42 @@
+/* eslint-disable */
 'use client';
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import axios from 'axios';
-
-type Publisher = {
-  id: number;
-  name: string;
-};
-
-type Author = {
-  id: number;
-  name: string;
-  birthdate: string | null;
-};
-
-type Book = {
-  id: number;
-  title: string;
-  publisher: Publisher | null;
-  authors: Author[];
-};
+import LibraryNavBar from '../libraryNavBar';
+import SearchBookComponent from './components/BookSearchComponent/BookSearchComponent';
+import BookSimpleComponent from './components/BookListComponent/BookListComponent';
+import { Book } from './types';
 
 export default function BooksList() {
   const [books, setBooks] = useState<Book[]>([]);
   const [error, setError] = useState<string | null>(null);
+  const [loading, setloading] = useState<boolean>(true);
 
-  useEffect(() => {
-    async function fetchBooks() {
-      try {
-        const response = await axios.get<Book[]>(
-          'http://localhost:8000/api/books/',
-        );
-        setBooks(response.data);
-        setError(null);
-      } catch (e) {
-        setError('Loading data error');
-        console.error(e);
-      }
+  const fetchBooksByTitle = async (title: string) => {
+    try {
+      setloading(true);
+      setError(null);
+      const response = await axios.get<Book[]>(
+        `http://localhost:8000/api/books/?title=${encodeURIComponent(title)}`,
+      );
+      setBooks(response.data);
+      setloading(false);
+    } catch (e) {
+      setError('Error fetching books');
+      console.error(e);
+      setBooks([]);
     }
-
-    void fetchBooks();
-  }, []);
-
-  if (error) return <p style={{ color: 'red' }}>{error}</p>;
+  };
 
   return (
-    <div>
-      <h1>Books зщзщ</h1>
-      {!books.length ? (
-        <p>No boo    ks</p>
-      ) : (
-        <ul>
-          {books.map((book) => (
-            <li key={book.id} style={{ marginBottom: 10 }}>
-              <strong>{book.title}</strong>
-              <br />
-              Publisher:{' '}
-              {book.publisher ? book.publisher.name : '-no bublisher -'}
-              <br />
-              Authors:{' '}
-              {book.authors.length > 0
-                ? book.authors.map((a) => a.name).join(', ')
-                : '-no authors -'}
-            </li>
-          ))}
-        </ul>
-      )}
-    </div>
+    <>
+      <LibraryNavBar />
+
+      <SearchBookComponent
+        onSearch={fetchBooksByTitle}
+        placeholder="Search for books..."
+      />
+      {!loading && <BookSimpleComponent books={books} />}
+    </>
   );
 }

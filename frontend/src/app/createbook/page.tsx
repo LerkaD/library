@@ -1,6 +1,18 @@
+/* eslint-disable */
 'use client';
 import React, { useEffect, useState } from 'react';
-import axios, { AxiosError } from 'axios';
+import axios from 'axios';
+import {
+  Container,
+  Form,
+  Button,
+  Alert,
+  ListGroup,
+  Card,
+  InputGroup,
+  Modal,
+} from 'react-bootstrap';
+import LibraryNavBar from '../libraryNavBar';
 
 type Publisher = {
   id: number;
@@ -13,26 +25,22 @@ type Author = {
   birthdate: string | null;
 };
 
-function isAPIErrorData(value: unknown): value is Record<string, unknown> {
-  return typeof value === 'object' && value !== null;
-}
-
 export default function AddBookPage() {
   const [publishers, setPublishers] = useState<Publisher[]>([]);
   const [authors, setAuthors] = useState<Author[]>([]);
-
   const [title, setTitle] = useState('');
-  const [selectedPublisherId, setSelectedPublisherId] = useState<number | ''>('');
+  const [selectedPublisherId, setSelectedPublisherId] = useState<number | ''>(
+    '',
+  );
   const [selectedAuthorIds, setSelectedAuthorIds] = useState<number[]>([]);
-
   const [authorNameInput, setAuthorNameInput] = useState('');
-
-  const [showNewAuthorForm, setShowNewAuthorForm] = useState(false);
+  const [showNewAuthorModal, setShowNewAuthorModal] = useState(false);
   const [newAuthorName, setNewAuthorName] = useState('');
   const [newAuthorBirthdate, setNewAuthorBirthdate] = useState('');
-
   const [formError, setFormError] = useState<string | null>(null);
   const [successMessage, setSuccessMessage] = useState<string | null>(null);
+  const [authorSuggestions, setAuthorSuggestions] = useState<Author[]>([]);
+  const [, setLoading] = useState(false);
 
   useEffect(() => {
     async function fetchData() {
@@ -43,7 +51,6 @@ export default function AddBookPage() {
         ]);
         setPublishers(pubRes.data);
         setAuthors(authRes.data);
-        setFormError(null);
       } catch (e) {
         setFormError('Data load error');
         console.error(e);
@@ -52,62 +59,92 @@ export default function AddBookPage() {
     void fetchData();
   }, []);
 
-  function handleAddAuthor() {
+  useEffect(() => {
+    const delayDebounce = setTimeout(() => {
+      if (authorNameInput.trim()) {
+        fetchAuthorSuggestions(authorNameInput);
+      } else {
+        setAuthorSuggestions([]);
+      }
+    }, 300);
+
+    return () => clearTimeout(delayDebounce);
+  }, [authorNameInput]);
+
+  const fetchAuthorSuggestions = async (prefix: string) => {
+    setLoading(true);
+    try {
+      const res = await axios.get<Author[]>(
+        `http://localhost:8000/api/authors/?name=${encodeURIComponent(prefix)}`,
+      );
+      setAuthorSuggestions(res.data);
+    } catch (error) {
+      console.error('Error fetching author suggestions:', error);
+      setAuthorSuggestions([]);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const handleAddAuthor = () => {
     const nameTrimmed = authorNameInput.trim();
     if (!nameTrimmed) {
-      alert('Enter author name');
+      setFormError('Enter author name');
       return;
     }
+
     const existing = authors.find(
-      (a) => a.name.toLowerCase() === nameTrimmed.toLowerCase()
+      (a) => a.name.toLowerCase() === nameTrimmed.toLowerCase(),
     );
+
     if (existing) {
       if (selectedAuthorIds.includes(existing.id)) {
-        alert(`Author "${existing.name}" already entered`);
+        setFormError(`Author "${existing.name}" already added`);
       } else {
         setSelectedAuthorIds((prev) => [...prev, existing.id]);
+        setAuthorNameInput('');
+        setFormError(null);
       }
-      setAuthorNameInput('');
     } else {
       setNewAuthorName(nameTrimmed);
-      setNewAuthorBirthdate('');
-      setShowNewAuthorForm(true);
+      setShowNewAuthorModal(true);
     }
-  }
+  };
 
-  async function createNewAuthor() {
+  const createNewAuthor = async () => {
     const nameTrimmed = newAuthorName.trim();
     if (!nameTrimmed) {
-      alert('Enter author name');
+      setFormError('Enter author name');
       return;
     }
+
     try {
       const res = await axios.post<Author>(
         'http://localhost:8000/api/authors/',
         {
           name: nameTrimmed,
           birthdate: newAuthorBirthdate || null,
-        }
+        },
       );
 
       setAuthors((prev) => [...prev, res.data]);
       setSelectedAuthorIds((prev) => [...prev, res.data.id]);
-
-      setShowNewAuthorForm(false);
+      setShowNewAuthorModal(false);
       setNewAuthorName('');
       setNewAuthorBirthdate('');
       setAuthorNameInput('');
+      setFormError(null);
     } catch (e) {
-      alert('Author creation error');
+      setFormError('Author creation error');
       console.error(e);
     }
-  }
+  };
 
-  function removeAuthor(id: number) {
+  const removeAuthor = (id: number) => {
     setSelectedAuthorIds((prev) => prev.filter((a) => a !== id));
-  }
+  };
 
-  async function handleSubmit(e: React.FormEvent) {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setFormError(null);
     setSuccessMessage(null);
@@ -123,75 +160,51 @@ export default function AddBookPage() {
         publisher_id: selectedPublisherId === '' ? null : selectedPublisherId,
         authors_ids: selectedAuthorIds,
       });
-      setSuccessMessage('Book successfully created! Check it out.');
+      setSuccessMessage('Book successfully created!');
       setTitle('');
       setSelectedPublisherId('');
       setSelectedAuthorIds([]);
       setAuthorNameInput('');
     } catch (error) {
       if (axios.isAxiosError(error)) {
-        const err = error as AxiosError;
-        if (isAPIErrorData(err.response?.data)) {
-          const data = err.response.data;
-          const msg = Object.entries(data)
-            .map(([field, val]) => {
-              if (Array.isArray(val)) return `${field}: ${val.join(', ')}`;
-              if (typeof val === 'string') return `${field}: ${val}`;
-              return `${field}: ${JSON.stringify(val)}`;
-            })
-            .join('\n');
-          setFormError(msg);
-        } else {
-          setFormError(err.message || 'Unknown API error occurred');
-        }
-      } else if (error instanceof Error) {
-        setFormError(error.message);
+        setFormError(error.response?.data?.message || error.message);
       } else {
         setFormError('Unknown error occurred');
       }
       console.error(error);
     }
-  }
+  };
 
   return (
-    <main style={{ maxWidth: 600, margin: 'auto', padding: 20 }}>
-      <h1>New book adding</h1>
+    <>
+      <LibraryNavBar />
+      <Container className="mt-4" style={{ maxWidth: '800px' }}>
+        <h1>Add New Book</h1>
 
-      {formError && (
-        <p style={{ color: 'red', whiteSpace: 'pre-wrap' }}>{formError}</p>
-      )}
-      {successMessage && (
-        <p style={{ color: 'green', whiteSpace: 'pre-wrap' }}>
-          {successMessage}
-        </p>
-      )}
+        {formError && <Alert variant="danger">{formError}</Alert>}
+        {successMessage && <Alert variant="success">{successMessage}</Alert>}
 
-      <form onSubmit={(e) => void handleSubmit(e)}>
-        <div style={{ marginBottom: 15 }}>
-          <label>
-            Book title: <br />
-            <input
+        <Form onSubmit={handleSubmit}>
+          <Form.Group className="mb-3">
+            <Form.Label>Book Title</Form.Label>
+            <Form.Control
               type="text"
               value={title}
               onChange={(e) => setTitle(e.target.value)}
+              placeholder="Enter book title"
               required
-              style={{ width: '100%', padding: '8px' }}
-              placeholder="Enter title"
             />
-          </label>
-        </div>
+          </Form.Group>
 
-        <div style={{ marginBottom: 15 }}>
-          <label>
-            Publisher: <br />
-            <select
+          <Form.Group className="mb-3">
+            <Form.Label>Publisher</Form.Label>
+            <Form.Select
               value={selectedPublisherId}
               onChange={(e) =>
                 setSelectedPublisherId(
-                  e.target.value === '' ? '' : Number(e.target.value)
+                  e.target.value === '' ? '' : Number(e.target.value),
                 )
               }
-              style={{ width: '100%', padding: '8px' }}
             >
               <option value="">— Not selected —</option>
               {publishers.map((pub) => (
@@ -199,112 +212,134 @@ export default function AddBookPage() {
                   {pub.name}
                 </option>
               ))}
-            </select>
-          </label>
-        </div>
+            </Form.Select>
+          </Form.Group>
 
-        <div style={{ marginBottom: 15 }}>
-          <label>
-            Add author by name: <br />
-            <input
-              type="text"
-              value={authorNameInput}
-              onChange={(e) => setAuthorNameInput(e.target.value)}
-              placeholder="Enter author name"
-              style={{ width: '80%', padding: '8px' }}
-              onKeyDown={(e) => {
-                if (e.key === 'Enter') {
-                  e.preventDefault();
-                  handleAddAuthor();
-                }
-              }}
-            />
-            <button
-              type="button"
-              onClick={handleAddAuthor}
-              style={{ padding: '8px 12px', marginLeft: 8 }}
-            >
-              Add author
-            </button>
-          </label>
-        </div>
-
-        <div style={{ marginBottom: 15 }}>
-          <label>Chosen authors:</label>
-          {selectedAuthorIds.length === 0 ? (
-            <p>No authors</p>
-          ) : (
-            <ul>
-              {selectedAuthorIds.map((id) => {
-                const a = authors.find((author) => author.id === id);
-                return (
-                  <li key={id}>
-                    {a?.name ?? 'Author'}{' '}
-                    <button type="button" onClick={() => removeAuthor(id)}>
-                      Delete
-                    </button>
-                  </li>
-                );
-              })}
-            </ul>
-          )}
-        </div>
-
-        {showNewAuthorForm && (
-          <div
-            style={{
-              border: '1px solid #999',
-              padding: 15,
-              marginTop: 10,
-              borderRadius: 6,
-              backgroundColor: '#f7f7f7',
-            }}
-          >
-            <h3>Create new author</h3>
-            <label>
-              Author name: <br />
-              <input
+          <Form.Group className="mb-3">
+            <Form.Label>Add Authors</Form.Label>
+            <InputGroup>
+              <Form.Control
                 type="text"
-                value={newAuthorName}
-                onChange={(e) => setNewAuthorName(e.target.value)}
-                style={{ width: '100%', padding: '6px' }}
+                value={authorNameInput}
+                onChange={(e) => setAuthorNameInput(e.target.value)}
+                placeholder="Search authors"
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter') {
+                    e.preventDefault();
+                    handleAddAuthor();
+                  }
+                }}
               />
-            </label>
-            <br />
-            <label>
-              Birthday: <br />
-              <input
-                type="date"
-                value={newAuthorBirthdate}
-                onChange={(e) => setNewAuthorBirthdate(e.target.value)}
-                style={{ width: '100%', padding: '6px', marginTop: 5 }}
-              />
-            </label>
-            <br />
-            <button
-              type="button"
-              onClick={() => void createNewAuthor()}
-              style={{ marginRight: 12, marginTop: 10 }}
-            >
-              Save author
-            </button>
-            <button
-              type="button"
-              onClick={() => {
-                setShowNewAuthorForm(false);
-                setNewAuthorName('');
-              }}
-              style={{ marginTop: 10 }}
+              <Button
+                variant="outline-secondary"
+                onClick={handleAddAuthor}
+                disabled={!authorNameInput.trim()}
+              >
+                Add
+              </Button>
+            </InputGroup>
+
+            {authorNameInput && authorSuggestions.length > 0 && (
+              <Card className="mt-2">
+                <ListGroup variant="flush">
+                  {authorSuggestions.map((author) => (
+                    <ListGroup.Item
+                      key={author.id}
+                      action
+                      onClick={() => {
+                        if (!selectedAuthorIds.includes(author.id)) {
+                          setSelectedAuthorIds((prev) => [...prev, author.id]);
+                          setAuthorNameInput('');
+                          setAuthorSuggestions([]);
+                        } else {
+                          setFormError(`Author "${author.name}" already added`);
+                        }
+                      }}
+                    >
+                      {author.name}
+                    </ListGroup.Item>
+                  ))}
+                </ListGroup>
+              </Card>
+            )}
+          </Form.Group>
+
+          <Form.Group className="mb-4">
+            <Form.Label>Selected Authors</Form.Label>
+            {selectedAuthorIds.length === 0 ? (
+              <Alert variant="info">No authors selected</Alert>
+            ) : (
+              <ListGroup>
+                {selectedAuthorIds.map((id) => {
+                  const author = authors.find((a) => a.id === id);
+                  return (
+                    <ListGroup.Item
+                      key={id}
+                      className="d-flex justify-content-between align-items-center"
+                    >
+                      {author?.name ?? 'Unknown Author'}
+                      <Button
+                        variant="outline-danger"
+                        size="sm"
+                        onClick={() => removeAuthor(id)}
+                      >
+                        Remove
+                      </Button>
+                    </ListGroup.Item>
+                  );
+                })}
+              </ListGroup>
+            )}
+          </Form.Group>
+
+          <Button variant="primary" type="submit" className="w-100">
+            Create Book
+          </Button>
+        </Form>
+
+        {/* Модальное окно для создания нового автора */}
+        <Modal
+          show={showNewAuthorModal}
+          onHide={() => setShowNewAuthorModal(false)}
+        >
+          <Modal.Header closeButton>
+            <Modal.Title>Create New Author</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            <Form>
+              <Form.Group className="mb-3">
+                <Form.Label>Author Name</Form.Label>
+                <Form.Control
+                  type="text"
+                  value={newAuthorName}
+                  onChange={(e) => setNewAuthorName(e.target.value)}
+                  placeholder="Enter author name"
+                  required
+                />
+              </Form.Group>
+              <Form.Group className="mb-3">
+                <Form.Label>Birthdate (optional)</Form.Label>
+                <Form.Control
+                  type="date"
+                  value={newAuthorBirthdate}
+                  onChange={(e) => setNewAuthorBirthdate(e.target.value)}
+                />
+              </Form.Group>
+            </Form>
+          </Modal.Body>
+          <Modal.Footer>
+            <Button
+              variant="secondary"
+              onClick={() => setShowNewAuthorModal(false)}
             >
               Cancel
-            </button>
-          </div>
-        )}
-
-        <button type="submit" style={{ padding: '10px 20px', fontSize: 16 }}>
-          Create book
-        </button>
-      </form>
-    </main>
+            </Button>
+            <Button variant="primary" onClick={createNewAuthor}>
+              Save Author
+            </Button>
+          </Modal.Footer>
+        </Modal>
+      </Container>
+    </>
   );
 }

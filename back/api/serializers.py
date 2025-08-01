@@ -1,5 +1,5 @@
 from rest_framework import serializers
-
+from django.utils.timezone import now
 from .models import Author, AuthorProfile, Book, Publisher
 
 
@@ -9,6 +9,18 @@ class PublisherSerializer(serializers.ModelSerializer):
         fields = ["id", "name", "address"]
 
 
+class AuthorSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Author
+        fields = ["id", "name", "birthdate"]
+    
+    def validate_birthdate(self, value):
+        if value:
+            age = (now().date() - value).days / 365.25
+            print(age)
+            if age < 16:
+                raise serializers.ValidationError("Author must be older than 16.")
+        
 class AuthorProfileSerializer(serializers.ModelSerializer):
     author_name = serializers.CharField(source="author.name", read_only=True)
     author_id = serializers.PrimaryKeyRelatedField(
@@ -34,10 +46,7 @@ class AuthorProfileSerializer(serializers.ModelSerializer):
         return value
 
 
-class AuthorSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Author
-        fields = ["id", "name", "birthdate"]
+
 
 
 class BookSerializer(serializers.ModelSerializer):

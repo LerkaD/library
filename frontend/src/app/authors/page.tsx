@@ -2,12 +2,13 @@
 
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import AuthorCreateForm from './components/AuthorCreateForm';
-import AuthorEditForm from './components/AuthorEditForm';
-import AuthorDeleteDialog from './components/AuthorDeleteDialog';
+import AuthorCreateForm from './components/AuthorCreateFormComponent/AuthorCreateFormComponent';
+import AuthorEditForm from './components/AuthorEditFormComponent/AuthorEditFormComponent';
+import AuthorDeleteDialog from './components/AuthorDeleteDialogComponent/AuthorDeleteDialogComponent';
 import AuthorSkeletonList from './components/AuthorSkeletonList';
-import AuthorList from './components/AuthorList';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import AuthorList from './components/AuthorListComponent/AuthorListComponent';
+import { Container, Card, Button, Alert, Stack } from 'react-bootstrap';
+import LibraryNavBar from '../libraryNavBar';
 
 export type Author = {
   id: number;
@@ -33,10 +34,12 @@ export default function AuthorsPage() {
     setLoading(true);
     setFormError(null);
     try {
-      const res = await axios.get<Author[]>('http://localhost:8000/api/authors/');
+      const res = await axios.get<Author[]>(
+        'http://localhost:8000/api/authors/',
+      );
       setAuthors(res.data);
     } catch (e) {
-      setFormError('Ошибка загрузки авторов');
+      setFormError('Error loading authors');
       console.error(e);
     } finally {
       setLoading(false);
@@ -50,26 +53,29 @@ export default function AuthorsPage() {
         name: data.name.trim(),
         birthdate: data.birthdate || null,
       });
-      setSuccessMessage('Автор успешно создан');
+      setSuccessMessage('Author created successfully');
       setShowCreateForm(false);
       void loadAuthors();
     } catch {
-      setFormError('Ошибка при создании автора');
+      setFormError('Error creating author');
     }
   }
 
-  async function handleUpdate(authorId: number, data: { name: string; birthdate: string }) {
+  async function handleUpdate(
+    authorId: number,
+    data: { name: string; birthdate: string },
+  ) {
     setFormError(null);
     try {
       await axios.patch(`http://localhost:8000/api/authors/${authorId}/`, {
         name: data.name.trim(),
         birthdate: data.birthdate || null,
       });
-      setSuccessMessage('Автор обновлён');
+      setSuccessMessage('Author updated successfully');
       setEditingAuthor(null);
       void loadAuthors();
     } catch {
-      setFormError('Ошибка при обновлении автора');
+      setFormError('Error updating author');
     }
   }
 
@@ -77,105 +83,88 @@ export default function AuthorsPage() {
     setFormError(null);
     try {
       await axios.delete(`http://localhost:8000/api/authors/${authorId}/`);
-      setSuccessMessage('Автор удалён');
+      setSuccessMessage('Author deleted successfully');
       setDeletingAuthor(null);
       void loadAuthors();
     } catch {
-      setFormError('Ошибка при удалении автора');
+      setFormError('Error deleting author');
     }
   }
 
   return (
-    <div className="container py-4" style={{ maxWidth: '800px' }}>
-      {/* Шапка */}
-      <div className="bg-light rounded-3 p-4 mb-4 text-center shadow-sm">
-        <h1 className="mb-3" style={{ fontSize: '28px', color: '#1e293b' }}>Авторы</h1>
-        <button
-          className="btn btn-primary fw-semibold py-2 px-4"
-          style={{
-            borderRadius: '8px',
-            boxShadow: '0 2px 4px rgba(0,0,0,1)',
-            fontSize: '16px'
-          }}
-          onClick={() => {
-            setShowCreateForm(true);
-            setSuccessMessage(null);
-          }}
-        >
-          Добавить автора
-        </button>
-      </div>
+    <>
+      <LibraryNavBar />
+      <Container className="py-4" style={{ maxWidth: '800px' }}>
+        {/* Header */}
+        <Card>
+          <Card.Body className="text-center">
+            <h1>Authors</h1>
+            <Button
+              variant="primary"
+              onClick={() => {
+                setShowCreateForm(true);
+                setSuccessMessage(null);
+              }}
+            >
+              Add Author
+            </Button>
+          </Card.Body>
+        </Card>
 
-      {/* Сообщения */}
-      {formError && (
-        <div
-          className="mb-3 p-3 text-center rounded"
-          style={{
-            backgroundColor: '#fee2e2',
-            color: '#b91c1c'
-          }}
-        >
-          {formError}
-        </div>
-      )}
-      {successMessage && (
-        <div
-          className="mb-3 p-3 text-center rounded"
-          style={{
-            backgroundColor: '#dcfce7',
-            color: '#166534'
-          }}
-        >
-          {successMessage}
-        </div>
-      )}
+        {/* Messages */}
+        <Stack gap={3} className="mb-3">
+          {formError && <Alert variant="danger">{formError}</Alert>}
+          {successMessage && <Alert variant="success">{successMessage}</Alert>}
+        </Stack>
 
-      {showCreateForm && (
-        <div className="card shadow-sm mb-4 border-0">
-          <div className="card-body p-4">
-            <AuthorCreateForm
-              onCancel={() => setShowCreateForm(false)}
-              onSave={handleCreate}
-            />
-          </div>
-        </div>
-      )}
-
-      {!showCreateForm && !editingAuthor && !deletingAuthor && (
-        loading ? (
-          <AuthorSkeletonList />
-        ) : (
-          <div className="card shadow-sm border-0">
-            <div className="card-body p-4">
-              <AuthorList
-                authors={authors}
-                onEdit={setEditingAuthor}
-                onDelete={setDeletingAuthor}
+        {showCreateForm && (
+          <Card>
+            <Card.Body>
+              <AuthorCreateForm
+                onCancel={() => setShowCreateForm(false)}
+                onSave={handleCreate}
               />
-            </div>
-          </div>
-        )
-      )}
+            </Card.Body>
+          </Card>
+        )}
 
-      {editingAuthor && (
-        <div className="card shadow-sm mt-4 border-0">
-          <div className="card-body p-4">
-            <AuthorEditForm
-              author={editingAuthor}
-              onCancel={() => setEditingAuthor(null)}
-              onSave={data => handleUpdate(editingAuthor.id, data)}
-            />
-          </div>
-        </div>
-      )}
+        {!showCreateForm &&
+          !editingAuthor &&
+          !deletingAuthor &&
+          (loading ? (
+            <AuthorSkeletonList />
+          ) : (
+            <Card className="shadow-sm">
+              <Card.Body>
+                <AuthorList
+                  authors={authors}
+                  onEdit={setEditingAuthor}
+                  onDelete={setDeletingAuthor}
+                />
+              </Card.Body>
+            </Card>
+          ))}
 
-      {deletingAuthor && (
-        <AuthorDeleteDialog
-          author={deletingAuthor}
-          onCancel={() => setDeletingAuthor(null)}
-          onConfirm={() => void handleDelete(deletingAuthor.id)}
-        />
-      )}
-    </div>
+        {editingAuthor && (
+          <Card>
+            <Card.Body>
+              <AuthorEditForm
+                author={editingAuthor}
+                onCancel={() => setEditingAuthor(null)}
+                onSave={(data) => handleUpdate(editingAuthor.id, data)}
+              />
+            </Card.Body>
+          </Card>
+        )}
+
+        {deletingAuthor && (
+          <AuthorDeleteDialog
+            author={deletingAuthor}
+            onCancel={() => setDeletingAuthor(null)}
+            onConfirm={() => void handleDelete(deletingAuthor.id)}
+          />
+        )}
+      </Container>
+    </>
   );
 }
