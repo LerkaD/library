@@ -32,9 +32,18 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    ".next/types/**/*.ts"
+    ".next/types/**/*.ts",
+    "src/app/context/ThemeContext.tsx"
   ],
   "exclude": [
     "node_modules"
+  ],
+  "typeRoots": [
+    "./node_modules/@types",
+    "./global.d.ts"
+  ],
+  "types": [
+    "jasmine",
+    "@testing-library/jasmine-dom"
   ]
 }

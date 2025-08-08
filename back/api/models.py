@@ -2,6 +2,7 @@ from django.db import models
 
 
 class Author(models.Model):
+    
     name = models.CharField(
         max_length=255, default="Unknown Author", unique=True
     )
@@ -10,7 +11,27 @@ class Author(models.Model):
     def __str__(self):
         return self.name
 
+#additional table for trigramm search
+class AuthorTrigram(models.Model):
+    author = models.ForeignKey(Author, on_delete=models.CASCADE, related_name='trigrams')
+    trigram = models.CharField(max_length=3, db_index=True)
+    class Meta:
+        indexes = [
+            models.Index(fields=['trigram']),
+            models.Index(fields=['author', 'trigram']),
+        ]
+        unique_together = ('author', 'trigram')
 
+class AuthorNGram(models.Model):
+    author = models.ForeignKey(Author, on_delete=models.CASCADE, related_name='ngrams')
+    ngram = models.CharField(max_length=3, db_index=True)
+    
+    class Meta:
+        indexes = [
+            models.Index(fields=['ngram']), 
+            models.Index(fields=['author', 'ngram']),
+        ]
+        unique_together = [('author', 'ngram')]
 class AuthorProfile(models.Model):
     author = models.OneToOneField(
         Author, on_delete=models.CASCADE, related_name="profile"

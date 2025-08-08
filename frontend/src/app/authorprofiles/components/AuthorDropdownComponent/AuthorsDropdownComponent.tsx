@@ -14,8 +14,11 @@ export default function AuthorsDropdownComponent({
 }: AuthorsDropdownProps) {
   return (
     <div className={styles.container}>
-      <Card className={`${styles.card} ${styles.searchBarContainers}`}>
+
+      <Card className={styles.card}>
+
         <ListGroup variant="flush">
+
           {authors.map((author) => (
             <ListGroup.Item
               key={author.id}
@@ -31,10 +34,13 @@ export default function AuthorsDropdownComponent({
                   </small>
                 )}
               </div>
+
             </ListGroup.Item>
           ))}
+
         </ListGroup>
       </Card>
+
     </div>
   );
 }

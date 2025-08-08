@@ -5,10 +5,10 @@ import axios from 'axios';
 import AuthorCreateForm from './components/AuthorCreateFormComponent/AuthorCreateFormComponent';
 import AuthorEditForm from './components/AuthorEditFormComponent/AuthorEditFormComponent';
 import AuthorDeleteDialog from './components/AuthorDeleteDialogComponent/AuthorDeleteDialogComponent';
-import AuthorSkeletonList from './components/AuthorSkeletonList';
+import SkeletonComponent from '../../baseComponents/SkeletonComponent/SkeletonComponent';
 import AuthorList from './components/AuthorListComponent/AuthorListComponent';
-import { Container, Card, Button, Alert, Stack } from 'react-bootstrap';
-import LibraryNavBar from '../libraryNavBar';
+import HeaderCard from '../../baseComponents/SimpleHeaderComponent/SimpleHeaderComponent'
+import { Container, Card, Alert, Stack } from 'react-bootstrap';
 
 export type Author = {
   id: number;
@@ -49,10 +49,13 @@ export default function AuthorsPage() {
   async function handleCreate(data: { name: string; birthdate: string }) {
     setFormError(null);
     try {
+      console.log('================================================================')
+
       await axios.post('http://localhost:8000/api/authors/', {
         name: data.name.trim(),
         birthdate: data.birthdate || null,
       });
+      console.log(data.birthdate)
       setSuccessMessage('Author created successfully');
       setShowCreateForm(false);
       void loadAuthors();
@@ -92,79 +95,73 @@ export default function AuthorsPage() {
   }
 
   return (
-    <>
-      <LibraryNavBar />
-      <Container className="py-4" style={{ maxWidth: '800px' }}>
-        {/* Header */}
-        <Card>
-          <Card.Body className="text-center">
-            <h1>Authors</h1>
-            <Button
-              variant="primary"
-              onClick={() => {
-                setShowCreateForm(true);
-                setSuccessMessage(null);
-              }}
-            >
-              Add Author
-            </Button>
+    <Container className={`containerMainPage`}>
+      <HeaderCard
+        title="Authors"
+        buttonText="Add author"
+        onButtonClick={() => setShowCreateForm(true)}
+      />
+
+      <Stack>
+        {formError && (
+          <Alert className="alert-danger ">
+            {formError}
+          </Alert>
+        )}
+        {successMessage && (
+          <Alert className="alert-success">
+            {successMessage}
+          </Alert>
+        )}
+      </Stack>
+
+      {showCreateForm && (
+        <Card className="bg-card">
+          <Card.Body>
+            <AuthorCreateForm
+              onCancel={() => setShowCreateForm(false)}
+              onSave={handleCreate}
+            />
           </Card.Body>
         </Card>
+      )}
 
-        {/* Messages */}
-        <Stack gap={3} className="mb-3">
-          {formError && <Alert variant="danger">{formError}</Alert>}
-          {successMessage && <Alert variant="success">{successMessage}</Alert>}
-        </Stack>
-
-        {showCreateForm && (
-          <Card>
+      {!showCreateForm && !editingAuthor && !deletingAuthor && (
+        loading ? (
+          <SkeletonComponent />
+        ) : (
+          <Card className="bg-card shadow-sm">
             <Card.Body>
-              <AuthorCreateForm
-                onCancel={() => setShowCreateForm(false)}
-                onSave={handleCreate}
+              <AuthorList
+                authors={authors}
+                onEdit={setEditingAuthor}
+                onDelete={setDeletingAuthor}
               />
             </Card.Body>
           </Card>
-        )}
+        )
+      )}
 
-        {!showCreateForm &&
-          !editingAuthor &&
-          !deletingAuthor &&
-          (loading ? (
-            <AuthorSkeletonList />
-          ) : (
-            <Card className="shadow-sm">
-              <Card.Body>
-                <AuthorList
-                  authors={authors}
-                  onEdit={setEditingAuthor}
-                  onDelete={setDeletingAuthor}
-                />
-              </Card.Body>
-            </Card>
-          ))}
+      {editingAuthor && (
+        <Card className="bg-card">
+          <Card.Body>
+            <AuthorEditForm
+              author={editingAuthor}
+              onCancel={() => setEditingAuthor(null)}
+              onSave={(data) => handleUpdate(editingAuthor.id, data)}
+            />
+          </Card.Body>
+        </Card>
+      )}
 
-        {editingAuthor && (
-          <Card>
-            <Card.Body>
-              <AuthorEditForm
-                author={editingAuthor}
-                onCancel={() => setEditingAuthor(null)}
-                onSave={(data) => handleUpdate(editingAuthor.id, data)}
-              />
-            </Card.Body>
-          </Card>
-        )}
-
-        {deletingAuthor && (
-          <AuthorDeleteDialog
-            author={deletingAuthor}
-            onCancel={() => setDeletingAuthor(null)}
-            onConfirm={() => void handleDelete(deletingAuthor.id)}
-          />
-        )}
-      </Container>
-    </>
+      {deletingAuthor && (
+        <AuthorDeleteDialog
+          author={deletingAuthor}
+          onCancel={() => setDeletingAuthor(null)}
+          onConfirm={() => void handleDelete(deletingAuthor.id)}
+        />
+      )}
+      <Card />
+    </Container>
   );
 }

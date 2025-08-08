@@ -2,7 +2,7 @@ from rest_framework import status, viewsets
 from rest_framework.exceptions import ValidationError
 from rest_framework.response import Response
 from django_filters.rest_framework import DjangoFilterBackend
-from  .filtters import AuthorFilter, BookFilter
+from .filtters import AuthorFilter, BookFilter
 from .models import Author, AuthorProfile, Book, Publisher
 from .serializers import (
     AuthorProfileSerializer,
@@ -10,6 +10,8 @@ from .serializers import (
     BookSerializer,
     PublisherSerializer,
 )
+from rest_framework.decorators import action
+from .services.search import search_authors 
 
 
 class PublisherViewSet(viewsets.ModelViewSet):
@@ -23,6 +25,25 @@ class AuthorViewSet(viewsets.ModelViewSet):
     filter_backends = [DjangoFilterBackend]
     # filterset_fields = ['^name'] # ^ means finding from the begining
     filterset_class = AuthorFilter
+
+    @action(
+        detail=False,
+        methods=['get'],
+        url_path='search'
+    )
+    def search(self, request:str) -> str:
+        query = request.GET.get('q', '').strip()
+        if not query:
+            return Response(
+                {"error": "Argument 'q' is nessary"},
+                status=status.HTTP_400_BAD_REQUEST
+            )
+        
+        authors = search_authors(query)
+        serializer = self.get_serializer(authors, many=True)
+        return Response(serializer.data)
+
+   
 
 class AuthorProfileViewSet(viewsets.ModelViewSet):
     queryset = AuthorProfile.objects.select_related("author").all()
@@ -66,7 +87,7 @@ class BookViewSet(viewsets.ModelViewSet):
         .all()
     )  # prefetch_related for n-n relations
     serializer_class = BookSerializer
-    #filter to find book by patrt of title
+    # filter to find book by patrt of title
     filter_backends = [DjangoFilterBackend]
     # filterset_fields = ['^name'] # ^ means finding from the begining
     filterset_class = BookFilter

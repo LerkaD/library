@@ -1,6 +1,6 @@
 import React from 'react';
-import { Card, Button, ListGroup, Alert } from 'react-bootstrap';
 import { Author } from '../../page';
+import './AuthorListComponent.css';
 
 type Props = {
   authors: Author[];
@@ -11,46 +11,44 @@ type Props = {
 export default function AuthorList({ authors, onEdit, onDelete }: Props) {
   if (authors.length === 0) {
     return (
-      <Alert variant="info" className="text-center">
+      <div className="author-list-empty">
         No authors found
-      </Alert>
+      </div>
     );
   }
 
   return (
-    <ListGroup variant="flush" className="gap-3">
+    <div className="author-list-container">
       {authors.map((author) => (
-        <ListGroup.Item key={author.id} className="p-0 border-0">
-          <Card>
-            <Card.Body>
-              <Card.Title className="text-primary mb-2">
+        <div key={author.id} className="author-list-item">
+          <div className="author-card">
+            <div className="author-card-body">
+              <h3 className="author-card-title">
                 {author.name}
-              </Card.Title>
+              </h3>
 
-              <Card.Subtitle className="text-muted mb-2">
-                {author.birthdate || 'Bithday unknown'}
-              </Card.Subtitle>
+              <div className="author-card-subtitle">
+                {author.birthdate || 'Birthday unknown'}
+              </div>
 
-              <div className="d-flex justify-content-end gap-2">
-                <Button
-                  variant="outline-primary"
-                  size="sm"
+              <div className="author-card-actions">
+                <button
+                  className="author-edit-btn"
                   onClick={() => onEdit(author)}
                 >
                   Edit
-                </Button>
-                <Button
-                  variant="outline-danger"
-                  size="sm"
+                </button>
+                <button
+                  className="author-delete-btn"
                   onClick={() => onDelete(author)}
                 >
                   Delete
-                </Button>
+                </button>
               </div>
-            </Card.Body>
-          </Card>
-        </ListGroup.Item>
+            </div>
+          </div>
+        </div>
       ))}
-    </ListGroup>
+    </div>
   );
 }

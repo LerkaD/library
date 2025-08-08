@@ -34,8 +34,6 @@ services:
       - "8000:8000"
     environment:
       <<: *db_env
-      # WATCHMAN: "true" 
-      # DJANGO_DEBUG: "true"
       DJANGO_DEBUG: "false"
     depends_on:
       db_lib:
@@ -45,25 +43,13 @@ services:
     build:
       context: ./frontend
     container_name: frontend
-    volumes:
-      - ./frontend:/app
-      - /app/node_modules
     ports:
       - "3000:3000"
-    # # docker compose up nextjs
-    # stdin_open: true
-    # tty: true
     depends_on:
       django:
         condition: service_started
     environment:
-      - NODE_ENV=development
-      - NEXT_PUBLIC_API_URL=http://backend:8000/api
-      - CHOKIDAR_USEPOLLING=true
-      - WATCHPACK_POLLING=true
-    restart: on-failure
+      - NODE_ENV=production
 
 volumes:
   db_data:
-
-

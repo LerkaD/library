@@ -1,0 +1,15 @@
+{
+  "spec_dir": "src",
+  "spec_files": [
+    "**/*.spec.{js,ts,tsx}"
+  ],
+  "helpers": [
+    "../spec/helpers/jsdom.js",
+    "../spec/helpers/babel.js",
+    "../spec/helpers/exclude.js",
+    "../spec/helpers/**/*.js",
+    "../spec/helpers/jasmineDom.js"
+  ],
+  "stopSpecOnExpectationFailure": false,
+  "random": false
+}

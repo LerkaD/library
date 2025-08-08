@@ -1,7 +1,8 @@
-/* eslint-disable */
+/*eslint-disable */
 import React, { useState, useEffect } from 'react';
-import { Modal, Form, Button, Alert, Spinner } from 'react-bootstrap';
+import { Modal, Form, Alert, Spinner } from 'react-bootstrap';
 import { Author } from '../../page';
+import './AuthorEditFormComponent.css';
 
 type Props = {
   author: Author;
@@ -40,23 +41,23 @@ export default function AuthorEditForm({ author, onSave, onCancel }: Props) {
   };
 
   return (
-    <Modal show={true} onHide={onCancel} centered backdrop="static">
-      <Modal.Header closeButton className="border-0 pb-0">
-        <Modal.Title className="w-100 text-center">
-          <h2> Edit author</h2>
+    <Modal show={true} onHide={onCancel} centered backdrop="static" className="author-edit-modal">
+      <Modal.Header closeButton className="author-edit-header">
+        <Modal.Title className="author-edit-title">
+          <h2>Edit author</h2>
         </Modal.Title>
       </Modal.Header>
 
       <Modal.Body>
         <Form onSubmit={handleSubmit} noValidate>
           {error && (
-            <Alert variant="danger" className="text-center">
+            <Alert variant="danger" className="author-edit-alert">
               {error}
             </Alert>
           )}
 
-          <Form.Group className="mb-4">
-            <Form.Label className="fw-medium">Author name:</Form.Label>
+          <Form.Group className="author-edit-form-group">
+            <Form.Label>Author name:</Form.Label>
             <Form.Control
               type="text"
               placeholder="Enter author name"
@@ -65,34 +66,44 @@ export default function AuthorEditForm({ author, onSave, onCancel }: Props) {
               disabled={saving}
               autoFocus
               required
+              className="author-edit-input"
             />
           </Form.Group>
 
-          <Form.Group className="mb-4">
-            <Form.Label className="fw-medium">Birthdate:</Form.Label>
+          <Form.Group className="author-edit-form-group">
+            <Form.Label>Birthdate:</Form.Label>
             <Form.Control
               type="date"
               value={birthdate}
               onChange={(e) => setBirthdate(e.target.value)}
               disabled={saving}
+              className="author-edit-input"
             />
           </Form.Group>
 
-          <div className="d-flex justify-content-end gap-3 mt-4">
-            <Button variant="primary" type="submit" disabled={saving}>
+          <div className="author-edit-buttons">
+            <button
+              type="submit"
+              disabled={saving}
+              className="author-edit-save"
+            >
               {saving ? (
                 <>
-                  <Spinner animation="border" size="sm" className="me-2" />
+                  <Spinner className="createSpinnerGlobal" />
                   Saving...
                 </>
               ) : (
                 'Save'
               )}
-            </Button>
+            </button>
 
-            <Button variant="light" onClick={onCancel} disabled={saving}>
+            <button
+              onClick={onCancel}
+              disabled={saving}
+              className="author-edit-cancel"
+            >
               Cancel
-            </Button>
+            </button>
           </div>
         </Form>
       </Modal.Body>

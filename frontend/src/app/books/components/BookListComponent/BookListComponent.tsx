@@ -8,7 +8,7 @@ export default function BookSimpleComponent({
   books,
 }: BookSimpleComponentProps) {
   return (
-    <Container className="mt-4">
+    <Container>
       {books.length > 0 ? (
         books.map((book) => <BookCardComponent key={book.id} book={book} />)
       ) : (

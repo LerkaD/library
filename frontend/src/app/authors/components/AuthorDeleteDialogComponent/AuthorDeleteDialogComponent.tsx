@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { Button, Spinner } from 'react-bootstrap';
+import { Spinner } from 'react-bootstrap';
 import { Author } from '../../page';
+import './AuthorDeleteDialogComponent.css';
 
 type Props = {
   author: Author;
@@ -22,50 +23,38 @@ export default function AuthorDeleteDialog({
   }
 
   return (
-    <div
-      className="card p-4 mb-4"
-      style={{ maxWidth: '500px', margin: '0 auto' }}
-    >
-      <h5 className="text-danger mb-3 fw-bold">Delete the author?</h5>
+    <div className="author-delete-dialog">
+      <h5 className="author-delete-title">Delete the author?</h5>
 
-      <p className="text-muted mb-4">
+      <p className="author-delete-message">
         Do you really want to delete <b>{author.name}</b>?
       </p>
 
-      <div className="d-flex justify-content-end gap-2">
-        <Button
-          variant="danger"
-          size="sm"
-          className="fw-semibold"
+      <div className="author-delete-buttons">
+        <button
+          className="author-delete-confirm"
           onClick={handleDelete}
           disabled={deleting}
         >
           {deleting ? (
             <>
               <Spinner
-                as="span"
-                animation="border"
-                size="sm"
-                role="status"
-                aria-hidden="true"
-                className="me-2"
+                className="createSpinnerGlobal"
               />
               Deleting...
             </>
           ) : (
             'Delete'
           )}
-        </Button>
+        </button>
 
-        <Button
-          variant="outline-secondary"
-          size="sm"
-          className="fw-semibold"
+        <button
+          className="author-delete-cancel"
           onClick={onCancel}
           disabled={deleting}
         >
           Cancel
-        </Button>
+        </button>
       </div>
     </div>
   );

@@ -1,72 +1,64 @@
-# FROM node:18-slim AS builder
-# # RUN apt-get update && apt-get install -y curl tar bash python3 make g++ \
-# #     && rm -rf /var/lib/apt/lists/*
-
-# # RUN apt-get update && apt-get install -y --no-install-recommends \
-# #     curl=8.5.0-2ubuntu10.6 \
-# #     tar=1.35+dfsg-3build1 \
-# #     bash=5.2.21-2ubuntu4 \
-# #     python3=3.12.3-0ubuntu2 \
-# #     make=4.3-4.1build2 \
-# #     g++=4:13.2.0-7ubuntu1 \
-# #     && rm -rf /var/lib/apt/lists/*
-# # Стадия сборки (builder)
+# FROM node:20-alpine AS builder
 
 # WORKDIR /app
 
-# RUN apt-get update && apt-get install -y --no-install-recommends \
-#     curl \
-#     tar \
-#     bash \
-#     python3 \
-#     make \
-#     g++ \
-#     && rm -rf /var/lib/apt/lists/*
+# RUN apk add --no-cache git python3 make g++
 
-# COPY package.json package-lock.json tsconfig.json ./
-# RUN npm install
+# COPY package.json package-lock.json ./
+# RUN npm ci
+
 # COPY . .
 # RUN npm run build
 
-# FROM node:18-slim AS runner
-# WORKDIR /app
-# RUN apt-get update && apt-get install -y --no-install-recommends curl \
-#     && rm -rf /var/lib/apt/lists/*
+# FROM node:20-alpine AS runner
 
-# COPY --from=builder /app/package.json ./package.json
-# COPY --from=builder /app/package-lock.json ./package-lock.json
-# COPY --from=builder /app/node_modules ./node_modules
+# WORKDIR /app
+
+# COPY --from=builder /app/package.json .
 # COPY --from=builder /app/.next ./.next
 # COPY --from=builder /app/public ./public
+# COPY --from=builder /app/node_modules ./node_modules
+# COPY --from=builder /app/next.config.ts ./ 
 
-# ENV HOST 0.0.0.0
-# ENV PORT 3000
+# ENV NODE_ENV=production
+# ENV PORT=3000
+# ENV HOSTNAME=0.0.0.0
+
 # EXPOSE 3000
-# CMD ["npm", "run", "dev"] 
+
+# CMD ["npm", "start"]
+
 FROM node:20-alpine AS builder
 
-WORKDIR /app
-
 RUN apk add --no-cache git python3 make g++
+
+WORKDIR /app_parent
+RUN mkdir -p /app_parent/app
 
 COPY package.json package-lock.json ./
 RUN npm ci
 
 COPY . .
-RUN npm run build && ls -la .next  
+RUN npm run build
 
 FROM node:20-alpine AS runner
 
-WORKDIR /app
+WORKDIR /app_parent
+# COPY --from=builder /app_parent/package.json .
+# COPY --from=builder /app_parent/.next ./.next
+# COPY --from=builder /app_parent/public ./public
+COPY --from=builder /app_parent/node_modules ./node_modules
+# COPY --from=builder /app_parent/next.config.ts ./
+COPY --from=builder /app_parent/.next ./app/.next
+COPY --from=builder /app_parent/app ./app
+COPY --from=builder /app_parent/next.config.ts ./app/
 
-COPY --from=builder /app/package.json .
-COPY --from=builder /app/.next ./.next
-COPY --from=builder /app/public ./public
-COPY --from=builder /app/node_modules ./node_modules
+ENV NODE_ENV=production
+ENV PORT=3000
+ENV HOSTNAME=0.0.0.0
 
-ENV NODE_ENV production
-ENV PORT 3000
+ENV NODE_PATH=/app_parent/node_modules
 
 EXPOSE 3000
-
+WORKDIR /app_parent/app
 CMD ["npm", "start"]

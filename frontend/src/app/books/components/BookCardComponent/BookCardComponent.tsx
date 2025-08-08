@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import { Card, Button } from 'react-bootstrap';
 import { Book } from '../../types';
+import styles from './BookCardComponent.module.css';
 
 interface BookCardProps {
   book: Book;
@@ -11,34 +12,40 @@ export default function BookCardComponent({ book }: BookCardProps) {
   const [isExpanded, setIsExpanded] = useState(false);
 
   return (
-    <Card className="mb-3">
-      <Card.Body className="p-2">
-        <div className="d-flex justify-content-between align-items-center">
-          <Card.Title>{book.title}</Card.Title>
+    <Card className={styles.bookCard}>
+      <Card.Body className={styles.cardBody}>
+        <div className={styles.cardHeader}>
+          <Card.Title>
+            {/* {book.title} */}
+            <a
+              className={styles.bookTitleLink}
+              href={`/books/${book.id}`}
+            >
+              {book.title}
+            </a>
+          </Card.Title>
           <Button
             variant="outline-primary"
-            type="submit"
+            className={styles.showButton}
             onClick={() => setIsExpanded(!isExpanded)}
           >
             {isExpanded ? 'Show less' : 'Show more'}
           </Button>
         </div>
         <Card.Text>
-          Authors: {book.authors.map((a) => a.name).join(', ')}
+          <strong>Authors:</strong>  {book.authors.map((a) => a.name).join(', ')}
         </Card.Text>
 
         {isExpanded && (
-          <div className="mt-2">
-            <Card.Text>
-              <strong>Publisher:</strong> {book.publisher?.name || 'Unknown'}
+          <div className={styles.detailsSection}>
+            <Card.Text className={styles.detailItem}>
+              <strong>Publisher:</strong> {'.....'}
             </Card.Text>
-            <Card.Text>
-              <strong>Year:.......</strong>
-              {/* {book.publicationYear || 'Not specified'} */}
+            <Card.Text className={styles.detailItem}>
+              <strong>Year:</strong> {'.....'}
             </Card.Text>
-            <Card.Text>
-              <strong>Description:.......</strong>
-              {/* {book.description || 'No description available'} */}
+            <Card.Text className={styles.detailItem}>
+              <strong>Description:</strong> {'.....'}
             </Card.Text>
           </div>
         )}

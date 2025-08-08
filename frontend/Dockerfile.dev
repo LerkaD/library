@@ -1,0 +1,33 @@
+# FROM node:20-alpine
+
+# RUN apk add --no-cache git python3 make g++
+
+# WORKDIR /app
+
+# COPY package.json package-lock.json* ./
+
+# RUN npm ci
+
+# COPY . .
+
+# CMD ["npm", "run", "dev"]
+
+FROM node:20-alpine
+
+RUN apk add --no-cache git python3 make g++
+
+WORKDIR /app_parent
+RUN mkdir -p /app_parent/app
+
+COPY package.json package-lock.json ./
+
+RUN npm ci
+
+WORKDIR /app_parent/app
+COPY . .
+
+ENV NODE_PATH=/app_parent/node_modules
+
+ENV NEXT_EXTERNAL_DIR=true
+
+CMD ["npm", "run", "dev"]

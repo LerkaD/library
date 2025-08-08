@@ -1,0 +1,37 @@
+/* BookCard.module.css */
+.bookCard {
+  margin-bottom: 1rem;
+}
+
+.cardBody {
+  padding: 0.5rem;
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.detailsSection {
+  margin-top: 0.5rem;
+}
+
+.detailItem {
+  margin-bottom: 0.25rem;
+}
+
+.showButton{
+  border-radius: 0.75rem;
+}
+
+/* title link without ___ */
+.bookTitleLink {
+  text-decoration: none;
+  color: var(--color-primary)
+}
+
+.bookTitleLink:hover {
+  text-decoration: none;
+  color: inherit;
+}

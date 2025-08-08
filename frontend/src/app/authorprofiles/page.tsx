@@ -1,149 +1,99 @@
-// 'use client';
-// import { useState, useEffect } from 'react';
-// import axios from 'axios';
-// import LibraryNavBar from '../libraryNavBar';
-// import AuthorSearchComponent from './components/AuthorSearchComponent/AuthorSearchComponent';
-// import AuthorsDropdownComponent from './components/AuthorDropdownComponent/AuthorsDropdownComponent';
-// import { useRouter } from 'next/navigation';
-// import { Author } from './types';
-
-// export default function AuthorProfilePage() {
-//   const [authors, setAuthors] = useState<Author[]>([]);
-//   const [searchTerm, setSearchTerm] = useState('');
-//   const [error, setError] = useState<string | null>(null);
-//   const router = useRouter();
-
-
-//   useEffect(() => {
-//     const handler = setTimeout(async () => {
-//       if (searchTerm.trim()) {
-//         try {
-//           setError(null);
-//           const response = await axios.get<Author[]>(
-//             `http://localhost:8000/api/authors/?name=${encodeURIComponent(searchTerm)}`,
-//           );
-//           setAuthors(response.data);
-//         } catch (err) {
-//           setError('Failed to fetch authors');
-//           console.error('Search error:', err);
-//         }
-//       }
-//     }, 600);
-
-//     return () => clearTimeout(handler);
-//   }, [searchTerm]);
-
-
-//   const handleSelectAuthor = (id: number) => {
-//     router.push(`authorprofiles/${id}`);
-//   };
-
-//   return (
-//     <>
-//       <LibraryNavBar />
-
-//       <AuthorSearchComponent
-//         onSearch={setSearchTerm}
-//         placeholder="Search authors..."
-//       />
-
-//       {error && <div style={{ color: 'red' }}>{error}</div>}
-
-//       <AuthorsDropdownComponent
-//         authors={authors}
-//         onSelect={handleSelectAuthor}
-//       />
-//     </>
-//   );
-// }
 /*eslint-disable  */
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import axios from 'axios';
-import LibraryNavBar from '../libraryNavBar';
-import AuthorSearchComponent from './components/AuthorSearchComponent/AuthorSearchComponent';
+import SearchInputView from '../../baseComponents/SearchInputComponent/SearchInputView';
 import AuthorsDropdownComponent from './components/AuthorDropdownComponent/AuthorsDropdownComponent';
 import { useRouter } from 'next/navigation';
 import { Author } from './types';
+import { Alert } from 'react-bootstrap';
 
 export default function AuthorProfilePage() {
   const [authors, setAuthors] = useState<Author[]>([]);
   const [searchTerm, setSearchTerm] = useState('');
   const [error, setError] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState(false);
+  const [lastSubmittedTerm, setLastSubmittedTerm] = useState('');
   const router = useRouter();
 
+  // get authors 
+  const fetchAuthors = useCallback(async (term: string, signal: AbortSignal) => {
+    if (!term.trim()) {
+      setAuthors([]);
+      return;
+    }
+
+    try {
+      setIsLoading(true);
+      setError(null);
+
+      const response = await axios.get<Author[]>(
+        `http://localhost:8000/api/authors/search/?q=${encodeURIComponent(term)}`,
+      );
+      const t: string = 'http://localhost:8000/api/authors/search/?q=le'
+      setAuthors(response.data);
+    } catch (err) {
+      if (!axios.isCancel(err)) {
+        setError('Failed to fetch authors');
+        console.error('Search error:', err);
+      }
+    } finally {
+      setIsLoading(false);
+    }
+  }, []);
+
+  // debounce input
   useEffect(() => {
     const controller = new AbortController();
-
-    const fetchAuthors = async () => {
-      if (!searchTerm.trim()) {
-        setAuthors([]);
-        return;
+    const debounceTimer = setTimeout(() => {
+      // check prevenr
+      if (searchTerm !== lastSubmittedTerm) {
+        fetchAuthors(searchTerm, controller.signal);
       }
-
-      try {
-        setIsLoading(true);
-        setError(null);
-
-        const response = await axios.get<Author[]>(
-          `http://localhost:8000/api/authors`,
-          {
-            params: { name: searchTerm },
-            signal: controller.signal
-          }
-        );
-
-        setAuthors(response.data);
-      } catch (err) {
-        if (!axios.isCancel(err)) {
-          setError('Failed to fetch authors');
-          console.error('Search error:', err);
-        }
-      } finally {
-        setIsLoading(false);
-      }
-    };
-
-    const handler = setTimeout(() => {
-      fetchAuthors();
-    }, 600);
+    }, 200);
 
     return () => {
       controller.abort();
-      clearTimeout(handler);
+      clearTimeout(debounceTimer);
     };
-  }, [searchTerm]);
+  }, [searchTerm, lastSubmittedTerm, fetchAuthors]);
+
+  // if submit
+  const handleSearchSubmit = (term: string) => {
+    setLastSubmittedTerm(term);
+    const controller = new AbortController();
+    fetchAuthors(term, controller.signal);
+    return () => controller.abort();
+  };
 
   const handleSelectAuthor = (id: number) => {
     router.push(`authorprofiles/${id}`);
   };
 
   return (
-    <>
-      <LibraryNavBar />
+    <div className='containerMainPage'>
+      <SearchInputView
+        onSearch={setSearchTerm}
+        onSubmit={handleSearchSubmit}
+        placeholder="Search authors..."
+      />
 
-      <div className="container mt-4">
-        <AuthorSearchComponent
-          onSearch={setSearchTerm}
-          placeholder="Search authors..."
+      {isLoading && <div>Loading...</div>}
+
+      {error && (
+        <Alert
+          className='alert-danger'>
+          {error}
+        </Alert>
+      )}
+
+      {authors.length > 0 && (
+        <AuthorsDropdownComponent
+          authors={authors}
+          onSelect={handleSelectAuthor}
         />
-
-        {isLoading && <div className="mt-3">Loading...</div>}
-        {error && (
-          <div className="alert alert-danger mt-3">
-            {error}
-          </div>
-        )}
-
-        {authors.length > 0 && (
-          <AuthorsDropdownComponent
-            authors={authors}
-            onSelect={handleSelectAuthor}
-          />
-        )}
-      </div>
-    </>
+      )}
+    </div>
   );
 }

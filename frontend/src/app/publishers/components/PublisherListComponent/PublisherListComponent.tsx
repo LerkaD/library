@@ -1,6 +1,7 @@
 import React from 'react';
 import { Card, Button, ListGroup, Alert } from 'react-bootstrap';
 import { Publisher } from '../../page';
+import styles from './PublisherListComponent.module.css';
 
 type Props = {
   publishers: Publisher[];
@@ -11,37 +12,35 @@ type Props = {
 export default function PublisherList({ publishers, onEdit, onDelete }: Props) {
   if (publishers.length === 0) {
     return (
-      <Alert variant="info" className="text-center">
+      <Alert className={`${styles.alert} ${styles.info}`}>
         No publishers found
       </Alert>
     );
   }
 
   return (
-    <ListGroup variant="flush" className="gap-3">
+    <ListGroup className={styles.listGroup}>
       {publishers.map((publisher) => (
-        <ListGroup.Item key={publisher.id} className="p-0 border-0">
-          <Card>
+        <ListGroup.Item key={publisher.id} className={styles.listItem}>
+          <Card className={styles.card}>
             <Card.Body>
-              <Card.Title className="text-primary mb-2">
+              <Card.Title className={styles.title}>
                 {publisher.name}
               </Card.Title>
 
-              <Card.Subtitle className="text-muted mb-2">
+              <Card.Subtitle className={styles.subtitle}>
                 {publisher.address || 'No address provided'}
               </Card.Subtitle>
 
-              <div className="d-flex justify-content-end gap-2">
+              <div className={styles.actions}>
                 <Button
-                  variant="outline-primary"
-                  size="sm"
+                  className={`${styles.button} ${styles.editButton}`}
                   onClick={() => onEdit(publisher)}
                 >
                   Edit
                 </Button>
                 <Button
-                  variant="outline-danger"
-                  size="sm"
+                  className={`${styles.button} ${styles.deleteButton}`}
                   onClick={() => onDelete(publisher)}
                 >
                   Delete

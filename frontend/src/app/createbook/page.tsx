@@ -12,7 +12,6 @@ import {
   InputGroup,
   Modal,
 } from 'react-bootstrap';
-import LibraryNavBar from '../libraryNavBar';
 
 type Publisher = {
   id: number;
@@ -177,7 +176,6 @@ export default function AddBookPage() {
 
   return (
     <>
-      <LibraryNavBar />
       <Container className="mt-4" style={{ maxWidth: '800px' }}>
         <h1>Add New Book</h1>
 

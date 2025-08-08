@@ -10,17 +10,22 @@ class PublisherSerializer(serializers.ModelSerializer):
 
 
 class AuthorSerializer(serializers.ModelSerializer):
+    
     class Meta:
         model = Author
         fields = ["id", "name", "birthdate"]
-    
+
     def validate_birthdate(self, value):
         if value:
             age = (now().date() - value).days / 365.25
-            print(age)
+            
             if age < 16:
-                raise serializers.ValidationError("Author must be older than 16.")
-        
+                raise serializers.ValidationError(
+                    "Author must be older than 16."
+                )
+        return value
+
+
 class AuthorProfileSerializer(serializers.ModelSerializer):
     author_name = serializers.CharField(source="author.name", read_only=True)
     author_id = serializers.PrimaryKeyRelatedField(
@@ -44,9 +49,6 @@ class AuthorProfileSerializer(serializers.ModelSerializer):
         if AuthorProfile.objects.filter(author=value).exists():
             raise serializers.ValidationError("Profile already exists")
         return value
-
-
-
 
 
 class BookSerializer(serializers.ModelSerializer):

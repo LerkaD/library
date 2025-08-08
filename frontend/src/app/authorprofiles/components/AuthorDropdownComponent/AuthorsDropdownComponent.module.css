@@ -2,17 +2,36 @@
 .container {
   display: flex;
   justify-content: center;
-  width: 45%;
+  width: 100%;
+  background-color: var(--bg-body);
+  padding: 1rem;
+  margin-top: 0.5rem;
 }
 
 .card {
-  display: flex;
-  width: 50%;
+  width: 100%;
+  /* max-width: 600px; Фиксированная максимальная ширина */
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 0.75rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .listGroupItem {
-  padding: 0.5rem 0;
+  padding: 0.75rem 1rem;
   cursor: pointer;
+  color: var(--text-color);
+  background-color: var(--bg-card);
+  border-bottom: 1px solid var(--border-color);
+  transition: background-color 0.2s ease;
+}
+
+.listGroupItem:last-child {
+  border-bottom: none;
+}
+
+.listGroupItem:hover {
+  background-color: var(--bg-body);
 }
 
 .authorInfo {
@@ -26,6 +45,17 @@
 }
 
 .yearText {
-  color: #6c757d;
+  color: var(--text-color);
+  opacity: 0.6;
   font-size: 0.875rem;
+}
+
+/* Темная тема */
+[data-bs-theme="dark"] .card {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+[data-bs-theme="dark"] .listGroupItem:hover {
+  background-color: var(--bg-body);
+  opacity: 0.9;
 }

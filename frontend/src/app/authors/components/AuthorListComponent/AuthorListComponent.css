@@ -1,0 +1,97 @@
+.author-list-empty {
+  background-color: #d1ecf1;
+  color: #0c5460;
+  text-align: center;
+  padding: 0.75rem 1.25rem;
+  border: 1px solid #bee5eb;
+  border-radius: 0.25rem;
+}
+
+.author-list-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.author-list-item {
+  padding: 0;
+  border: none;
+}
+
+.author-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 0.25rem;
+  overflow: hidden;
+}
+
+.author-card-body {
+  padding: 1.25rem;
+}
+
+.author-card-title {
+  color: var(--color-primary);
+  margin-bottom: 0.5rem;
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+
+.author-card-subtitle {
+  color: var(--text-color);
+  opacity: 0.75;
+  margin-bottom: 1rem;
+  font-size: 0.875rem;
+}
+
+.author-card-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+}
+
+.author-edit-btn,
+.author-delete-btn {
+  /* Base button styles */
+  padding: 0.25rem 0.5rem;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  border-radius: 0.2rem;
+  font-weight: 400;
+  cursor: pointer;
+  background-color: transparent;
+  border: 1px solid;
+  transition: all 0.15s ease-in-out;
+}
+
+.author-edit-btn {
+  /* Outline primary styles */
+  color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+.author-edit-btn:hover {
+  background-color: var(--color-primary);
+  color: white;
+}
+
+.author-delete-btn {
+  /* Outline danger styles */
+  color: var(--color-danger);
+  border-color: var(--color-danger);
+}
+
+.author-delete-btn:hover {
+  background-color: var(--color-danger);
+  color: white;
+}
+
+/* Dark mode adjustments */
+[data-bs-theme="dark"] .author-list-empty {
+  background-color: #1a2226;
+  color: #bee5eb;
+  border-color: #0c5460;
+}
+
+[data-bs-theme="dark"] .author-card-subtitle {
+  opacity: 0.85;
+}

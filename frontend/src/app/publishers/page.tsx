@@ -2,10 +2,9 @@
 
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-import LibraryNavBar from '../libraryNavBar';
-import PublisherCreateForm from './components/PublisherCreateComponent/PublisherCreateForm';
+import PublisherCreateComponent from './components/PublisherCreateComponent/PublisherCreateComponent';
 import PublisherList from './components/PublisherListComponent/PublisherListComponent';
-import PublisherSkeleton from './components/PublisherSkeleton';
+import SkeletonComponent from '../../baseComponents/SkeletonComponent/SkeletonComponent';
 import { Button, Card, Alert, Container, Stack } from 'react-bootstrap';
 
 export type Publisher = {
@@ -66,7 +65,6 @@ export default function PublisherPage() {
 
   return (
     <>
-      <LibraryNavBar />
       <Container className="py-4" style={{ maxWidth: '800px' }}>
         <Card className="mb-4">
           <Card.Body className="text-center">
@@ -91,7 +89,7 @@ export default function PublisherPage() {
         {formVisible && !loading && (
           <Card>
             <Card.Body>
-              <PublisherCreateForm
+              <PublisherCreateComponent
                 onSave={handleCreatePublisher}
                 onCancel={() => setFormVisible(false)} //for create
               />
@@ -102,7 +100,7 @@ export default function PublisherPage() {
         {/* show publishers list and skeleton */}
         {!formVisible &&
           (loading ? (
-            <PublisherSkeleton />
+            <SkeletonComponent />
           ) : (
             <Card>
               <Card.Body>

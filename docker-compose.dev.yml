@@ -1,0 +1,63 @@
+x-environment: &db_env
+  DATABASE_HOST: db_lib
+  DATABASE_NAME: lib_db
+  DATABASE_USER: root
+  DATABASE_PASSWORD: root
+  DJANGO_SETTINGS_MODULE: backend.settings
+
+services:
+  db_lib:
+    image: mysql:8
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: lib_db
+    ports:
+      - "3306:3306"
+    volumes:
+      - db_data:/var/lib/mysql
+    healthcheck:
+      test: [ "CMD-SHELL", "mysqladmin ping -h localhost -u root -proot" ]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+      start_period: 15s
+    restart: always
+
+  django:
+    build:
+      context: ./back
+    volumes:
+      - ./back:/app
+    ports:
+      - "8000:8000"
+    environment:
+      <<: *db_env
+      WATCHMAN: "true"
+      DJANGO_DEBUG: "true"
+    depends_on:
+      db_lib:
+        condition: service_healthy
+
+  nextjs:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile.dev
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+      - /app/.next
+    ports:
+      - "3000:3000"
+    depends_on:
+      django:
+        condition: service_started
+    environment:
+      - NODE_ENV=development
+      - NEXT_PUBLIC_HMR_DEBUG=true
+      - CHOKIDAR_USEPOLLING=true
+      - WATCHPACK_POLLING=true
+      - WATCHPACK_POLLING_INTERVAL=500
+    restart: unless-stopped
+
+volumes:
+  db_data:

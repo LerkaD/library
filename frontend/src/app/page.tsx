@@ -1,9 +1,7 @@
 'use client';
-import LibraryNavBar from './libraryNavBar';
 export default function MainPage() {
   return (
     <>
-      <LibraryNavBar />
     </>
   );
 }
