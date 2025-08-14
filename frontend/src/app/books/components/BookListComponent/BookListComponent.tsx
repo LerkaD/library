@@ -1,7 +1,7 @@
 'use client';
 import React from 'react';
 import { Container } from 'react-bootstrap';
-import { BookSimpleComponentProps } from '../../types';
+import { BookSimpleComponentProps } from '../../../basic_types';
 import BookCardComponent from '../BookCardComponent/BookCardComponent';
 
 export default function BookSimpleComponent({

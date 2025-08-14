@@ -1,7 +1,0 @@
-.themeToggleButton {
-    width: 40px;
-    height: 40px;
-    transition: all 0.3s ease;
-    border-radius: 50% !important; /* rounded-circle equivalent */
-    padding: 0.5rem !important; /* p-2 equivalent */
-}

@@ -1,66 +1,100 @@
 import React from 'react';
-import { render, screen, fireEvent } from '@testing-library/react';
+import { createRoot, Root } from 'react-dom/client';
+import { act, fireEvent } from '@testing-library/react';
 import SearchInput from './SearchInputView';
 
-describe('SearchInput component: ', () => {
-    it('check renders SearchInput component with placeholder', () => {
-        const mockOnSearch = jasmine.createSpy('onSearch');
-        const mockOnSubmit = jasmine.createSpy('onSubmit');
-        const placeholderText = 'Test placeholder...';
+describe('SearchInput component', () => {
+    let container: HTMLDivElement;
+    let root: Root;
 
-        render(
-            <SearchInput
-                onSearch={mockOnSearch}
-                onSubmit={mockOnSubmit}
-                placeholder={placeholderText}
-            />
-        );
-
-        const input = screen.getByPlaceholderText(placeholderText);
-        expect(input).toBeDefined();
+    beforeEach(() => {
+        container = document.createElement('div');
+        document.body.appendChild(container);
+        root = createRoot(container);
     });
 
-    it('check updating input value', () => {
-        const mockOnSearch = jasmine.createSpy('onSearch');
-        const mockOnSubmit = jasmine.createSpy('onSubmit');
-        const placeholderText = 'Test placeholder...';
-
-        render(
-            <SearchInput
-                onSearch={mockOnSearch}
-                onSubmit={mockOnSubmit}
-                placeholder={placeholderText}
-            />
-        );
-
-        const input = screen.getByPlaceholderText(placeholderText);
-
-        fireEvent.change(input, { target: { value: 'New value' } });
-        expect((input as HTMLInputElement).value).toBe('New value');
-        expect(mockOnSearch).toHaveBeenCalledWith('New value');
+    afterEach(() => {
+        root.unmount();
+        document.body.removeChild(container);
     });
 
-    it('check submit seacrh button', () => {
+    it('check placeholder', () => {
         const mockOnSearch = jasmine.createSpy('onSearch');
         const mockOnSubmit = jasmine.createSpy('onSubmit');
-        const placeholderText = 'Test placeholder...';
+        const placeholderText = 'Test placeholder';
 
-        render(
-            <SearchInput
-                onSearch={mockOnSearch}
-                onSubmit={mockOnSubmit}
-                placeholder={placeholderText}
-            />
-        );
-        const input = screen.getByPlaceholderText(placeholderText);
+        act(() => {
+            root.render(
+                <SearchInput
+                    onSearch={mockOnSearch}
+                    onSubmit={mockOnSubmit}
+                    placeholder={placeholderText}
+                />
+            );
+        });
 
-        fireEvent.change(input, { target: { value: 'New value' } });
-
-        const form = screen.getByRole('button');
-        fireEvent.submit(form)
-
-        expect(mockOnSubmit).toHaveBeenCalledWith('New value');
+        const input = container.querySelector(`input[placeholder="${placeholderText}"]`);
+        expect(input).toBeTruthy();
     });
 
+    it('check calling onSearch during text input', () => {
+        const mockOnSearch = jasmine.createSpy('onSearch');
+        const mockOnSubmit = jasmine.createSpy('onSubmit');
 
+        act(() => {
+            root.render(<SearchInput onSearch={mockOnSearch} onSubmit={mockOnSubmit} />);
+        });
+
+        const input = container.querySelector('input')!;
+
+        act(() => {
+            fireEvent.change(input, { target: { value: 'test' } });
+        });
+
+        expect(mockOnSearch).toHaveBeenCalledWith('test');
+    });
+
+    it('check calling onSubmit', () => {
+        const mockOnSearch = jasmine.createSpy('onSearch');
+        const mockOnSubmit = jasmine.createSpy('onSubmit');
+
+        act(() => {
+            root.render(<SearchInput onSearch={mockOnSearch} onSubmit={mockOnSubmit} />);
+        });
+
+        const input = container.querySelector('input')!;
+        const form = container.querySelector('form')!;
+
+        act(() => {
+            fireEvent.change(input, { target: { value: 'submit' } });
+        });
+        act(() => {
+            fireEvent.submit(form);
+        });
+
+        expect(mockOnSubmit).toHaveBeenCalledWith('submit');
+    });
+
+    it('check Search button with submit type', () => {
+        act(() => {
+            root.render(
+                <SearchInput onSearch={jasmine.createSpy()} onSubmit={jasmine.createSpy()} />
+            );
+        });
+
+        const button = container.querySelector('button');
+        expect(button).toBeTruthy();
+        expect(button?.getAttribute('type')).toBe('submit');
+    });
+    it('check Search button with label -search-', () => {
+        act(() => {
+            root.render(
+                <SearchInput onSearch={jasmine.createSpy()} onSubmit={jasmine.createSpy()} />
+            );
+        });
+
+        const button = container.querySelector('button');
+        expect(button).toBeTruthy();
+        expect(button?.textContent).toBe('Search');
+    });
 });

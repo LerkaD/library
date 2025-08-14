@@ -9,14 +9,12 @@ type SearchBarProps = {
     onSearch: (term: string) => void;
     onSubmit: (term: string) => void;
     placeholder?: string;
-    // className?: string;
 };
 
 export default function SearchInput({
     onSearch,
     onSubmit,
     placeholder = '',
-    // className = '',
 }: SearchBarProps) {
     const { searchTerm, handleChange, handleSubmit } = useSearchInput({
         onSearch,

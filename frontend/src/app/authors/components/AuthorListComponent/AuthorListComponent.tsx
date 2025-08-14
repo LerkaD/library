@@ -1,54 +1,55 @@
 import React from 'react';
-import { Author } from '../../page';
-import './AuthorListComponent.css';
+import { Card, Button, ListGroup, Alert } from 'react-bootstrap';
+import { Author } from '../../../basic_types';
+import styles from './AuthorListComponent.module.css';
 
 type Props = {
-  authors: Author[];
-  onEdit: (a: Author) => void;
-  onDelete: (a: Author) => void;
+  publishers: Author[];
+  onEdit: (p: Author) => void;
+  onDelete: (p: Author) => void;
 };
 
-export default function AuthorList({ authors, onEdit, onDelete }: Props) {
-  if (authors.length === 0) {
+export default function AuthorList({ publishers, onEdit, onDelete }: Props) {
+  if (publishers.length === 0) {
     return (
-      <div className="author-list-empty">
+      <Alert className={`${styles.alert} ${styles.info}`}>
         No authors found
-      </div>
+      </Alert>
     );
   }
 
   return (
-    <div className="author-list-container">
-      {authors.map((author) => (
-        <div key={author.id} className="author-list-item">
-          <div className="author-card">
-            <div className="author-card-body">
-              <h3 className="author-card-title">
-                {author.name}
-              </h3>
+    <ListGroup className={styles.listGroup}>
+      {publishers.map((publisher) => (
+        <ListGroup.Item key={publisher.id} className={styles.listItem}>
+          <Card className={styles.card}>
+            <Card.Body>
+              <Card.Title className={styles.title}>{publisher.name}</Card.Title>
 
-              <div className="author-card-subtitle">
-                {author.birthdate || 'Birthday unknown'}
-              </div>
+              <Card.Subtitle className={styles.subtitle}>
+                {publisher.birthdate || 'No birthdate'}
+              </Card.Subtitle>
 
-              <div className="author-card-actions">
-                <button
-                  className="author-edit-btn"
-                  onClick={() => onEdit(author)}
+              <div className={styles.actions}>
+                <Button
+                  variant="outline-primary"
+                  className={`${styles.button} ${styles.editButton}`}
+                  onClick={() => onEdit(publisher)}
                 >
                   Edit
-                </button>
-                <button
-                  className="author-delete-btn"
-                  onClick={() => onDelete(author)}
+                </Button>
+                <Button
+                  variant="outline-danger"
+                  className={`${styles.button} ${styles.deleteButton}`}
+                  onClick={() => onDelete(publisher)}
                 >
                   Delete
-                </button>
+                </Button>
               </div>
-            </div>
-          </div>
-        </div>
+            </Card.Body>
+          </Card>
+        </ListGroup.Item>
       ))}
-    </div>
+    </ListGroup>
   );
 }

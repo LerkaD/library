@@ -1,167 +1,120 @@
-'use client';
+// 'use client';
 
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
-import AuthorCreateForm from './components/AuthorCreateFormComponent/AuthorCreateFormComponent';
-import AuthorEditForm from './components/AuthorEditFormComponent/AuthorEditFormComponent';
-import AuthorDeleteDialog from './components/AuthorDeleteDialogComponent/AuthorDeleteDialogComponent';
-import SkeletonComponent from '../../baseComponents/SkeletonComponent/SkeletonComponent';
-import AuthorList from './components/AuthorListComponent/AuthorListComponent';
-import HeaderCard from '../../baseComponents/SimpleHeaderComponent/SimpleHeaderComponent'
-import { Container, Card, Alert, Stack } from 'react-bootstrap';
+// import React, { useState } from 'react';
+// import AuthorList from './components/AuthorListComponent/AuthorListComponent';
+// import HeaderComponent from '../../baseComponents/SimpleHeaderComponent/SimpleHeaderComponent';
+// import AuthorFormView from './components/AuthorFormComponent/AuthorFormView';
+// import { DeletingEntityView } from '../../baseComponents/DeletingEntityComponent/DeletingEntityView';
+// import { Container, Card, Alert, Stack } from 'react-bootstrap';
+// import { useAuthors } from '../../hooks/useAuthors';
+// import { Author } from '../../app/basic_types';
 
-export type Author = {
-  id: number;
-  name: string;
-  birthdate: string | null;
-};
+// export default function AuthorsPage() {
+//   const {
+//     authors,
+//     error,
+//     successMessage,
+//     handleCreate,
+//     handleUpdate,
+//     handleDelete,
+//   } = useAuthors();
 
-export default function AuthorsPage() {
-  const [authors, setAuthors] = useState<Author[]>([]);
-  const [loading, setLoading] = useState(true);
-  const [formError, setFormError] = useState<string | null>(null);
-  const [successMessage, setSuccessMessage] = useState<string | null>(null);
+//   const [showCreateForm, setShowCreateForm] = useState(false);
+//   const [editingAuthor, setEditingAuthor] = useState<Author | null>(null);
+//   const [deletingAuthor, setDeletingAuthor] = useState<Author | null>(null);
 
-  const [showCreateForm, setShowCreateForm] = useState(false);
-  const [editingAuthor, setEditingAuthor] = useState<Author | null>(null);
-  const [deletingAuthor, setDeletingAuthor] = useState<Author | null>(null);
+//   return (
+//     <Container className={`containerMainPage`}>
+//       <HeaderComponent
+//         title="Authors"
+//         buttonText="Add author"
+//         onButtonClick={() => setShowCreateForm(true)}
+//       />
 
-  useEffect(() => {
-    void loadAuthors();
-  }, []);
+//       <Stack>
+//         {error && <Alert className="alert-danger">{error}</Alert>}
+//         {successMessage && (
+//           <Alert className="alert-success">{successMessage}</Alert>
+//         )}
+//       </Stack>
 
-  async function loadAuthors() {
-    setLoading(true);
-    setFormError(null);
-    try {
-      const res = await axios.get<Author[]>(
-        'http://localhost:8000/api/authors/',
-      );
-      setAuthors(res.data);
-    } catch (e) {
-      setFormError('Error loading authors');
-      console.error(e);
-    } finally {
-      setLoading(false);
-    }
-  }
+//       {showCreateForm && (
+//         <Card className="bg-card">
+//           <Card.Body>
+//             <AuthorFormView
+//               show={showCreateForm}
+//               onCancel={() => setShowCreateForm(false)}
+//               onSave={async (data) => {
+//                 const success = await handleCreate(data);
+//                 if (success) setShowCreateForm(false);
+//               }}
+//             />
+//           </Card.Body>
+//         </Card>
+//       )}
 
-  async function handleCreate(data: { name: string; birthdate: string }) {
-    setFormError(null);
-    try {
-      console.log('================================================================')
+//       {!showCreateForm &&
+//         !editingAuthor &&
+//         !deletingAuthor && (
+//           <Card>
+//             <Card.Body>
+//               <AuthorList
+//                 publishers={authors}
+//                 onEdit={setEditingAuthor}
+//                 onDelete={setDeletingAuthor}
+//               />
+//             </Card.Body>
+//           </Card>
+//         )}
 
-      await axios.post('http://localhost:8000/api/authors/', {
-        name: data.name.trim(),
-        birthdate: data.birthdate || null,
-      });
-      console.log(data.birthdate)
-      setSuccessMessage('Author created successfully');
-      setShowCreateForm(false);
-      void loadAuthors();
-    } catch {
-      setFormError('Error creating author');
-    }
-  }
+//       {editingAuthor && (
+//         <Card className="bg-card">
+//           <Card.Body>
+//             <AuthorFormView
+//               show={true}
+//               title="Edit author"
+//               initialName={editingAuthor.name}
+//               initialBirthdate={
+//                 editingAuthor.birthdate ? editingAuthor.birthdate : ''
+//               }
+//               onCancel={() => setEditingAuthor(null)}
+//               onSave={async (data) => {
+//                 const success = await handleUpdate(editingAuthor.id, data);
+//                 if (success) setEditingAuthor(null);
+//               }}
+//             />
+//           </Card.Body>
+//         </Card>
+//       )}
 
-  async function handleUpdate(
-    authorId: number,
-    data: { name: string; birthdate: string },
-  ) {
-    setFormError(null);
-    try {
-      await axios.patch(`http://localhost:8000/api/authors/${authorId}/`, {
-        name: data.name.trim(),
-        birthdate: data.birthdate || null,
-      });
-      setSuccessMessage('Author updated successfully');
-      setEditingAuthor(null);
-      void loadAuthors();
-    } catch {
-      setFormError('Error updating author');
-    }
-  }
+//       {deletingAuthor && (
+//         <DeletingEntityView
+//           show={true}
+//           entityName={deletingAuthor.name}
+//           onCancel={() => setDeletingAuthor(null)}
+//           onDelete={async () => {
+//             const success = await handleDelete(deletingAuthor.id);
+//             if (success) setDeletingAuthor(null);
+//           }}
+//         />
+//       )}
+//       <Card />
+//     </Container>
+//   );
+// }
+// app/authors/page.tsx
+import { fetchAuthors } from '@/services/authorService';
+import AuthorsPageClient from './components/AuthorsPageClient/AuthorsPageClient';
+import { Author } from '@/app/basic_types';
+import { Suspense } from 'react';
+import AuthorsSkeleton from '../../baseComponents/SkeletonComponent/SkeletonComponent';
 
-  async function handleDelete(authorId: number) {
-    setFormError(null);
-    try {
-      await axios.delete(`http://localhost:8000/api/authors/${authorId}/`);
-      setSuccessMessage('Author deleted successfully');
-      setDeletingAuthor(null);
-      void loadAuthors();
-    } catch {
-      setFormError('Error deleting author');
-    }
-  }
+export default async function AuthorsPage() {
+  const authors: Author[] = await fetchAuthors();
 
   return (
-    <Container className={`containerMainPage`}>
-      <HeaderCard
-        title="Authors"
-        buttonText="Add author"
-        onButtonClick={() => setShowCreateForm(true)}
-      />
-
-      <Stack>
-        {formError && (
-          <Alert className="alert-danger ">
-            {formError}
-          </Alert>
-        )}
-        {successMessage && (
-          <Alert className="alert-success">
-            {successMessage}
-          </Alert>
-        )}
-      </Stack>
-
-      {showCreateForm && (
-        <Card className="bg-card">
-          <Card.Body>
-            <AuthorCreateForm
-              onCancel={() => setShowCreateForm(false)}
-              onSave={handleCreate}
-            />
-          </Card.Body>
-        </Card>
-      )}
-
-      {!showCreateForm && !editingAuthor && !deletingAuthor && (
-        loading ? (
-          <SkeletonComponent />
-        ) : (
-          <Card className="bg-card shadow-sm">
-            <Card.Body>
-              <AuthorList
-                authors={authors}
-                onEdit={setEditingAuthor}
-                onDelete={setDeletingAuthor}
-              />
-            </Card.Body>
-          </Card>
-        )
-      )}
-
-      {editingAuthor && (
-        <Card className="bg-card">
-          <Card.Body>
-            <AuthorEditForm
-              author={editingAuthor}
-              onCancel={() => setEditingAuthor(null)}
-              onSave={(data) => handleUpdate(editingAuthor.id, data)}
-            />
-          </Card.Body>
-        </Card>
-      )}
-
-      {deletingAuthor && (
-        <AuthorDeleteDialog
-          author={deletingAuthor}
-          onCancel={() => setDeletingAuthor(null)}
-          onConfirm={() => void handleDelete(deletingAuthor.id)}
-        />
-      )}
-      <Card />
-    </Container>
+    <Suspense fallback={<AuthorsSkeleton />}>
+      <AuthorsPageClient initialAuthors={authors} />
+    </Suspense>
   );
 }

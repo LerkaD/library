@@ -1,9 +1,9 @@
 'use client';
+import SpecialButton from "@/baseComponents/SpecialButton/specButton";
 export default function MainPage() {
-  return (
-    <>
-    </>
-  );
+  return <>
+    <SpecialButton />
+  </>;
 }
 
 // import Image from 'next/image';

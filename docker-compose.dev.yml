@@ -45,18 +45,18 @@ services:
     volumes:
       - ./frontend:/app
       - /app/node_modules
-      - /app/.next
     ports:
       - "3000:3000"
     depends_on:
       django:
         condition: service_started
+    network_mode: "host"
     environment:
       - NODE_ENV=development
       - NEXT_PUBLIC_HMR_DEBUG=true
       - CHOKIDAR_USEPOLLING=true
       - WATCHPACK_POLLING=true
-      - WATCHPACK_POLLING_INTERVAL=500
+      - WATCHPACK_POLLING_INTERVAL=100
     restart: unless-stopped
 
 volumes:

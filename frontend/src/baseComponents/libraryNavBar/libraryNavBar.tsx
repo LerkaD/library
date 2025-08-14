@@ -13,8 +13,9 @@ import {
   Building
 } from 'react-bootstrap-icons';
 import { useState } from 'react';
-import styles from './Navbar.module.css';
+import styles from './Navbar.module.scss';
 import ThemeSwitcherView from '../ThemeSwitcher/ThemeSwitcherView'
+import Link from 'next/link';
 
 
 export default function LibraryNavBar() {
@@ -38,8 +39,10 @@ export default function LibraryNavBar() {
           <Navbar.Toggle aria-controls="main-navbar" />
 
           <Navbar.Collapse id="main-navbar">
-            <Nav className="me-auto">
+            <Nav>
+
               <Nav.Link
+                as={Link}
                 href="/authors"
                 onClick={() => setExpanded(false)}
                 className={`${styles.navLink} d-flex align-items-center`}
@@ -49,6 +52,7 @@ export default function LibraryNavBar() {
               </Nav.Link>
 
               <Nav.Link
+                as={Link}
                 href="/authorprofiles"
                 onClick={() => setExpanded(false)}
                 className={`${styles.navLink} d-flex align-items-center`}
@@ -58,6 +62,7 @@ export default function LibraryNavBar() {
               </Nav.Link>
 
               <Nav.Link
+                as={Link}
                 href="/books"
                 onClick={() => setExpanded(false)}
                 className={`${styles.navLink} d-flex align-items-center`}
@@ -67,6 +72,7 @@ export default function LibraryNavBar() {
               </Nav.Link>
 
               <Nav.Link
+                as={Link}
                 href="/createbook"
                 onClick={() => setExpanded(false)}
                 className={`${styles.navLink} d-flex align-items-center`}
@@ -76,6 +82,7 @@ export default function LibraryNavBar() {
               </Nav.Link>
 
               <Nav.Link
+                as={Link}
                 href="/publishers"
                 onClick={() => setExpanded(false)}
                 className={`${styles.navLink} d-flex align-items-center`}
@@ -84,12 +91,6 @@ export default function LibraryNavBar() {
                 Publishers
               </Nav.Link>
             </Nav>
-
-            {/* <Nav>
-              <div className={styles.themeToggle}>
-                <ThemeToggle />
-              </div>
-            </Nav> */}
             <Nav>
               <div className={styles.themeToggle}>
                 <ThemeSwitcherView />
@@ -98,6 +99,6 @@ export default function LibraryNavBar() {
           </Navbar.Collapse>
         </Container>
       </Navbar>
-    </div>
+    </div >
   );
 }

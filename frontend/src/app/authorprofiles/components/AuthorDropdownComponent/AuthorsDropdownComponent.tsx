@@ -1,25 +1,22 @@
 'use client';
 import { Card, ListGroup } from 'react-bootstrap';
-import { Author } from '../../types';
+import { Author } from '../../../basic_types';
 import styles from './AuthorsDropdownComponent.module.css';
 
 interface AuthorsDropdownProps {
-  authors: Author[];
+  authorsList: Author[];
   onSelect: (authorId: number) => void;
 }
 
 export default function AuthorsDropdownComponent({
-  authors,
+  authorsList,
   onSelect,
 }: AuthorsDropdownProps) {
   return (
     <div className={styles.container}>
-
       <Card className={styles.card}>
-
         <ListGroup variant="flush">
-
-          {authors.map((author) => (
+          {authorsList.map((author) => (
             <ListGroup.Item
               key={author.id}
               action
@@ -34,13 +31,10 @@ export default function AuthorsDropdownComponent({
                   </small>
                 )}
               </div>
-
             </ListGroup.Item>
           ))}
-
         </ListGroup>
       </Card>
-
     </div>
   );
 }

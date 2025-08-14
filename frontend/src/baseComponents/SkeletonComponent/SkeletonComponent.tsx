@@ -1,14 +1,11 @@
 'use client'
 import { Card, Button } from 'react-bootstrap'
 import styles from './SkeletonComponent.module.css'
-import { useSelector } from 'react-redux';
-import { RootState } from '@/store';
 
 
-export default function SkeletonComponent() {
-    const theme = useSelector((state: RootState) => state.themeSwitcher.mode);
+export default async function SkeletonComponent() {
     return (
-        <div className={styles.container} data-bs-theme={theme}>
+        <div className={styles.container}>
             {[...Array<undefined>(5)].map((_, idx) => (
                 <Card key={idx} className={styles.card}>
                     <Card.Body>

@@ -2,6 +2,6 @@
     "python-envs.pythonProjects": [],
     "files.associations": {
         "*.css": "tailwindcss"
-        }
-
+    },
+    "git.ignoreLimitWarning": true
 }

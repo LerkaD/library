@@ -1,7 +1,7 @@
 'use client';
 import React, { useState } from 'react';
 import { Card, Button } from 'react-bootstrap';
-import { Book } from '../../types';
+import { Book } from '../../../basic_types';
 import styles from './BookCardComponent.module.css';
 
 interface BookCardProps {
@@ -17,10 +17,7 @@ export default function BookCardComponent({ book }: BookCardProps) {
         <div className={styles.cardHeader}>
           <Card.Title>
             {/* {book.title} */}
-            <a
-              className={styles.bookTitleLink}
-              href={`/books/${book.id}`}
-            >
+            <a className={styles.bookTitleLink} href={`/books/${book.id}`}>
               {book.title}
             </a>
           </Card.Title>
@@ -33,7 +30,7 @@ export default function BookCardComponent({ book }: BookCardProps) {
           </Button>
         </div>
         <Card.Text>
-          <strong>Authors:</strong>  {book.authors.map((a) => a.name).join(', ')}
+          <strong>Authors:</strong> {book.authors.map((a) => a.name).join(', ')}
         </Card.Text>
 
         {isExpanded && (

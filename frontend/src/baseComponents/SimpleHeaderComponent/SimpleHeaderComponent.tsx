@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react';
 import { Card, Button } from 'react-bootstrap';
 import styles from './SimpleHeaderComponent.module.scss'
@@ -8,7 +10,7 @@ interface HeaderCardProps {
     onButtonClick: () => void;
 }
 
-const HeaderCard: React.FC<HeaderCardProps> = ({ title, buttonText, onButtonClick }) => {
+const HeaderComponent: React.FC<HeaderCardProps> = ({ title, buttonText, onButtonClick }) => {
     return (
         <Card className={styles.headerCardContainer}>
             <Card.Body className={styles.headerCardBody}>
@@ -25,4 +27,4 @@ const HeaderCard: React.FC<HeaderCardProps> = ({ title, buttonText, onButtonClic
     );
 };
 
-export default HeaderCard;
+export default HeaderComponent;

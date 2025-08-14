@@ -1,6 +1,6 @@
 version: '3'
 vars:
-  compose_file: "docker-compose.yml"
+  compose_file: "docker-compose.dev.yml"
 tasks:
 
   build:
@@ -58,7 +58,7 @@ tasks:
       - npm --prefix ./frontend run prietter
 
   run-front:
-    desc: "Run frontend"
+    ddocker-compose -f docker-compose.dev.yml upesc: "Run frontend"
     cmds:
       - docker compose run --service-ports nextjs
 
@@ -67,3 +67,8 @@ tasks:
     cmds:
       - docker exec - it frontend bash
       - curl -i http://django:8000/api/authors/
+
+  test:
+    desc: Run tests
+    cmds:
+      - npm --prefix ./frontend run test

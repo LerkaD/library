@@ -21,14 +21,14 @@
   margin-bottom: 0.25rem;
 }
 
-.showButton{
+.showButton {
   border-radius: 0.75rem;
 }
 
 /* title link without ___ */
 .bookTitleLink {
   text-decoration: none;
-  color: var(--color-primary)
+  color: var(--color-primary);
 }
 
 .bookTitleLink:hover {

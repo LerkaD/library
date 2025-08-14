@@ -1,6 +1,6 @@
 import React from 'react';
 import { Card, Button, ListGroup, Alert } from 'react-bootstrap';
-import { Publisher } from '../../page';
+import { Publisher } from '../../../basic_types';
 import styles from './PublisherListComponent.module.css';
 
 type Props = {
@@ -22,11 +22,9 @@ export default function PublisherList({ publishers, onEdit, onDelete }: Props) {
     <ListGroup className={styles.listGroup}>
       {publishers.map((publisher) => (
         <ListGroup.Item key={publisher.id} className={styles.listItem}>
-          <Card className={styles.card}>
+          <Card>
             <Card.Body>
-              <Card.Title className={styles.title}>
-                {publisher.name}
-              </Card.Title>
+              <Card.Title className={styles.title}>{publisher.name}</Card.Title>
 
               <Card.Subtitle className={styles.subtitle}>
                 {publisher.address || 'No address provided'}
