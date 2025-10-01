@@ -1,0 +1,18 @@
+{{- if .Values.nginx.enabled }}
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "library-app.fullname" . }}-nginx
+  labels:
+    {{- include "library-app.labels" . | nindent 4 }}
+    component: nginx
+spec:
+  type: {{ .Values.nginx.service.type }}
+  ports:
+  - port: {{ .Values.nginx.service.port }}
+    targetPort: 5500
+    protocol: TCP
+  selector:
+    {{- include "library-app.selectorLabels" . | nindent 4 }}
+    component: nginx
+{{- end }}

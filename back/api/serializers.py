@@ -1,7 +1,7 @@
 from rest_framework import serializers
 from django.utils.timezone import now
 from .models import Author, AuthorProfile, Book, Publisher
-
+import base64
 
 class PublisherSerializer(serializers.ModelSerializer):
     class Meta:
@@ -69,6 +69,9 @@ class BookSerializer(serializers.ModelSerializer):
         write_only=True,
     )
 
+    book_image = serializers.CharField(required=False, allow_null=True, write_only=True)
+    book_image_url = serializers.SerializerMethodField(read_only=True)
+
     class Meta:
         model = Book
         fields = [
@@ -78,9 +81,27 @@ class BookSerializer(serializers.ModelSerializer):
             "publisher_id",
             "authors",
             "authors_ids",
+            "description",
+            "publish_year",
+            "book_image",
+            'book_image_url',
         ]
 
+    def get_book_image_url(self, obj):
+        if obj.book_image:
+            return f"data:image/jpeg;base64,{base64.b64encode(obj.book_image).decode('utf-8')}"
+        return None
+
     def create(self, validated_data):
+
+        book_image_data = validated_data.pop('book_image', None)
+        
+        if book_image_data:
+            try:
+                validated_data['book_image'] = base64.b64decode(book_image_data)
+            except (ValueError, TypeError):
+                raise serializers.ValidationError("Invalid image data")
+            
         authors = validated_data.pop("authors", [])
         book = Book.objects.create(**validated_data)
         book.authors.set(authors)

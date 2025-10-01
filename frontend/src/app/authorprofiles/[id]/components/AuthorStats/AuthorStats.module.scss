@@ -1,0 +1,50 @@
+.authorStats {
+    &Card {
+        background-color: var(--bg-card) !important;
+        border: none !important;
+        border-radius: 0.75rem !important;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        margin-bottom: 1.5rem;
+    }
+
+    &Title {
+        color: var(--text-color) !important;
+        font-weight: 700 !important;
+        font-size: 1.25rem !important;
+        margin-bottom: 1.25rem !important;
+    }
+
+    &Item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 0.75rem;
+        padding: 0.5rem 0;
+        border-bottom: 1px solid var(--border-color);
+
+        &:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+    }
+
+    &Label {
+        color: var(--text-color);
+        opacity: 0.8;
+        font-size: 0.95rem;
+    }
+
+    &Value {
+        color: var(--text-color);
+        font-weight: 600;
+        font-size: 0.95rem;
+    }
+
+    &PopularBook {
+        max-width: 120px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        text-align: right;
+    }
+}

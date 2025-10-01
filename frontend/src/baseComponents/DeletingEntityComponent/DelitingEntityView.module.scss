@@ -1,24 +1,22 @@
 .customSpinner {
-    // Базовые стили для span-элемента
     display: inline-block;
     box-sizing: border-box;
     vertical-align: middle;
 
-    // Размер sm (small)
+    // sm (small)
     width: 1rem;
     height: 1rem;
 
-    // Стили анимации border
+    // border animation 
     border: 0.2em solid currentColor;
     border-right-color: transparent;
     border-radius: 50%;
     animation: spinner-border 0.75s linear infinite;
 
-    // Отступ справа (аналог me-2)
     margin-right: 0.5rem;
 }
 
-// Анимация вращения
+// spiner ani,ation
 @keyframes spinner-border {
     to {
         transform: rotate(360deg);

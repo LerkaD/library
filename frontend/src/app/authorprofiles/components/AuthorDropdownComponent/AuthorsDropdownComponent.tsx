@@ -1,7 +1,7 @@
 'use client';
 import { Card, ListGroup } from 'react-bootstrap';
 import { Author } from '../../../basic_types';
-import styles from './AuthorsDropdownComponent.module.css';
+import styles from './AuthorsDropdownComponent.module.scss';
 
 interface AuthorsDropdownProps {
   authorsList: Author[];

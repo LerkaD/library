@@ -3,14 +3,14 @@ module.exports = {
         [
             "@babel/preset-env",
             {
-                targets: { node: "current" }, // Для Node.js окружения
-                modules: "commonjs",         // Важно для Jasmine
+                targets: { node: "current" },
+                modules: "commonjs",         // for jasmine
             }
         ],
         [
             "@babel/preset-react",
             {
-                runtime: "automatic",        // Использует новый JSX-рантайм
+                runtime: "automatic",
             }
         ],
         "@babel/preset-typescript"

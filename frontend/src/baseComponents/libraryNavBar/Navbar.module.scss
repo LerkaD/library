@@ -1,52 +1,97 @@
-/* // Navbar container styles with CSS variables for theming */
+@use "bootstrap/scss/mixins" as *;
+
 .navbarContainer {
-
-  --navbar-bg: #0d6efd;
-  --navbar-text: white;
-  --dropdown-bg: #ffffff;
-  --dropdown-text: #212529;
-
-  /* Dark theme overrides (applied when data-bs-theme="dark") */
-  [data-bs-theme="dark"] & {
-    --navbar-bg: #0a58ca;
-    --dropdown-bg: #1e293b;
-    --dropdown-text: #f8f9fa;
-  }
-
-  /* Navbar base styles */
   .navbar {
     background-color: var(--navbar-bg) !important;
     color: var(--navbar-text);
     padding: 0.5rem 1rem;
   }
 
+  // Центрирование для всех элементов навбара
+  .flexCenter {
+    display: flex;
+    align-items: center;
+  }
+
+  // Иконка в бренде
+  .brandIcon {
+    margin-right: 0.5rem;
+  }
+
+  // Ссылки навигации
   .navLink {
-    display: flex;
-    align-items: center;
+    @extend .flexCenter;
+    padding: 0.5rem 1rem;
+    transition: background-color 0.2s ease;
+    color: var(--navbar-text);
+
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+      color: var(--navbar-text);
+    }
   }
 
-  /* Dropdown menu styling */
-  .dropdownMenu {
-    background-color: var(--dropdown-bg);
-    color: var(--dropdown-text);
-    border: 1px solid var(--border-color);
-  }
-
-  /* Theme toggle button container */
-  .themeToggle {
-    width: 40px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    transition: all 0.3s ease;
-  }
-
-  /* Icon styling within nav items */
+  // Иконки внутри ссылок
   .navIcon {
     margin-right: 0.5rem;
     font-size: 1.1rem;
-    margin-right: 0.5rem;
+    color: var(--navbar-text);
+  }
+
+  // Выпадающее меню
+  .dropdownMenu {
+    background-color: var(--bg-card);
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+    border-radius: 0.25rem;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  }
+
+  // Элементы выпадающего меню
+  .dropdownItem {
+    color: var(--text-color);
+
+    &:hover {
+      background-color: rgba(var(--color-primary), 0.1);
+    }
+  }
+
+  // Переключатель темы
+  .themeToggle {
+    width: 40px;
+    height: 40px;
+    @extend .flexCenter;
+    justify-content: center;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    margin-left: 0.5rem;
+    color: var(--navbar-text);
+
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+  }
+
+  // Контейнер для элементов навбара
+  .navContent {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  // Для мобильного меню
+  .navbarCollapse {
+    background-color: var(--navbar-bg);
+  }
+
+  // Тогглер мобильного меню
+  .navbarToggler {
+    border-color: rgba(255, 255, 255, 0.1);
+    color: var(--navbar-text);
+
+    &:focus {
+      box-shadow: 0 0 0 0.25rem rgba(255, 255, 255, 0.1);
+    }
   }
 }

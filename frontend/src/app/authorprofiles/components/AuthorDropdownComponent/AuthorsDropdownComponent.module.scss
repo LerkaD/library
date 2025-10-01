@@ -1,0 +1,35 @@
+@use '@styles/mixins' as mixins;
+
+.container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  background-color: var(--bg-body);
+  padding: 1rem;
+  margin-top: 0.5rem;
+
+  .card {
+    width: 100%;
+    @include mixins.card-style;
+
+    .listGroupItem {
+      @include mixins.list-item-style;
+
+      .authorInfo {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .authorName {
+          font-weight: 500;
+        }
+
+        .yearText {
+          color: var(--text-color);
+          opacity: 0.6;
+          font-size: 0.875rem;
+        }
+      }
+    }
+  }
+}

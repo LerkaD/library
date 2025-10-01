@@ -1,0 +1,24 @@
+.authorBiography {
+    &Card {
+        background-color: var(--bg-card) !important;
+        border: none !important;
+        border-radius: 0.75rem !important;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        margin-bottom: 1.5rem;
+    }
+
+    &Title {
+        color: var(--text-color) !important;
+        font-weight: 700 !important;
+        font-size: 1.5rem !important;
+        margin-bottom: 1.5rem !important;
+    }
+
+    &Text {
+        color: var(--text-color);
+        opacity: 0.9;
+        line-height: 1.8;
+        margin-bottom: 0;
+        font-size: 1.05rem;
+    }
+}

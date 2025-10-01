@@ -1,0 +1,6 @@
+apiVersion: v2
+name: library-app
+description: Library Application with Django, Next.js, MySQL, Redis
+type: application
+version: 0.1.0
+appVersion: "1.0.0"

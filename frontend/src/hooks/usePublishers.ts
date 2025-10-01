@@ -69,7 +69,7 @@ export const usePublishers = () => {
     }, [loadPublishers]);
 
     useEffect(() => {
-        loadPublishers();
+        loadPublishers().catch(e => console.error("Failed to load publishers:", e));
     }, [loadPublishers]);
 
     return {

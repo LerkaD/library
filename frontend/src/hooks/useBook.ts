@@ -1,8 +1,8 @@
 /* eslint-disable */
 'use client';
 import React, { useCallback, useState, useEffect } from 'react';
-import { fetchHintBooks, createBook } from '../services/bookService'
-import { Book } from '../app/basic_types'
+import { fetchHintBooks, createBook } from '../services/bookService';
+import { Book, CreateBookData } from '../app/basic_types';
 
 export const useBook = () => {
     const [subtitle, setSubtitle] = useState<string>('')
@@ -42,18 +42,20 @@ export const useBook = () => {
         };
     }, [subtitle, hintBooks]);
 
-    const handlecreateBook = useCallback(async (bookData: {
-        title: string;
-        publisher_id: number | null;
-        authors_ids: number[];
-    }) => {
+    const handlecreateBook = async (bookData: CreateBookData) => {
+        setLoading(true);
+        setError(null);
+
         try {
-            await createBook(bookData)
-        } catch (error) {
-            console.error('Book creation error:', error);
-            throw error;
+            return await createBook(bookData);
+        } catch (err) {
+            console.error('Error creating book:', err);
+            setError(err instanceof Error ? err.message : 'Unknown error');
+            throw err;
+        } finally {
+            setLoading(false);
         }
-    }, []);
+    };
 
     return {
         books,

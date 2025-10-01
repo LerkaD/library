@@ -2,7 +2,11 @@ import axios from 'axios';
 import { Publisher } from '../app/basic_types'
 
 
-const API_URL = 'http://localhost:8000/api/publishers/';
+// const API_URL = 'http://localhost:8000/api/publishers/';
+
+const API_URL = process.env.NODE_ENV === 'development'
+    ? 'http://localhost:5500/api/publishers/'
+    : '/api/publishers/';
 
 export const fetchPublishers = async (): Promise<Publisher[]> => {
     const response = await axios.get<Publisher[]>(API_URL);

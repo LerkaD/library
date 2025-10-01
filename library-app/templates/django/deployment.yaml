@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "library-app.fullname" . }}-django
+  labels:
+    {{- include "library-app.labels" . | nindent 4 }}
+    component: django
+spec:
+  replicas: {{ .Values.django.replicas }}
+  selector:
+    matchLabels:
+      {{- include "library-app.selectorLabels" . | nindent 6 }}
+      component: django
+  template:
+    metadata:
+      labels:
+        {{- include "library-app.selectorLabels" . | nindent 8 }}
+        component: django
+    spec:
+      containers:
+      - name: django
+        image: "{{ .Values.django.image.repository }}:{{ .Values.django.image.tag }}"
+        imagePullPolicy: {{ .Values.django.image.pullPolicy }}
+        ports:
+        - containerPort: 8000
+        env: 
+        - name: DATABASE_HOST
+          value: "library-app-mysql"
+        - name: DATABASE_NAME
+          value: "lib_db"  # прямое значение
+        - name: DATABASE_USER
+          value: "root"        # прямое значение
+        - name: DATABASE_PASSWORD
+          value: "root"    # прямое значение
+        - name: DJANGO_SETTINGS_MODULE
+          value: {{ .Values.django.environment.DJANGO_SETTINGS_MODULE | quote }}
+        - name: DJANGO_DEBUG
+          value: {{ .Values.django.environment.DJANGO_DEBUG | quote }}
+        - name: WATCHMAN
+          value: {{ .Values.django.environment.WATCHMAN | quote }}
+        - name: REDIS_PORT
+          value: "6379"

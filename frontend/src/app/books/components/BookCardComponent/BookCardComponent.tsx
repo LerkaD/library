@@ -36,13 +36,13 @@ export default function BookCardComponent({ book }: BookCardProps) {
         {isExpanded && (
           <div className={styles.detailsSection}>
             <Card.Text className={styles.detailItem}>
-              <strong>Publisher:</strong> {'.....'}
+              <strong>Publisher:</strong> {book.publisher ? `${book.publisher.name}` : 'No publisher'}
             </Card.Text>
             <Card.Text className={styles.detailItem}>
-              <strong>Year:</strong> {'.....'}
+              <strong>Year:</strong> {book.publish_year}
             </Card.Text>
             <Card.Text className={styles.detailItem}>
-              <strong>Description:</strong> {'.....'}
+              <strong>Description:</strong> {book.description}
             </Card.Text>
           </div>
         )}

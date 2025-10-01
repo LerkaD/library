@@ -1,27 +1,42 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { createSlice } from '@reduxjs/toolkit';
 
-interface ButtonState {
-    buttonText: string;
-}
-
-const initialState: ButtonState = {
-    buttonText: "Click!",
+const getStoredValue = () => {
+    console.log('Getting stored value')
+    if (typeof window !== 'undefined') {
+        const savedCount = localStorage.getItem('savedCount');
+        if (savedCount) {
+            return Number(savedCount);
+        } else {
+            localStorage.setItem('savedCount', '0');
+            return 0;
+        }
+    }
+    return 0;
 };
 
 const buttonSlice = createSlice({
-    name: 'button',
-    initialState,
+    name: 'counter',
+    initialState: {
+        value: getStoredValue()
+    },
     reducers: {
-        setButtonText: (state, action: PayloadAction<string>) => {
-            state.buttonText = action.payload;
+        setValueIncrement: (state) => {
+            state.value += 1;
+            if (typeof window !== 'undefined') {
+                localStorage.setItem('savedCount', state.value.toString());
+            }
         },
-        toggleButtonText: (state) => {
-            state.buttonText = state.buttonText === "Click!"
-                ? "OK, one more!"
-                : "Click!";
-        }
+        setValueDecrement: (state) => {
+            state.value -= 1;
+            if (typeof window !== 'undefined') {
+                localStorage.setItem('savedCount', state.value.toString());
+            }
+        },
     },
 });
 
-export const { setButtonText, toggleButtonText } = buttonSlice.actions;
+
+export const { setValueIncrement, setValueDecrement } = buttonSlice.actions;
+
 export default buttonSlice.reducer;
+export { getStoredValue };

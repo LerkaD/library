@@ -7,6 +7,7 @@ type DeleteDialogProps = {
   entityName: string;
   onDelete: () => Promise<void>;
   onCancel: () => void;
+  loading?: boolean;
 };
 
 export const DeletingEntityView: React.FC<DeleteDialogProps> = ({
@@ -17,13 +18,11 @@ export const DeletingEntityView: React.FC<DeleteDialogProps> = ({
 }) => {
   const [deleting, setDeleting] = useState(false);
 
-  const handleDelete = async () => {
+  const handleDelete = () => {
     setDeleting(true);
-    try {
-      await onDelete();
-    } finally {
-      setDeleting(false);
-    }
+    onDelete()
+      .finally(() => setDeleting(false))
+      .catch(err => console.error("Delete error:", err));
   };
 
   return (

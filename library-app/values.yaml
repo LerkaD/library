@@ -1,0 +1,96 @@
+fullnameOverride: "library-app"
+nameOverride: "library-app"
+
+global:
+  appName: "library-app"
+  namespace: "library"
+
+mysql:
+  enabled: true 
+  image: "mysql:8"
+  replicas: 1  
+  database: "lib_db"
+  rootPassword: "root"
+  storageClass: ""
+  storageSize: "8Gi"
+  service:
+    port: 3306    
+    type: ClusterIP
+
+redis:
+  enabled: true   
+  image: "redis:7.0-alpine"
+  replicas: 1 
+  service:
+    port: 6379   
+    type: ClusterIP
+
+django:
+  enabled: true  
+  replicas: 1    
+  image:
+    repository: "library-django"
+    tag: "latest"
+    pullPolicy: Never
+  service:
+    port: 8000   
+    type: ClusterIP
+  environment:
+    DJANGO_DEBUG: "true"  
+    DJANGO_SETTINGS_MODULE: "backend.settings"
+    WATCHMAN: "true"             
+  resources:
+    requests:
+      memory: "256Mi"
+      cpu: "100m"
+    limits:
+      memory: "512Mi"
+      cpu: "500m"
+
+nextjs:
+  enabled: true 
+  replicas: 1
+  image:
+    repository: "library-nextjs"
+    tag: "latest"
+    pullPolicy: Never
+  service:
+    port: 3000    
+    type: ClusterIP
+  environment:
+    NODE_ENV: "development"
+    NEXT_PUBLIC_API_URL: "/api"
+    WATCHPACK_POLLING: "true" 
+  resources:
+    requests:
+      memory: "256Mi"
+      cpu: "100m"
+    limits:
+      memory: "512Mi"
+      cpu: "500m"
+
+nginx:
+  enabled: true   
+  image: "nginx:alpine"
+  replicas: 1      
+  service:
+    port: 5500   
+    type: LoadBalancer
+  resources:
+    requests:
+      memory: "128Mi"
+      cpu: "50m"
+    limits:
+      memory: "256Mi"
+      cpu: "200m"
+
+ingress:
+  enabled: false  
+  className: ""
+  annotations: {}
+  hosts:
+    - host: library.local
+      paths:
+        - path: /
+          pathType: Prefix
+  tls: []

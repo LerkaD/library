@@ -1,4 +1,3 @@
-'use strict';
 'use client';
 import { useRouter } from 'next/navigation';
 import SearchInputView from '../../baseComponents/SearchInputComponent/SearchInputView';
@@ -18,11 +17,11 @@ export default function AuthorProfilePage() {
     setSearchTerm(term);
   };
   const handleSelectAuthor = (id: number) => {
+    console.log('handleSelect', id);
     router.push(`authorprofiles/${id}`);
+
   };
 
-  const a = 15;
-  const b = a;
   return (
     <div className="containerMainPage">
       <SearchInputView
@@ -30,7 +29,6 @@ export default function AuthorProfilePage() {
         onSubmit={handleOnSubmitTerm}
         placeholder="Search authors..."
       />
-
 
       {error && <Alert className="alert-danger">{error}</Alert>}
 

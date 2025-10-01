@@ -5,7 +5,6 @@ import SearchInputView from '../../baseComponents/SearchInputComponent/SearchInp
 import BookSimpleComponent from './components/BookListComponent/BookListComponent';
 import SearchInputSkeletone from '@/baseComponents/SearchInputSkeletone/SearchInputSkeletone';
 import { useBook } from '../../hooks/useBook';
-import SpecialButton from '@/baseComponents/SpecialButton/specButton';
 export default function BooksPage() {
   const { books, loading, error, setSubtitle } = useBook();
 
@@ -30,7 +29,6 @@ export default function BooksPage() {
         />
       )}
       {!loading && !error && <BookSimpleComponent books={books} />}
-      <SpecialButton />
     </div>
   );
 }

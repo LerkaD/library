@@ -9,7 +9,6 @@ import {
   FormGroup,
   FormLabel,
 } from 'react-bootstrap';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import { usePublisherForm } from './usePublisherForm';
 
 type Props = {
@@ -32,9 +31,9 @@ export default function PublisherFormView({
   const { formData, saving, error, handleChange, handleSubmit } =
     usePublisherForm(initialName, initialAddress);
 
-  const onSubmit = async (e: React.FormEvent) => {
+  const onSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    await handleSubmit(onSave);
+    void handleSubmit(onSave);
   };
 
   return (

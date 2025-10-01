@@ -1,6 +1,7 @@
 import { configureStore } from "@reduxjs/toolkit";
 import themeSlice from './themeSlice';
 import buttonSlice from './buttonSlice'
+
 const store = configureStore({
     reducer: {
         themeSwitcher: themeSlice,

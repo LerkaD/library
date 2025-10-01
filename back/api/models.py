@@ -1,4 +1,6 @@
 from django.db import models
+from django.core.validators import MinValueValidator, MaxValueValidator
+from datetime import datetime
 
 
 class Author(models.Model):
@@ -32,6 +34,7 @@ class AuthorNGram(models.Model):
             models.Index(fields=['author', 'ngram']),
         ]
         unique_together = [('author', 'ngram')]
+        
 class AuthorProfile(models.Model):
     author = models.OneToOneField(
         Author, on_delete=models.CASCADE, related_name="profile"
@@ -61,3 +64,20 @@ class Book(models.Model):
         related_name="books",
     )
     authors = models.ManyToManyField(Author, related_name="books")
+    publish_year = models.IntegerField(
+        null=True,
+        blank=True,
+        validators=[
+            MinValueValidator(1000),
+            MaxValueValidator(datetime.now().year)
+        ],
+        help_text="Publish year"
+    )
+    description = models.TextField(blank=True, null=True)
+    # book_image = models.ImageField(
+    #     upload_to='book_covers/',
+    #     null=True,
+    #     blank=True,
+    #     help_text="Book cover picture"
+    # )
+    book_image = models.BinaryField(null=True, blank=True)

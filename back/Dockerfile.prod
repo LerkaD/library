@@ -1,0 +1,46 @@
+# Stage 1: build stage
+FROM python:3.12-slim as builder
+
+ENV POETRY_VERSION=1.6.1
+ENV PYTHONUNBUFFERED=1
+
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    gcc \
+    default-libmysqlclient-dev \
+    build-essential \
+    pkg-config \
+    default-mysql-client \
+    && rm -rf /var/lib/apt/lists/*
+
+RUN python3 -m venv /venv \
+    && /venv/bin/pip install --upgrade pip \
+    && /venv/bin/pip install "poetry==$POETRY_VERSION"
+
+ENV PATH="/venv/bin:$PATH"
+
+WORKDIR /app
+
+COPY pyproject.toml poetry.lock /app/
+
+RUN poetry config virtualenvs.create false \
+    && poetry install --no-root --only main
+
+# Stage 2: runtime stage
+FROM python:3.12-slim
+
+ENV PYTHONUNBUFFERED=1
+
+RUN apt-get update && apt-get install -y --no-install-recommends default-mysql-client && rm -rf /var/lib/apt/lists/*
+
+WORKDIR /app
+
+COPY --from=builder /venv /venv
+COPY --from=builder /app /app
+
+ENV PATH="/venv/bin:$PATH"
+
+RUN pip install --no-cache-dir channels channels-redis daphne gunicorn
+
+EXPOSE 8000
+
+CMD ["gunicorn", "--bind", "0.0.0.0:8000", "backend.wsgi:application"]

@@ -1,10 +1,8 @@
 import type { Metadata } from 'next';
 import LibraryNavBar from '../baseComponents/libraryNavBar/libraryNavBar';
-import 'bootstrap/dist/css/bootstrap.css';;
-import './globals.css';
-import './globals.scss';
-import { ReduxProvider } from '../provider/ReduxThemeProvider';
-import ThemeInitializer from '../provider/Theminit';
+import 'bootstrap/dist/css/bootstrap.css';
+import './styles/globals.scss';
+import { ReduxProvider, ClientOnly, ThemeInitializer } from '../provider/ReduxThemeProvider';
 
 export const metadata: Metadata = {
   title: 'Library Manager',
@@ -20,9 +18,11 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body>
         <ReduxProvider>
-          <ThemeInitializer />
-          <LibraryNavBar />
-          {children}
+          <ClientOnly>
+            <ThemeInitializer />
+            <LibraryNavBar />
+            {children}
+          </ClientOnly>
         </ReduxProvider>
       </body>
     </html>

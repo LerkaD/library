@@ -20,7 +20,6 @@ export const useAuthorSuggestions = () => {
 
         try {
             setIsLoading(true);
-            console.log(isLoading)
             setError(null);
 
             const response = await fetchHintAuthors(term, signal);

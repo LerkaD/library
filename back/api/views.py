@@ -43,6 +43,17 @@ class AuthorViewSet(viewsets.ModelViewSet):
         serializer = self.get_serializer(authors, many=True)
         return Response(serializer.data)
 
+    @action(
+        detail=True,  # detail=True -> for concrete aurhor
+        methods=['get'],
+        url_path='books'
+    )
+    def author_books(self, request, pk=None):
+        author = self.get_object()
+        books = author.books.all()  # use related_name="books"        
+        serializer = BookSerializer(books, many=True)
+        return Response(serializer.data)
+
    
 
 class AuthorProfileViewSet(viewsets.ModelViewSet):
@@ -50,6 +61,15 @@ class AuthorProfileViewSet(viewsets.ModelViewSet):
     # select_related: for 1-1 and FK., SQL join without additional requests
     serializer_class = AuthorProfileSerializer
 
+    def get_queryset(self):
+        """
+        filter by author_id if author_id
+        """
+        author_id = self.request.query_params.get('author_id')
+        if author_id:
+            return AuthorProfile.objects.filter(author_id=author_id)
+        return AuthorProfile.objects.all()
+    
     def create(self, request, *args, **kwargs):
         author_id = request.data.get("author_id")
 
@@ -91,3 +111,5 @@ class BookViewSet(viewsets.ModelViewSet):
     filter_backends = [DjangoFilterBackend]
     # filterset_fields = ['^name'] # ^ means finding from the begining
     filterset_class = BookFilter
+
+    

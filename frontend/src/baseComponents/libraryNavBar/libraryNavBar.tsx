@@ -31,8 +31,8 @@ export default function LibraryNavBar() {
         variant="dark"
       >
         <Container fluid>
-          <Navbar.Brand href="/" className="d-flex align-items-center">
-            <BookFill className={`${styles.navIcon} me-2`} />
+          <Navbar.Brand href="/" className={styles.navLink}>
+            <BookFill className={`${styles.navIcon}`} />
             Library Manager
           </Navbar.Brand>
 
@@ -45,9 +45,9 @@ export default function LibraryNavBar() {
                 as={Link}
                 href="/authors"
                 onClick={() => setExpanded(false)}
-                className={`${styles.navLink} d-flex align-items-center`}
+                className={`${styles.navLink}`}
               >
-                <PeopleFill className={`${styles.navIcon} me-2`} />
+                <PeopleFill className={`${styles.navIcon}`} />
                 All Authors
               </Nav.Link>
 
@@ -55,9 +55,9 @@ export default function LibraryNavBar() {
                 as={Link}
                 href="/authorprofiles"
                 onClick={() => setExpanded(false)}
-                className={`${styles.navLink} d-flex align-items-center`}
+                className={`${styles.navLink}`}
               >
-                <JournalBookmark className={`${styles.navIcon} me-2`} />
+                <JournalBookmark className={`${styles.navIcon}`} />
                 Authorprofiles
               </Nav.Link>
 
@@ -65,9 +65,9 @@ export default function LibraryNavBar() {
                 as={Link}
                 href="/books"
                 onClick={() => setExpanded(false)}
-                className={`${styles.navLink} d-flex align-items-center`}
+                className={`${styles.navLink}`}
               >
-                <Book className={`${styles.navIcon} me-2`} />
+                <Book className={`${styles.navIcon}`} />
                 All Books
               </Nav.Link>
 
@@ -75,9 +75,9 @@ export default function LibraryNavBar() {
                 as={Link}
                 href="/createbook"
                 onClick={() => setExpanded(false)}
-                className={`${styles.navLink} d-flex align-items-center`}
+                className={`${styles.navLink}`}
               >
-                <PlusCircle className={`${styles.navIcon} me-2`} />
+                <PlusCircle className={`${styles.navIcon}`} />
                 Add book
               </Nav.Link>
 
@@ -85,9 +85,9 @@ export default function LibraryNavBar() {
                 as={Link}
                 href="/publishers"
                 onClick={() => setExpanded(false)}
-                className={`${styles.navLink} d-flex align-items-center`}
+                className={`${styles.navLink}`}
               >
-                <Building className={`${styles.navIcon} me-2`} />
+                <Building className={`${styles.navIcon}`} />
                 Publishers
               </Nav.Link>
             </Nav>

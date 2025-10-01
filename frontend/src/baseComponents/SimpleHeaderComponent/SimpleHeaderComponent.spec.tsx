@@ -1,6 +1,6 @@
 import React from 'react';
 import { createRoot, Root } from 'react-dom/client';
-import { act, fireEvent } from '@testing-library/react';
+import { act } from '@testing-library/react';
 import HeaderComponent from './SimpleHeaderComponent';
 
 describe('SearchInput component', () => {

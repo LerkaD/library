@@ -1,0 +1,16 @@
+.authorBooks {
+    &__container {
+        margin-top: 3rem;
+    }
+
+    &__title {
+        color: var(--text-color) !important;
+        font-weight: 700 !important;
+        font-size: 1.75rem !important;
+        margin-bottom: 1.5rem !important;
+    }
+
+    &__grid {
+        row-gap: 1.5rem;
+    }
+}

@@ -9,7 +9,6 @@ import {
   FormGroup,
   FormLabel,
 } from 'react-bootstrap';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import { useAuthorForm } from './useAuthorForm';
 
 type Props = {
@@ -36,7 +35,11 @@ export default function AuthorFormView({
 
   const onSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    await handleSubmit(onSave);
+    try {
+      await handleSubmit(onSave);
+    } catch (err) {
+      console.error('Failed to save author:', err);
+    }
   };
 
   return (
@@ -56,10 +59,17 @@ export default function AuthorFormView({
       <Modal.Body>
         {error && <Alert variant="danger">{error}</Alert>}
 
-        <Form onSubmit={onSubmit} noValidate>
+        <Form
+          onSubmit={(e) => {
+            e.preventDefault();
+            onSubmit(e).catch(() => { });
+          }}
+        >
+          {/* тут исправляла */}
           <FormGroup className="author-create-form-group">
-            <FormLabel>Author name:</FormLabel>
+            <FormLabel htmlFor="author-name">Author name:</FormLabel>
             <FormControl
+              id="author-name"
               type="text"
               name="name"
               placeholder="Enter author name"
@@ -72,8 +82,9 @@ export default function AuthorFormView({
           </FormGroup>
 
           <FormGroup className="author-create-form-group">
-            <FormLabel>Birthdate:</FormLabel>
+            <FormLabel htmlFor="author-birthdate">Birthdate:</FormLabel>
             <FormControl
+              id="author-birthdate"
               type="date"
               name="birthdate"
               value={formData.birthdate}
