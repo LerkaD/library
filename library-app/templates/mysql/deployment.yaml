@@ -3,6 +3,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: {{ include "library-app.fullname" . }}-mysql
+  namespace: {{ include "library-app.namespace" . }}
   labels:
     {{- include "library-app.labels" . | nindent 4 }}
     component: mysql
@@ -32,6 +33,31 @@ spec:
             secretKeyRef:
               name: {{ include "library-app.fullname" . }}-mysql
               key: database
+        readinessProbe:
+          exec:
+            command:
+            - mysqladmin
+            - ping
+            - -h
+            - localhost
+            - -uroot
+            - -proot
+          initialDelaySeconds: 15
+          periodSeconds: 5
+          timeoutSeconds: 5
+          failureThreshold: 10
+        livenessProbe:
+          exec:
+            command:
+            - mysqladmin
+            - ping
+            - -h
+            - localhost
+            - -uroot
+            - -proot
+          initialDelaySeconds: 30
+          periodSeconds: 10
+          timeoutSeconds: 5
         ports:
         - containerPort: 3306
         volumeMounts:

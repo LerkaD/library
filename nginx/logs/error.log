@@ -1962,3 +1962,1884 @@
 2025/09/30 15:01:49 [notice] 1#1: signal 17 (SIGCHLD) received from 29
 2025/09/30 15:01:49 [notice] 1#1: worker process 29 exited with code 0
 2025/09/30 15:01:49 [notice] 1#1: signal 29 (SIGIO) received
+2025/10/04 07:05:46 [notice] 1#1: using the "epoll" event method
+2025/10/04 07:05:46 [notice] 1#1: nginx/1.29.1
+2025/10/04 07:05:46 [notice] 1#1: built by gcc 14.2.0 (Alpine 14.2.0) 
+2025/10/04 07:05:46 [notice] 1#1: OS: Linux 6.6.96-0-virt
+2025/10/04 07:05:46 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2025/10/04 07:05:46 [notice] 1#1: start worker processes
+2025/10/04 07:05:46 [notice] 1#1: start worker process 29
+2025/10/04 07:05:46 [notice] 1#1: start worker process 30
+2025/10/04 07:07:56 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2025/10/04 07:07:56 [notice] 29#29: gracefully shutting down
+2025/10/04 07:07:56 [notice] 30#30: gracefully shutting down
+2025/10/04 07:07:56 [notice] 30#30: exiting
+2025/10/04 07:07:56 [notice] 30#30: exit
+2025/10/04 07:07:57 [notice] 1#1: signal 17 (SIGCHLD) received from 30
+2025/10/04 07:07:57 [notice] 1#1: worker process 30 exited with code 0
+2025/10/04 07:07:57 [notice] 1#1: signal 29 (SIGIO) received
+2025/10/05 14:51:12 [notice] 1#1: using the "epoll" event method
+2025/10/05 14:51:12 [notice] 1#1: nginx/1.29.1
+2025/10/05 14:51:12 [notice] 1#1: built by gcc 14.2.0 (Alpine 14.2.0) 
+2025/10/05 14:51:12 [notice] 1#1: OS: Linux 6.6.96-0-virt
+2025/10/05 14:51:12 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2025/10/05 14:51:12 [notice] 1#1: start worker processes
+2025/10/05 14:51:12 [notice] 1#1: start worker process 29
+2025/10/05 14:51:12 [notice] 1#1: start worker process 30
+2025/10/05 14:51:25 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2025/10/05 14:51:25 [notice] 29#29: gracefully shutting down
+2025/10/05 14:51:25 [notice] 30#30: gracefully shutting down
+2025/10/05 14:51:25 [notice] 29#29: exiting
+2025/10/05 14:51:25 [notice] 30#30: exiting
+2025/10/05 14:51:25 [notice] 29#29: exit
+2025/10/05 14:51:25 [notice] 30#30: exit
+2025/10/05 14:51:25 [notice] 1#1: signal 17 (SIGCHLD) received from 30
+2025/10/05 14:51:25 [notice] 1#1: worker process 30 exited with code 0
+2025/10/05 14:51:25 [notice] 1#1: signal 29 (SIGIO) received
+2025/10/05 14:51:25 [notice] 1#1: signal 17 (SIGCHLD) received from 29
+2025/10/05 14:51:25 [notice] 1#1: worker process 29 exited with code 0
+2025/10/05 14:51:25 [notice] 1#1: exit
+2025/10/05 14:51:43 [notice] 1#1: using the "epoll" event method
+2025/10/05 14:51:43 [notice] 1#1: nginx/1.29.1
+2025/10/05 14:51:43 [notice] 1#1: built by gcc 14.2.0 (Alpine 14.2.0) 
+2025/10/05 14:51:43 [notice] 1#1: OS: Linux 6.6.96-0-virt
+2025/10/05 14:51:43 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2025/10/05 14:51:43 [notice] 1#1: start worker processes
+2025/10/05 14:51:43 [notice] 1#1: start worker process 29
+2025/10/05 14:51:43 [notice] 1#1: start worker process 30
+2025/10/05 14:52:06 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2025/10/05 14:52:06 [notice] 29#29: gracefully shutting down
+2025/10/05 14:52:06 [notice] 29#29: exiting
+2025/10/05 14:52:06 [notice] 30#30: gracefully shutting down
+2025/10/05 14:52:06 [notice] 30#30: exiting
+2025/10/05 14:52:06 [notice] 29#29: exit
+2025/10/05 14:52:06 [notice] 30#30: exit
+2025/10/05 14:52:07 [notice] 1#1: signal 17 (SIGCHLD) received from 30
+2025/10/05 14:52:07 [notice] 1#1: worker process 30 exited with code 0
+2025/10/05 14:52:07 [notice] 1#1: signal 29 (SIGIO) received
+2025/10/05 14:52:07 [notice] 1#1: signal 17 (SIGCHLD) received from 29
+2025/10/05 14:52:07 [notice] 1#1: worker process 29 exited with code 0
+2025/10/05 14:52:07 [notice] 1#1: exit
+2025/10/05 15:06:56 [notice] 1#1: using the "epoll" event method
+2025/10/05 15:06:56 [notice] 1#1: nginx/1.29.1
+2025/10/05 15:06:56 [notice] 1#1: built by gcc 14.2.0 (Alpine 14.2.0) 
+2025/10/05 15:06:56 [notice] 1#1: OS: Linux 6.6.96-0-virt
+2025/10/05 15:06:56 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2025/10/05 15:06:56 [notice] 1#1: start worker processes
+2025/10/05 15:06:56 [notice] 1#1: start worker process 29
+2025/10/05 15:06:56 [notice] 1#1: start worker process 30
+2025/10/05 15:08:19 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2025/10/05 15:08:19 [notice] 30#30: gracefully shutting down
+2025/10/05 15:08:19 [notice] 29#29: gracefully shutting down
+2025/10/05 15:08:19 [notice] 30#30: exiting
+2025/10/05 15:08:19 [notice] 30#30: exit
+2025/10/05 15:08:19 [notice] 29#29: exiting
+2025/10/05 15:08:19 [notice] 29#29: exit
+2025/10/05 15:08:20 [notice] 1#1: signal 17 (SIGCHLD) received from 30
+2025/10/05 15:08:20 [notice] 1#1: worker process 29 exited with code 0
+2025/10/05 15:08:20 [notice] 1#1: worker process 30 exited with code 0
+2025/10/05 15:08:20 [notice] 1#1: exit
+2025/10/05 15:10:04 [notice] 1#1: using the "epoll" event method
+2025/10/05 15:10:04 [notice] 1#1: nginx/1.29.1
+2025/10/05 15:10:04 [notice] 1#1: built by gcc 14.2.0 (Alpine 14.2.0) 
+2025/10/05 15:10:04 [notice] 1#1: OS: Linux 6.6.96-0-virt
+2025/10/05 15:10:04 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2025/10/05 15:10:04 [notice] 1#1: start worker processes
+2025/10/05 15:10:04 [notice] 1#1: start worker process 29
+2025/10/05 15:10:04 [notice] 1#1: start worker process 30
+2025/10/05 15:11:37 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2025/10/05 15:11:37 [notice] 29#29: gracefully shutting down
+2025/10/05 15:11:37 [notice] 29#29: exiting
+2025/10/05 15:11:37 [notice] 30#30: gracefully shutting down
+2025/10/05 15:11:37 [notice] 30#30: exiting
+2025/10/05 15:11:37 [notice] 29#29: exit
+2025/10/05 15:11:37 [notice] 30#30: exit
+2025/10/05 15:11:37 [notice] 1#1: signal 17 (SIGCHLD) received from 30
+2025/10/05 15:11:37 [notice] 1#1: worker process 29 exited with code 0
+2025/10/05 15:11:37 [notice] 1#1: worker process 30 exited with code 0
+2025/10/05 15:11:37 [notice] 1#1: exit
+2025/10/05 15:11:48 [notice] 1#1: using the "epoll" event method
+2025/10/05 15:11:48 [notice] 1#1: nginx/1.29.1
+2025/10/05 15:11:48 [notice] 1#1: built by gcc 14.2.0 (Alpine 14.2.0) 
+2025/10/05 15:11:48 [notice] 1#1: OS: Linux 6.6.96-0-virt
+2025/10/05 15:11:48 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2025/10/05 15:11:48 [notice] 1#1: start worker processes
+2025/10/05 15:11:48 [notice] 1#1: start worker process 29
+2025/10/05 15:11:48 [notice] 1#1: start worker process 30
+2025/10/06 14:51:18 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2025/10/06 14:51:18 [notice] 29#29: gracefully shutting down
+2025/10/06 14:51:18 [notice] 30#30: gracefully shutting down
+2025/10/06 14:51:18 [notice] 29#29: exiting
+2025/10/06 14:51:18 [notice] 30#30: exiting
+2025/10/06 14:51:18 [notice] 30#30: exit
+2025/10/06 14:51:18 [notice] 29#29: exit
+2025/10/06 14:51:19 [notice] 1#1: signal 17 (SIGCHLD) received from 29
+2025/10/06 14:51:19 [notice] 1#1: worker process 29 exited with code 0
+2025/10/06 14:51:19 [notice] 1#1: signal 29 (SIGIO) received
+2025/10/06 14:51:19 [notice] 1#1: signal 17 (SIGCHLD) received from 30
+2025/10/06 14:51:19 [notice] 1#1: worker process 30 exited with code 0
+2025/10/06 14:51:19 [notice] 1#1: exit
+2025/10/06 15:52:46 [notice] 1#1: using the "epoll" event method
+2025/10/06 15:52:46 [notice] 1#1: nginx/1.29.1
+2025/10/06 15:52:46 [notice] 1#1: built by gcc 14.2.0 (Alpine 14.2.0) 
+2025/10/06 15:52:46 [notice] 1#1: OS: Linux 6.6.96-0-virt
+2025/10/06 15:52:46 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2025/10/06 15:52:46 [notice] 1#1: start worker processes
+2025/10/06 15:52:46 [notice] 1#1: start worker process 28
+2025/10/06 15:52:46 [notice] 1#1: start worker process 29
+2025/10/06 15:58:29 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2025/10/06 15:58:29 [notice] 29#29: gracefully shutting down
+2025/10/06 15:58:29 [notice] 28#28: gracefully shutting down
+2025/10/06 15:58:29 [notice] 28#28: exiting
+2025/10/06 15:58:29 [notice] 28#28: exit
+2025/10/06 15:58:29 [notice] 1#1: signal 17 (SIGCHLD) received from 28
+2025/10/06 15:58:29 [notice] 1#1: worker process 28 exited with code 0
+2025/10/06 15:58:29 [notice] 1#1: signal 29 (SIGIO) received
+2025/10/06 16:00:03 [notice] 1#1: using the "epoll" event method
+2025/10/06 16:00:03 [notice] 1#1: nginx/1.29.1
+2025/10/06 16:00:03 [notice] 1#1: built by gcc 14.2.0 (Alpine 14.2.0) 
+2025/10/06 16:00:03 [notice] 1#1: OS: Linux 6.6.96-0-virt
+2025/10/06 16:00:03 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2025/10/06 16:00:03 [notice] 1#1: start worker processes
+2025/10/06 16:00:03 [notice] 1#1: start worker process 29
+2025/10/06 16:00:03 [notice] 1#1: start worker process 30
+2025/10/06 16:11:44 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2025/10/06 16:11:44 [notice] 30#30: gracefully shutting down
+2025/10/06 16:11:44 [notice] 29#29: gracefully shutting down
+2025/10/06 16:11:44 [notice] 29#29: exiting
+2025/10/06 16:11:44 [notice] 29#29: exit
+2025/10/06 16:11:44 [notice] 1#1: signal 17 (SIGCHLD) received from 29
+2025/10/06 16:11:44 [notice] 1#1: worker process 29 exited with code 0
+2025/10/06 16:11:44 [notice] 1#1: signal 29 (SIGIO) received
+2025/10/06 16:15:35 [notice] 1#1: using the "epoll" event method
+2025/10/06 16:15:35 [notice] 1#1: nginx/1.29.1
+2025/10/06 16:15:35 [notice] 1#1: built by gcc 14.2.0 (Alpine 14.2.0) 
+2025/10/06 16:15:35 [notice] 1#1: OS: Linux 6.6.96-0-virt
+2025/10/06 16:15:35 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2025/10/06 16:15:35 [notice] 1#1: start worker processes
+2025/10/06 16:15:35 [notice] 1#1: start worker process 29
+2025/10/06 16:15:35 [notice] 1#1: start worker process 30
+2025/10/06 16:16:17 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2025/10/06 16:16:17 [notice] 30#30: gracefully shutting down
+2025/10/06 16:16:17 [notice] 30#30: exiting
+2025/10/06 16:16:17 [notice] 29#29: gracefully shutting down
+2025/10/06 16:16:17 [notice] 29#29: exiting
+2025/10/06 16:16:17 [notice] 30#30: exit
+2025/10/06 16:16:17 [notice] 29#29: exit
+2025/10/06 16:16:17 [notice] 1#1: signal 17 (SIGCHLD) received from 29
+2025/10/06 16:16:17 [notice] 1#1: worker process 29 exited with code 0
+2025/10/06 16:16:17 [notice] 1#1: worker process 30 exited with code 0
+2025/10/06 16:16:17 [notice] 1#1: exit
+2025/10/06 16:18:32 [notice] 1#1: using the "epoll" event method
+2025/10/06 16:18:32 [notice] 1#1: nginx/1.29.1
+2025/10/06 16:18:32 [notice] 1#1: built by gcc 14.2.0 (Alpine 14.2.0) 
+2025/10/06 16:18:32 [notice] 1#1: OS: Linux 6.6.96-0-virt
+2025/10/06 16:18:32 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2025/10/06 16:18:32 [notice] 1#1: start worker processes
+2025/10/06 16:18:32 [notice] 1#1: start worker process 29
+2025/10/06 16:18:32 [notice] 1#1: start worker process 30
+2025/10/06 16:26:38 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2025/10/06 16:26:38 [notice] 29#29: gracefully shutting down
+2025/10/06 16:26:38 [notice] 30#30: gracefully shutting down
+2025/10/06 16:26:38 [notice] 29#29: exiting
+2025/10/06 16:26:38 [notice] 29#29: exit
+2025/10/06 16:26:38 [notice] 1#1: signal 17 (SIGCHLD) received from 29
+2025/10/06 16:26:38 [notice] 1#1: worker process 29 exited with code 0
+2025/10/06 16:26:38 [notice] 1#1: signal 29 (SIGIO) received
+2025/10/06 16:27:12 [notice] 1#1: using the "epoll" event method
+2025/10/06 16:27:12 [notice] 1#1: nginx/1.29.1
+2025/10/06 16:27:12 [notice] 1#1: built by gcc 14.2.0 (Alpine 14.2.0) 
+2025/10/06 16:27:12 [notice] 1#1: OS: Linux 6.6.96-0-virt
+2025/10/06 16:27:12 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2025/10/06 16:27:12 [notice] 1#1: start worker processes
+2025/10/06 16:27:12 [notice] 1#1: start worker process 29
+2025/10/06 16:27:12 [notice] 1#1: start worker process 30
+2025/10/06 16:38:28 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2025/10/06 16:38:28 [notice] 30#30: gracefully shutting down
+2025/10/06 16:38:28 [notice] 30#30: exiting
+2025/10/06 16:38:28 [notice] 30#30: exit
+2025/10/06 16:38:28 [notice] 29#29: gracefully shutting down
+2025/10/06 16:38:28 [notice] 29#29: exiting
+2025/10/06 16:38:28 [notice] 29#29: exit
+2025/10/06 16:38:28 [notice] 1#1: signal 17 (SIGCHLD) received from 29
+2025/10/06 16:38:28 [notice] 1#1: worker process 29 exited with code 0
+2025/10/06 16:38:28 [notice] 1#1: signal 29 (SIGIO) received
+2025/10/06 16:38:28 [notice] 1#1: signal 17 (SIGCHLD) received from 30
+2025/10/06 16:38:28 [notice] 1#1: worker process 30 exited with code 0
+2025/10/06 16:38:28 [notice] 1#1: exit
+2025/10/06 16:39:43 [notice] 1#1: using the "epoll" event method
+2025/10/06 16:39:43 [notice] 1#1: nginx/1.29.1
+2025/10/06 16:39:43 [notice] 1#1: built by gcc 14.2.0 (Alpine 14.2.0) 
+2025/10/06 16:39:43 [notice] 1#1: OS: Linux 6.6.96-0-virt
+2025/10/06 16:39:43 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2025/10/06 16:39:43 [notice] 1#1: start worker processes
+2025/10/06 16:39:43 [notice] 1#1: start worker process 28
+2025/10/06 16:39:43 [notice] 1#1: start worker process 29
+2025/10/06 17:01:20 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2025/10/06 17:01:20 [notice] 29#29: gracefully shutting down
+2025/10/06 17:01:20 [notice] 28#28: gracefully shutting down
+2025/10/06 17:01:20 [notice] 29#29: exiting
+2025/10/06 17:01:20 [notice] 29#29: exit
+2025/10/06 17:01:20 [notice] 1#1: signal 17 (SIGCHLD) received from 29
+2025/10/06 17:01:20 [notice] 1#1: worker process 29 exited with code 0
+2025/10/06 17:01:20 [notice] 1#1: signal 29 (SIGIO) received
+2025/10/06 17:05:34 [notice] 1#1: using the "epoll" event method
+2025/10/06 17:05:34 [notice] 1#1: nginx/1.29.1
+2025/10/06 17:05:34 [notice] 1#1: built by gcc 14.2.0 (Alpine 14.2.0) 
+2025/10/06 17:05:34 [notice] 1#1: OS: Linux 6.6.96-0-virt
+2025/10/06 17:05:34 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2025/10/06 17:05:34 [notice] 1#1: start worker processes
+2025/10/06 17:05:34 [notice] 1#1: start worker process 29
+2025/10/06 17:05:34 [notice] 1#1: start worker process 30
+2025/10/06 17:54:27 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2025/10/06 17:54:27 [notice] 29#29: gracefully shutting down
+2025/10/06 17:54:27 [notice] 30#30: gracefully shutting down
+2025/10/06 17:54:27 [notice] 29#29: exiting
+2025/10/06 17:54:27 [notice] 29#29: exit
+2025/10/06 17:54:27 [notice] 1#1: signal 17 (SIGCHLD) received from 29
+2025/10/06 17:54:27 [notice] 1#1: worker process 29 exited with code 0
+2025/10/06 17:54:27 [notice] 1#1: signal 29 (SIGIO) received
+2025/10/06 17:54:52 [notice] 1#1: using the "epoll" event method
+2025/10/06 17:54:52 [notice] 1#1: nginx/1.29.1
+2025/10/06 17:54:52 [notice] 1#1: built by gcc 14.2.0 (Alpine 14.2.0) 
+2025/10/06 17:54:52 [notice] 1#1: OS: Linux 6.6.96-0-virt
+2025/10/06 17:54:52 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2025/10/06 17:54:52 [notice] 1#1: start worker processes
+2025/10/06 17:54:52 [notice] 1#1: start worker process 29
+2025/10/06 17:54:52 [notice] 1#1: start worker process 30
+2025/10/06 18:06:50 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2025/10/06 18:06:50 [notice] 29#29: gracefully shutting down
+2025/10/06 18:06:50 [notice] 29#29: exiting
+2025/10/06 18:06:50 [notice] 30#30: gracefully shutting down
+2025/10/06 18:06:50 [notice] 29#29: exit
+2025/10/06 18:06:50 [notice] 1#1: signal 17 (SIGCHLD) received from 29
+2025/10/06 18:06:50 [notice] 1#1: worker process 29 exited with code 0
+2025/10/06 18:06:50 [notice] 1#1: signal 29 (SIGIO) received
+2025/10/06 18:15:36 [notice] 1#1: using the "epoll" event method
+2025/10/06 18:15:36 [notice] 1#1: nginx/1.29.1
+2025/10/06 18:15:36 [notice] 1#1: built by gcc 14.2.0 (Alpine 14.2.0) 
+2025/10/06 18:15:36 [notice] 1#1: OS: Linux 6.6.96-0-virt
+2025/10/06 18:15:36 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2025/10/06 18:15:36 [notice] 1#1: start worker processes
+2025/10/06 18:15:36 [notice] 1#1: start worker process 29
+2025/10/06 18:15:36 [notice] 1#1: start worker process 30
+2025/10/06 18:20:57 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2025/10/06 18:20:57 [notice] 30#30: gracefully shutting down
+2025/10/06 18:20:57 [notice] 30#30: exiting
+2025/10/06 18:20:57 [notice] 29#29: gracefully shutting down
+2025/10/06 18:20:57 [notice] 30#30: exit
+2025/10/06 18:20:57 [notice] 1#1: signal 17 (SIGCHLD) received from 30
+2025/10/06 18:20:57 [notice] 1#1: worker process 30 exited with code 0
+2025/10/06 18:20:57 [notice] 1#1: signal 29 (SIGIO) received
+2025/10/06 18:28:35 [notice] 1#1: using the "epoll" event method
+2025/10/06 18:28:35 [notice] 1#1: nginx/1.29.1
+2025/10/06 18:28:35 [notice] 1#1: built by gcc 14.2.0 (Alpine 14.2.0) 
+2025/10/06 18:28:35 [notice] 1#1: OS: Linux 6.6.96-0-virt
+2025/10/06 18:28:35 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2025/10/06 18:28:35 [notice] 1#1: start worker processes
+2025/10/06 18:28:35 [notice] 1#1: start worker process 29
+2025/10/06 18:28:35 [notice] 1#1: start worker process 30
+2025/10/06 18:48:20 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2025/10/06 18:48:20 [notice] 29#29: gracefully shutting down
+2025/10/06 18:48:20 [notice] 30#30: gracefully shutting down
+2025/10/06 18:48:20 [notice] 30#30: exiting
+2025/10/06 18:48:20 [notice] 30#30: exit
+2025/10/06 18:48:20 [notice] 1#1: signal 17 (SIGCHLD) received from 30
+2025/10/06 18:48:20 [notice] 1#1: worker process 30 exited with code 0
+2025/10/06 18:48:20 [notice] 1#1: signal 29 (SIGIO) received
+2025/10/06 18:49:39 [notice] 1#1: using the "epoll" event method
+2025/10/06 18:49:39 [notice] 1#1: nginx/1.29.1
+2025/10/06 18:49:39 [notice] 1#1: built by gcc 14.2.0 (Alpine 14.2.0) 
+2025/10/06 18:49:39 [notice] 1#1: OS: Linux 6.6.96-0-virt
+2025/10/06 18:49:39 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2025/10/06 18:49:39 [notice] 1#1: start worker processes
+2025/10/06 18:49:39 [notice] 1#1: start worker process 29
+2025/10/06 18:49:39 [notice] 1#1: start worker process 30
+2025/10/06 19:08:04 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2025/10/06 19:08:04 [notice] 30#30: gracefully shutting down
+2025/10/06 19:08:04 [notice] 29#29: gracefully shutting down
+2025/10/06 19:08:04 [notice] 29#29: exiting
+2025/10/06 19:08:04 [notice] 29#29: exit
+2025/10/06 19:08:04 [notice] 1#1: signal 17 (SIGCHLD) received from 29
+2025/10/06 19:08:04 [notice] 1#1: worker process 29 exited with code 0
+2025/10/06 19:08:04 [notice] 1#1: signal 29 (SIGIO) received
+2025/10/06 19:15:06 [notice] 1#1: using the "epoll" event method
+2025/10/06 19:15:06 [notice] 1#1: nginx/1.29.1
+2025/10/06 19:15:06 [notice] 1#1: built by gcc 14.2.0 (Alpine 14.2.0) 
+2025/10/06 19:15:06 [notice] 1#1: OS: Linux 6.6.96-0-virt
+2025/10/06 19:15:06 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2025/10/06 19:15:06 [notice] 1#1: start worker processes
+2025/10/06 19:15:06 [notice] 1#1: start worker process 28
+2025/10/06 19:15:06 [notice] 1#1: start worker process 29
+2025/10/06 19:23:28 [error] 28#28: *75 upstream timed out (110: Operation timed out) while reading response header from upstream, client: 172.18.0.1, server: localhost, request: "GET /createbook?_rsc=412is HTTP/1.1", upstream: "http://172.18.0.5:3000/createbook?_rsc=412is", host: "localhost:5500", referrer: "http://localhost:5500/publishers"
+2025/10/06 19:23:29 [error] 28#28: *79 upstream timed out (110: Operation timed out) while reading response header from upstream, client: 172.18.0.1, server: localhost, request: "GET /books?_rsc=412is HTTP/1.1", upstream: "http://172.18.0.5:3000/books?_rsc=412is", host: "localhost:5500", referrer: "http://localhost:5500/publishers"
+2025/10/06 19:23:32 [error] 28#28: *80 upstream timed out (110: Operation timed out) while reading response header from upstream, client: 172.18.0.1, server: localhost, request: "GET /authorprofiles?_rsc=412is HTTP/1.1", upstream: "http://172.18.0.5:3000/authorprofiles?_rsc=412is", host: "localhost:5500", referrer: "http://localhost:5500/publishers"
+2025/10/06 19:23:41 [error] 29#29: *85 upstream timed out (110: Operation timed out) while reading response header from upstream, client: 172.18.0.1, server: localhost, request: "GET /authors?_rsc=412is HTTP/1.1", upstream: "http://172.18.0.5:3000/authors?_rsc=412is", host: "localhost:5500", referrer: "http://localhost:5500/publishers"
+2025/10/06 19:23:54 [error] 28#28: *83 upstream timed out (110: Operation timed out) while reading response header from upstream, client: 172.18.0.1, server: localhost, request: "GET /authorprofiles?_rsc=412is HTTP/1.1", upstream: "http://172.18.0.5:3000/authorprofiles?_rsc=412is", host: "localhost:5500", referrer: "http://localhost:5500/publishers"
+2025/10/06 19:23:57 [error] 29#29: *127 upstream timed out (110: Operation timed out) while reading response header from upstream, client: 172.18.0.1, server: localhost, request: "GET /authorprofiles?_rsc=412is HTTP/1.1", upstream: "http://172.18.0.5:3000/authorprofiles?_rsc=412is", host: "localhost:5500", referrer: "http://localhost:5500/publishers"
+2025/10/06 19:24:41 [error] 29#29: *85 upstream timed out (110: Operation timed out) while reading response header from upstream, client: 172.18.0.1, server: localhost, request: "GET /authors HTTP/1.1", upstream: "http://172.18.0.5:3000/authors", host: "localhost:5500", referrer: "http://localhost:5500/publishers"
+2025/10/06 19:27:47 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2025/10/06 19:27:47 [notice] 28#28: gracefully shutting down
+2025/10/06 19:27:47 [notice] 28#28: exiting
+2025/10/06 19:27:47 [notice] 29#29: gracefully shutting down
+2025/10/06 19:27:47 [notice] 28#28: exit
+2025/10/06 19:27:47 [notice] 1#1: signal 17 (SIGCHLD) received from 28
+2025/10/06 19:27:47 [notice] 1#1: worker process 28 exited with code 0
+2025/10/06 19:27:47 [notice] 1#1: signal 29 (SIGIO) received
+2025/10/06 19:33:08 [notice] 1#1: using the "epoll" event method
+2025/10/06 19:33:08 [notice] 1#1: nginx/1.29.1
+2025/10/06 19:33:08 [notice] 1#1: built by gcc 14.2.0 (Alpine 14.2.0) 
+2025/10/06 19:33:08 [notice] 1#1: OS: Linux 6.6.96-0-virt
+2025/10/06 19:33:08 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2025/10/06 19:33:08 [notice] 1#1: start worker processes
+2025/10/06 19:33:08 [notice] 1#1: start worker process 29
+2025/10/06 19:33:08 [notice] 1#1: start worker process 30
+2025/10/06 19:47:55 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2025/10/06 19:47:55 [notice] 29#29: gracefully shutting down
+2025/10/06 19:47:55 [notice] 30#30: gracefully shutting down
+2025/10/06 19:47:55 [notice] 29#29: exiting
+2025/10/06 19:47:55 [notice] 29#29: exit
+2025/10/06 19:47:55 [notice] 1#1: signal 17 (SIGCHLD) received from 29
+2025/10/06 19:47:55 [notice] 1#1: worker process 29 exited with code 0
+2025/10/06 19:47:55 [notice] 1#1: signal 29 (SIGIO) received
+2025/10/06 19:48:21 [notice] 1#1: using the "epoll" event method
+2025/10/06 19:48:21 [notice] 1#1: nginx/1.29.1
+2025/10/06 19:48:21 [notice] 1#1: built by gcc 14.2.0 (Alpine 14.2.0) 
+2025/10/06 19:48:21 [notice] 1#1: OS: Linux 6.6.96-0-virt
+2025/10/06 19:48:21 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2025/10/06 19:48:21 [notice] 1#1: start worker processes
+2025/10/06 19:48:21 [notice] 1#1: start worker process 29
+2025/10/06 19:48:21 [notice] 1#1: start worker process 30
+2025/10/06 19:50:34 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2025/10/06 19:50:34 [notice] 29#29: gracefully shutting down
+2025/10/06 19:50:34 [notice] 30#30: gracefully shutting down
+2025/10/06 19:50:34 [notice] 29#29: exiting
+2025/10/06 19:50:34 [notice] 29#29: exit
+2025/10/06 19:50:34 [notice] 1#1: signal 17 (SIGCHLD) received from 29
+2025/10/06 19:50:34 [notice] 1#1: worker process 29 exited with code 0
+2025/10/06 19:50:34 [notice] 1#1: signal 29 (SIGIO) received
+2025/10/06 19:56:03 [notice] 1#1: using the "epoll" event method
+2025/10/06 19:56:03 [notice] 1#1: nginx/1.29.1
+2025/10/06 19:56:03 [notice] 1#1: built by gcc 14.2.0 (Alpine 14.2.0) 
+2025/10/06 19:56:03 [notice] 1#1: OS: Linux 6.6.96-0-virt
+2025/10/06 19:56:03 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2025/10/06 19:56:03 [notice] 1#1: start worker processes
+2025/10/06 19:56:03 [notice] 1#1: start worker process 29
+2025/10/06 19:56:03 [notice] 1#1: start worker process 30
+2025/10/06 19:59:20 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2025/10/06 19:59:20 [notice] 29#29: gracefully shutting down
+2025/10/06 19:59:20 [notice] 29#29: exiting
+2025/10/06 19:59:20 [notice] 30#30: gracefully shutting down
+2025/10/06 19:59:20 [notice] 29#29: exit
+2025/10/06 19:59:20 [notice] 1#1: signal 17 (SIGCHLD) received from 29
+2025/10/06 19:59:20 [notice] 1#1: worker process 29 exited with code 0
+2025/10/06 19:59:20 [notice] 1#1: signal 29 (SIGIO) received
+2025/10/06 20:16:30 [notice] 1#1: using the "epoll" event method
+2025/10/06 20:16:30 [notice] 1#1: nginx/1.29.1
+2025/10/06 20:16:30 [notice] 1#1: built by gcc 14.2.0 (Alpine 14.2.0) 
+2025/10/06 20:16:30 [notice] 1#1: OS: Linux 6.6.96-0-virt
+2025/10/06 20:16:30 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2025/10/06 20:16:30 [notice] 1#1: start worker processes
+2025/10/06 20:16:30 [notice] 1#1: start worker process 29
+2025/10/06 20:16:30 [notice] 1#1: start worker process 30
+2025/10/06 20:29:27 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2025/10/06 20:29:27 [notice] 29#29: gracefully shutting down
+2025/10/06 20:29:27 [notice] 30#30: gracefully shutting down
+2025/10/06 20:29:27 [notice] 30#30: exiting
+2025/10/06 20:29:27 [notice] 30#30: exit
+2025/10/06 20:29:27 [notice] 1#1: signal 17 (SIGCHLD) received from 30
+2025/10/06 20:29:27 [notice] 1#1: worker process 30 exited with code 0
+2025/10/06 20:29:27 [notice] 1#1: signal 29 (SIGIO) received
+2025/10/06 20:31:06 [notice] 1#1: using the "epoll" event method
+2025/10/06 20:31:06 [notice] 1#1: nginx/1.29.1
+2025/10/06 20:31:06 [notice] 1#1: built by gcc 14.2.0 (Alpine 14.2.0) 
+2025/10/06 20:31:06 [notice] 1#1: OS: Linux 6.6.96-0-virt
+2025/10/06 20:31:06 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2025/10/06 20:31:06 [notice] 1#1: start worker processes
+2025/10/06 20:31:06 [notice] 1#1: start worker process 28
+2025/10/06 20:31:06 [notice] 1#1: start worker process 29
+2025/10/06 20:31:07 [error] 28#28: *1 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET / HTTP/1.1", upstream: "http://172.18.0.5:3000/", host: "localhost:5500"
+2025/10/06 20:31:07 [error] 28#28: *1 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1", upstream: "http://172.18.0.5:3000/.well-known/appspecific/com.chrome.devtools.json", host: "localhost:5500"
+2025/10/06 21:05:51 [warn] 28#28: *152 a client request body is buffered to a temporary file /var/cache/nginx/client_temp/0000000001, client: 172.18.0.1, server: localhost, request: "POST /api/books/ HTTP/1.1", host: "localhost:5500", referrer: "http://localhost:5500/createbook"
+2025/10/06 21:05:52 [warn] 29#29: *181 a client request body is buffered to a temporary file /var/cache/nginx/client_temp/0000000002, client: 172.18.0.1, server: localhost, request: "POST /api/books/ HTTP/1.1", host: "localhost:5500", referrer: "http://localhost:5500/createbook"
+2025/10/06 21:06:00 [warn] 28#28: *183 a client request body is buffered to a temporary file /var/cache/nginx/client_temp/0000000003, client: 172.18.0.1, server: localhost, request: "POST /api/books/ HTTP/1.1", host: "localhost:5500", referrer: "http://localhost:5500/createbook"
+2025/10/06 21:06:00 [warn] 29#29: *185 a client request body is buffered to a temporary file /var/cache/nginx/client_temp/0000000004, client: 172.18.0.1, server: localhost, request: "POST /api/books/ HTTP/1.1", host: "localhost:5500", referrer: "http://localhost:5500/createbook"
+2025/10/06 21:09:56 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2025/10/06 21:09:56 [notice] 28#28: gracefully shutting down
+2025/10/06 21:09:56 [notice] 29#29: gracefully shutting down
+2025/10/06 21:09:56 [notice] 28#28: exiting
+2025/10/06 21:09:56 [notice] 28#28: exit
+2025/10/06 21:09:56 [notice] 1#1: signal 17 (SIGCHLD) received from 28
+2025/10/06 21:09:56 [notice] 1#1: worker process 28 exited with code 0
+2025/10/06 21:09:56 [notice] 1#1: signal 29 (SIGIO) received
+2025/10/06 21:14:12 [notice] 1#1: using the "epoll" event method
+2025/10/06 21:14:12 [notice] 1#1: nginx/1.29.1
+2025/10/06 21:14:12 [notice] 1#1: built by gcc 14.2.0 (Alpine 14.2.0) 
+2025/10/06 21:14:12 [notice] 1#1: OS: Linux 6.6.96-0-virt
+2025/10/06 21:14:12 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2025/10/06 21:14:12 [notice] 1#1: start worker processes
+2025/10/06 21:14:12 [notice] 1#1: start worker process 29
+2025/10/06 21:14:12 [notice] 1#1: start worker process 30
+2025/10/06 21:19:04 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2025/10/06 21:19:04 [notice] 29#29: gracefully shutting down
+2025/10/06 21:19:04 [notice] 30#30: gracefully shutting down
+2025/10/06 21:19:04 [notice] 30#30: exiting
+2025/10/06 21:19:04 [notice] 30#30: exit
+2025/10/06 21:19:05 [notice] 1#1: signal 17 (SIGCHLD) received from 30
+2025/10/06 21:19:05 [notice] 1#1: worker process 30 exited with code 0
+2025/10/06 21:19:05 [notice] 1#1: signal 29 (SIGIO) received
+2025/10/06 21:22:23 [notice] 1#1: using the "epoll" event method
+2025/10/06 21:22:23 [notice] 1#1: nginx/1.29.1
+2025/10/06 21:22:23 [notice] 1#1: built by gcc 14.2.0 (Alpine 14.2.0) 
+2025/10/06 21:22:23 [notice] 1#1: OS: Linux 6.6.96-0-virt
+2025/10/06 21:22:23 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2025/10/06 21:22:23 [notice] 1#1: start worker processes
+2025/10/06 21:22:23 [notice] 1#1: start worker process 28
+2025/10/06 21:22:23 [notice] 1#1: start worker process 29
+2025/10/06 21:28:16 [error] 28#28: *199 upstream timed out (110: Operation timed out) while reading response header from upstream, client: 172.18.0.1, server: localhost, request: "GET /createbook?_rsc=412is HTTP/1.1", upstream: "http://172.18.0.5:3000/createbook?_rsc=412is", host: "localhost:5500", referrer: "http://localhost:5500/publishers"
+2025/10/06 21:28:33 [error] 28#28: *79 upstream prematurely closed connection while reading response header from upstream, client: 172.18.0.1, server: localhost, request: "GET /publishers HTTP/1.1", upstream: "http://172.18.0.5:3000/publishers", host: "localhost:5500"
+2025/10/06 21:28:33 [error] 29#29: *204 recv() failed (104: Connection reset by peer) while proxying upgraded connection, client: 172.18.0.1, server: localhost, request: "GET /_next/webpack-hmr HTTP/1.1", upstream: "http://172.18.0.5:3000/_next/webpack-hmr", host: "localhost:5500"
+2025/10/06 21:28:33 [error] 29#29: *121 upstream prematurely closed connection while reading response header from upstream, client: 172.18.0.1, server: localhost, request: "GET /createbook?_rsc=412is HTTP/1.1", upstream: "http://172.18.0.5:3000/createbook?_rsc=412is", host: "localhost:5500", referrer: "http://localhost:5500/publishers"
+2025/10/06 21:28:33 [error] 29#29: *252 recv() failed (104: Connection reset by peer) while reading response header from upstream, client: 172.18.0.1, server: localhost, request: "GET /createbook?_rsc=412is HTTP/1.1", upstream: "http://172.18.0.5:3000/createbook?_rsc=412is", host: "localhost:5500", referrer: "http://localhost:5500/publishers"
+2025/10/06 21:28:33 [error] 29#29: *252 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1", upstream: "http://172.18.0.5:3000/.well-known/appspecific/com.chrome.devtools.json", host: "localhost:5500"
+2025/10/06 21:28:33 [error] 28#28: *79 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", upstream: "http://172.18.0.5:3000/favicon.ico", host: "localhost:5500", referrer: "http://localhost:5500/publishers"
+2025/10/06 21:28:43 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2025/10/06 21:28:43 [notice] 28#28: gracefully shutting down
+2025/10/06 21:28:43 [notice] 28#28: exiting
+2025/10/06 21:28:43 [notice] 29#29: gracefully shutting down
+2025/10/06 21:28:43 [notice] 29#29: exiting
+2025/10/06 21:28:43 [notice] 29#29: exit
+2025/10/06 21:28:43 [notice] 28#28: exit
+2025/10/06 21:28:43 [notice] 1#1: signal 17 (SIGCHLD) received from 28
+2025/10/06 21:28:43 [notice] 1#1: worker process 28 exited with code 0
+2025/10/06 21:28:43 [notice] 1#1: worker process 29 exited with code 0
+2025/10/06 21:28:43 [notice] 1#1: exit
+2025/10/06 21:29:08 [notice] 1#1: using the "epoll" event method
+2025/10/06 21:29:08 [notice] 1#1: nginx/1.29.1
+2025/10/06 21:29:08 [notice] 1#1: built by gcc 14.2.0 (Alpine 14.2.0) 
+2025/10/06 21:29:08 [notice] 1#1: OS: Linux 6.6.96-0-virt
+2025/10/06 21:29:08 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2025/10/06 21:29:08 [notice] 1#1: start worker processes
+2025/10/06 21:29:08 [notice] 1#1: start worker process 29
+2025/10/06 21:29:08 [notice] 1#1: start worker process 30
+2025/10/06 21:40:04 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2025/10/06 21:40:04 [notice] 29#29: gracefully shutting down
+2025/10/06 21:40:04 [notice] 30#30: gracefully shutting down
+2025/10/06 21:40:04 [notice] 30#30: exiting
+2025/10/06 21:40:04 [notice] 30#30: exit
+2025/10/06 21:40:04 [notice] 1#1: signal 17 (SIGCHLD) received from 30
+2025/10/06 21:40:04 [notice] 1#1: worker process 30 exited with code 0
+2025/10/06 21:40:04 [notice] 1#1: signal 29 (SIGIO) received
+2025/10/06 21:40:31 [notice] 1#1: using the "epoll" event method
+2025/10/06 21:40:31 [notice] 1#1: nginx/1.29.1
+2025/10/06 21:40:31 [notice] 1#1: built by gcc 14.2.0 (Alpine 14.2.0) 
+2025/10/06 21:40:31 [notice] 1#1: OS: Linux 6.6.96-0-virt
+2025/10/06 21:40:31 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2025/10/06 21:40:31 [notice] 1#1: start worker processes
+2025/10/06 21:40:31 [notice] 1#1: start worker process 28
+2025/10/06 21:40:31 [notice] 1#1: start worker process 29
+2025/10/06 21:45:19 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2025/10/06 21:45:19 [notice] 28#28: gracefully shutting down
+2025/10/06 21:45:19 [notice] 29#29: gracefully shutting down
+2025/10/06 21:45:19 [notice] 28#28: exiting
+2025/10/06 21:45:19 [notice] 28#28: exit
+2025/10/06 21:45:19 [notice] 1#1: signal 17 (SIGCHLD) received from 28
+2025/10/06 21:45:19 [notice] 1#1: worker process 28 exited with code 0
+2025/10/06 21:45:19 [notice] 1#1: signal 29 (SIGIO) received
+2025/10/06 21:46:06 [notice] 1#1: using the "epoll" event method
+2025/10/06 21:46:06 [notice] 1#1: nginx/1.29.1
+2025/10/06 21:46:06 [notice] 1#1: built by gcc 14.2.0 (Alpine 14.2.0) 
+2025/10/06 21:46:06 [notice] 1#1: OS: Linux 6.6.96-0-virt
+2025/10/06 21:46:06 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2025/10/06 21:46:06 [notice] 1#1: start worker processes
+2025/10/06 21:46:06 [notice] 1#1: start worker process 29
+2025/10/06 21:46:06 [notice] 1#1: start worker process 30
+2025/10/06 21:47:04 [warn] 29#29: *12 an upstream response is buffered to a temporary file /var/cache/nginx/proxy_temp/1/00/0000000001 while reading upstream, client: 172.18.0.1, server: localhost, request: "GET /api/books/?title=b HTTP/1.1", upstream: "http://172.18.0.4:8000/api/books/?title=b", host: "localhost:5500", referrer: "http://localhost:5500/books"
+2025/10/06 21:50:22 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2025/10/06 21:50:22 [notice] 29#29: gracefully shutting down
+2025/10/06 21:50:22 [notice] 30#30: gracefully shutting down
+2025/10/06 21:50:22 [notice] 30#30: exiting
+2025/10/06 21:50:22 [notice] 30#30: exit
+2025/10/06 21:50:22 [notice] 1#1: signal 17 (SIGCHLD) received from 30
+2025/10/06 21:50:22 [notice] 1#1: worker process 30 exited with code 0
+2025/10/06 21:50:22 [notice] 1#1: signal 29 (SIGIO) received
+2025/10/06 21:52:29 [notice] 1#1: using the "epoll" event method
+2025/10/06 21:52:29 [notice] 1#1: nginx/1.29.1
+2025/10/06 21:52:29 [notice] 1#1: built by gcc 14.2.0 (Alpine 14.2.0) 
+2025/10/06 21:52:29 [notice] 1#1: OS: Linux 6.6.96-0-virt
+2025/10/06 21:52:29 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2025/10/06 21:52:29 [notice] 1#1: start worker processes
+2025/10/06 21:52:29 [notice] 1#1: start worker process 28
+2025/10/06 21:52:29 [notice] 1#1: start worker process 29
+2025/10/06 21:55:15 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2025/10/06 21:55:15 [notice] 28#28: gracefully shutting down
+2025/10/06 21:55:15 [notice] 29#29: gracefully shutting down
+2025/10/06 21:55:21 [notice] 29#29: exiting
+2025/10/06 21:55:21 [notice] 29#29: exit
+2025/10/06 21:55:21 [notice] 28#28: exiting
+2025/10/06 21:55:21 [notice] 28#28: exit
+2025/10/06 21:55:21 [notice] 1#1: signal 17 (SIGCHLD) received from 29
+2025/10/06 21:55:21 [notice] 1#1: worker process 29 exited with code 0
+2025/10/06 21:55:21 [notice] 1#1: signal 29 (SIGIO) received
+2025/10/06 21:55:21 [notice] 1#1: signal 17 (SIGCHLD) received from 28
+2025/10/06 21:55:21 [notice] 1#1: worker process 28 exited with code 0
+2025/10/06 21:55:21 [notice] 1#1: exit
+2025/10/06 21:55:34 [notice] 1#1: using the "epoll" event method
+2025/10/06 21:55:34 [notice] 1#1: nginx/1.29.1
+2025/10/06 21:55:34 [notice] 1#1: built by gcc 14.2.0 (Alpine 14.2.0) 
+2025/10/06 21:55:34 [notice] 1#1: OS: Linux 6.6.96-0-virt
+2025/10/06 21:55:34 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2025/10/06 21:55:34 [notice] 1#1: start worker processes
+2025/10/06 21:55:34 [notice] 1#1: start worker process 28
+2025/10/06 21:55:34 [notice] 1#1: start worker process 29
+2025/10/06 22:00:59 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2025/10/06 22:00:59 [notice] 28#28: gracefully shutting down
+2025/10/06 22:00:59 [notice] 29#29: gracefully shutting down
+2025/10/06 22:01:21 [notice] 1#1: using the "epoll" event method
+2025/10/06 22:01:21 [notice] 1#1: nginx/1.29.1
+2025/10/06 22:01:21 [notice] 1#1: built by gcc 14.2.0 (Alpine 14.2.0) 
+2025/10/06 22:01:21 [notice] 1#1: OS: Linux 6.6.96-0-virt
+2025/10/06 22:01:21 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2025/10/06 22:01:21 [notice] 1#1: start worker processes
+2025/10/06 22:01:21 [notice] 1#1: start worker process 29
+2025/10/06 22:01:21 [notice] 1#1: start worker process 30
+2025/10/06 22:06:08 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2025/10/06 22:06:08 [notice] 30#30: gracefully shutting down
+2025/10/06 22:06:08 [notice] 29#29: gracefully shutting down
+2025/10/06 22:06:08 [notice] 29#29: exiting
+2025/10/06 22:06:08 [notice] 29#29: exit
+2025/10/06 22:06:08 [notice] 1#1: signal 17 (SIGCHLD) received from 29
+2025/10/06 22:06:08 [notice] 1#1: worker process 29 exited with code 0
+2025/10/06 22:06:08 [notice] 1#1: signal 29 (SIGIO) received
+2025/10/06 22:08:05 [notice] 1#1: using the "epoll" event method
+2025/10/06 22:08:05 [notice] 1#1: nginx/1.29.1
+2025/10/06 22:08:05 [notice] 1#1: built by gcc 14.2.0 (Alpine 14.2.0) 
+2025/10/06 22:08:05 [notice] 1#1: OS: Linux 6.6.96-0-virt
+2025/10/06 22:08:05 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2025/10/06 22:08:05 [notice] 1#1: start worker processes
+2025/10/06 22:08:05 [notice] 1#1: start worker process 29
+2025/10/06 22:08:05 [notice] 1#1: start worker process 30
+2025/10/06 22:10:27 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2025/10/06 22:10:27 [notice] 29#29: gracefully shutting down
+2025/10/06 22:10:27 [notice] 29#29: exiting
+2025/10/06 22:10:27 [notice] 30#30: gracefully shutting down
+2025/10/06 22:10:27 [notice] 29#29: exit
+2025/10/06 22:10:28 [notice] 1#1: signal 17 (SIGCHLD) received from 29
+2025/10/06 22:10:28 [notice] 1#1: worker process 29 exited with code 0
+2025/10/06 22:10:28 [notice] 1#1: signal 29 (SIGIO) received
+2025/10/06 22:10:42 [notice] 1#1: using the "epoll" event method
+2025/10/06 22:10:42 [notice] 1#1: nginx/1.29.1
+2025/10/06 22:10:42 [notice] 1#1: built by gcc 14.2.0 (Alpine 14.2.0) 
+2025/10/06 22:10:42 [notice] 1#1: OS: Linux 6.6.96-0-virt
+2025/10/06 22:10:42 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2025/10/06 22:10:42 [notice] 1#1: start worker processes
+2025/10/06 22:10:42 [notice] 1#1: start worker process 28
+2025/10/06 22:10:42 [notice] 1#1: start worker process 29
+2025/10/06 22:11:27 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2025/10/06 22:11:27 [notice] 29#29: gracefully shutting down
+2025/10/06 22:11:27 [notice] 29#29: exiting
+2025/10/06 22:11:27 [notice] 28#28: gracefully shutting down
+2025/10/06 22:11:27 [notice] 29#29: exit
+2025/10/06 22:11:27 [notice] 1#1: signal 17 (SIGCHLD) received from 29
+2025/10/06 22:11:27 [notice] 1#1: worker process 29 exited with code 0
+2025/10/06 22:11:27 [notice] 1#1: signal 29 (SIGIO) received
+2025/10/06 22:11:49 [notice] 1#1: using the "epoll" event method
+2025/10/06 22:11:49 [notice] 1#1: nginx/1.29.1
+2025/10/06 22:11:49 [notice] 1#1: built by gcc 14.2.0 (Alpine 14.2.0) 
+2025/10/06 22:11:49 [notice] 1#1: OS: Linux 6.6.96-0-virt
+2025/10/06 22:11:49 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2025/10/06 22:11:49 [notice] 1#1: start worker processes
+2025/10/06 22:11:49 [notice] 1#1: start worker process 29
+2025/10/06 22:11:49 [notice] 1#1: start worker process 30
+2025/10/06 22:16:56 [warn] 29#29: *184 a client request body is buffered to a temporary file /var/cache/nginx/client_temp/0000000001, client: 172.18.0.1, server: localhost, request: "POST /api/books/ HTTP/1.1", host: "localhost:5500", referrer: "http://localhost:5500/createbook"
+2025/10/06 22:19:48 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2025/10/06 22:19:48 [notice] 29#29: gracefully shutting down
+2025/10/06 22:19:48 [notice] 30#30: gracefully shutting down
+2025/10/06 22:19:48 [notice] 29#29: exiting
+2025/10/06 22:19:48 [notice] 29#29: exit
+2025/10/06 22:19:48 [notice] 1#1: signal 17 (SIGCHLD) received from 29
+2025/10/06 22:19:48 [notice] 1#1: worker process 29 exited with code 0
+2025/10/06 22:19:48 [notice] 1#1: signal 29 (SIGIO) received
+2025/10/06 22:21:23 [notice] 1#1: using the "epoll" event method
+2025/10/06 22:21:23 [notice] 1#1: nginx/1.29.1
+2025/10/06 22:21:23 [notice] 1#1: built by gcc 14.2.0 (Alpine 14.2.0) 
+2025/10/06 22:21:23 [notice] 1#1: OS: Linux 6.6.96-0-virt
+2025/10/06 22:21:23 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2025/10/06 22:21:23 [notice] 1#1: start worker processes
+2025/10/06 22:21:23 [notice] 1#1: start worker process 28
+2025/10/06 22:21:23 [notice] 1#1: start worker process 29
+2025/10/06 22:25:10 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2025/10/06 22:25:10 [notice] 29#29: gracefully shutting down
+2025/10/06 22:25:10 [notice] 28#28: gracefully shutting down
+2025/10/06 22:25:10 [notice] 28#28: exiting
+2025/10/06 22:25:10 [notice] 28#28: exit
+2025/10/06 22:25:10 [notice] 1#1: signal 17 (SIGCHLD) received from 28
+2025/10/06 22:25:10 [notice] 1#1: worker process 28 exited with code 0
+2025/10/06 22:25:10 [notice] 1#1: signal 29 (SIGIO) received
+2025/10/06 22:25:44 [notice] 1#1: using the "epoll" event method
+2025/10/06 22:25:44 [notice] 1#1: nginx/1.29.1
+2025/10/06 22:25:44 [notice] 1#1: built by gcc 14.2.0 (Alpine 14.2.0) 
+2025/10/06 22:25:44 [notice] 1#1: OS: Linux 6.6.96-0-virt
+2025/10/06 22:25:44 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2025/10/06 22:25:44 [notice] 1#1: start worker processes
+2025/10/06 22:25:44 [notice] 1#1: start worker process 29
+2025/10/06 22:25:44 [notice] 1#1: start worker process 30
+2025/10/06 22:26:09 [warn] 30#30: *7 an upstream response is buffered to a temporary file /var/cache/nginx/proxy_temp/1/00/0000000001 while reading upstream, client: 172.18.0.1, server: localhost, request: "GET /api/books/?title=b HTTP/1.1", upstream: "http://172.18.0.4:8000/api/books/?title=b", host: "localhost:5500", referrer: "http://localhost:5500/books"
+2025/10/06 22:27:21 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2025/10/06 22:27:21 [notice] 29#29: gracefully shutting down
+2025/10/06 22:27:21 [notice] 30#30: gracefully shutting down
+2025/10/06 22:27:21 [notice] 30#30: exiting
+2025/10/06 22:27:21 [notice] 30#30: exit
+2025/10/06 22:27:21 [notice] 1#1: signal 17 (SIGCHLD) received from 30
+2025/10/06 22:27:21 [notice] 1#1: worker process 30 exited with code 0
+2025/10/06 22:27:21 [notice] 1#1: signal 29 (SIGIO) received
+2025/10/07 13:47:01 [notice] 1#1: using the "epoll" event method
+2025/10/07 13:47:01 [notice] 1#1: nginx/1.29.1
+2025/10/07 13:47:01 [notice] 1#1: built by gcc 14.2.0 (Alpine 14.2.0) 
+2025/10/07 13:47:01 [notice] 1#1: OS: Linux 6.6.96-0-virt
+2025/10/07 13:47:01 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2025/10/07 13:47:01 [notice] 1#1: start worker processes
+2025/10/07 13:47:01 [notice] 1#1: start worker process 29
+2025/10/07 13:47:01 [notice] 1#1: start worker process 30
+2025/10/07 13:51:04 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2025/10/07 13:51:04 [notice] 29#29: gracefully shutting down
+2025/10/07 13:51:04 [notice] 30#30: gracefully shutting down
+2025/10/07 13:51:04 [notice] 30#30: exiting
+2025/10/07 13:51:04 [notice] 30#30: exit
+2025/10/07 13:51:04 [notice] 1#1: signal 17 (SIGCHLD) received from 30
+2025/10/07 13:51:04 [notice] 1#1: worker process 30 exited with code 0
+2025/10/07 13:51:04 [notice] 1#1: signal 29 (SIGIO) received
+2025/10/07 13:53:26 [notice] 1#1: using the "epoll" event method
+2025/10/07 13:53:26 [notice] 1#1: nginx/1.29.1
+2025/10/07 13:53:26 [notice] 1#1: built by gcc 14.2.0 (Alpine 14.2.0) 
+2025/10/07 13:53:26 [notice] 1#1: OS: Linux 6.6.96-0-virt
+2025/10/07 13:53:26 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2025/10/07 13:53:26 [notice] 1#1: start worker processes
+2025/10/07 13:53:26 [notice] 1#1: start worker process 29
+2025/10/07 13:53:26 [notice] 1#1: start worker process 30
+2025/10/07 13:59:53 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2025/10/07 13:59:53 [notice] 29#29: gracefully shutting down
+2025/10/07 13:59:53 [notice] 29#29: exiting
+2025/10/07 13:59:53 [notice] 30#30: gracefully shutting down
+2025/10/07 13:59:53 [notice] 29#29: exit
+2025/10/07 13:59:53 [notice] 1#1: signal 17 (SIGCHLD) received from 29
+2025/10/07 13:59:53 [notice] 1#1: worker process 29 exited with code 0
+2025/10/07 13:59:53 [notice] 1#1: signal 29 (SIGIO) received
+2025/10/07 14:01:19 [notice] 1#1: using the "epoll" event method
+2025/10/07 14:01:19 [notice] 1#1: nginx/1.29.1
+2025/10/07 14:01:19 [notice] 1#1: built by gcc 14.2.0 (Alpine 14.2.0) 
+2025/10/07 14:01:19 [notice] 1#1: OS: Linux 6.6.96-0-virt
+2025/10/07 14:01:19 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2025/10/07 14:01:19 [notice] 1#1: start worker processes
+2025/10/07 14:01:19 [notice] 1#1: start worker process 28
+2025/10/07 14:01:19 [notice] 1#1: start worker process 29
+2025/10/07 14:05:25 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2025/10/07 14:05:25 [notice] 29#29: gracefully shutting down
+2025/10/07 14:05:25 [notice] 28#28: gracefully shutting down
+2025/10/07 14:05:25 [notice] 28#28: exiting
+2025/10/07 14:05:25 [notice] 28#28: exit
+2025/10/07 14:05:25 [notice] 1#1: signal 17 (SIGCHLD) received from 28
+2025/10/07 14:05:25 [notice] 1#1: worker process 28 exited with code 0
+2025/10/07 14:05:25 [notice] 1#1: signal 29 (SIGIO) received
+2025/10/07 14:07:09 [notice] 1#1: using the "epoll" event method
+2025/10/07 14:07:09 [notice] 1#1: nginx/1.29.1
+2025/10/07 14:07:09 [notice] 1#1: built by gcc 14.2.0 (Alpine 14.2.0) 
+2025/10/07 14:07:09 [notice] 1#1: OS: Linux 6.6.96-0-virt
+2025/10/07 14:07:09 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2025/10/07 14:07:09 [notice] 1#1: start worker processes
+2025/10/07 14:07:09 [notice] 1#1: start worker process 29
+2025/10/07 14:07:09 [notice] 1#1: start worker process 30
+2025/10/07 15:11:25 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2025/10/07 15:11:25 [notice] 29#29: gracefully shutting down
+2025/10/07 15:11:25 [notice] 30#30: gracefully shutting down
+2025/10/07 15:11:25 [notice] 30#30: exiting
+2025/10/07 15:11:25 [notice] 30#30: exit
+2025/10/07 15:11:25 [notice] 1#1: signal 17 (SIGCHLD) received from 30
+2025/10/07 15:11:25 [notice] 1#1: worker process 30 exited with code 0
+2025/10/07 15:11:25 [notice] 1#1: signal 29 (SIGIO) received
+2025/10/07 15:57:24 [notice] 1#1: using the "epoll" event method
+2025/10/07 15:57:24 [notice] 1#1: nginx/1.29.1
+2025/10/07 15:57:24 [notice] 1#1: built by gcc 14.2.0 (Alpine 14.2.0) 
+2025/10/07 15:57:24 [notice] 1#1: OS: Linux 6.6.96-0-virt
+2025/10/07 15:57:24 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2025/10/07 15:57:24 [notice] 1#1: start worker processes
+2025/10/07 15:57:24 [notice] 1#1: start worker process 29
+2025/10/07 15:57:24 [notice] 1#1: start worker process 30
+2025/10/07 16:00:59 [error] 29#29: *7 upstream timed out (110: Operation timed out) while reading response header from upstream, client: 172.18.0.1, server: localhost, request: "GET /authorprofiles/1?_rsc=5vsb2 HTTP/1.1", upstream: "http://172.18.0.5:3000/authorprofiles/1?_rsc=5vsb2", host: "localhost:5500", referrer: "http://localhost:5500/authorprofiles"
+2025/10/07 16:01:23 [error] 30#30: *8 upstream timed out (110: Operation timed out) while reading response header from upstream, client: 172.18.0.1, server: localhost, request: "GET /authorprofiles/1?_rsc=5vsb2 HTTP/1.1", upstream: "http://172.18.0.5:3000/authorprofiles/1?_rsc=5vsb2", host: "localhost:5500", referrer: "http://localhost:5500/authorprofiles"
+2025/10/07 16:01:56 [error] 29#29: *5 upstream timed out (110: Operation timed out) while reading response header from upstream, client: 172.18.0.1, server: localhost, request: "GET /authorprofiles/1?_rsc=5vsb2 HTTP/1.1", upstream: "http://172.18.0.5:3000/authorprofiles/1?_rsc=5vsb2", host: "localhost:5500", referrer: "http://localhost:5500/authorprofiles"
+2025/10/07 16:02:28 [error] 29#29: *7 upstream timed out (110: Operation timed out) while reading response header from upstream, client: 172.18.0.1, server: localhost, request: "GET /authorprofiles HTTP/1.1", upstream: "http://172.18.0.5:3000/authorprofiles", host: "localhost:5500"
+2025/10/07 16:03:10 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2025/10/07 16:03:10 [notice] 29#29: gracefully shutting down
+2025/10/07 16:03:10 [notice] 30#30: gracefully shutting down
+2025/10/07 16:03:10 [notice] 30#30: exiting
+2025/10/07 16:03:10 [notice] 30#30: exit
+2025/10/07 16:03:10 [notice] 1#1: signal 17 (SIGCHLD) received from 30
+2025/10/07 16:03:10 [notice] 1#1: worker process 30 exited with code 0
+2025/10/07 16:03:10 [notice] 1#1: signal 29 (SIGIO) received
+2025/10/07 17:03:22 [notice] 1#1: using the "epoll" event method
+2025/10/07 17:03:22 [notice] 1#1: nginx/1.29.1
+2025/10/07 17:03:22 [notice] 1#1: built by gcc 14.2.0 (Alpine 14.2.0) 
+2025/10/07 17:03:22 [notice] 1#1: OS: Linux 6.6.96-0-virt
+2025/10/07 17:03:22 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2025/10/07 17:03:22 [notice] 1#1: start worker processes
+2025/10/07 17:03:22 [notice] 1#1: start worker process 29
+2025/10/07 17:03:22 [notice] 1#1: start worker process 30
+2025/10/07 17:31:02 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2025/10/07 17:31:02 [notice] 29#29: gracefully shutting down
+2025/10/07 17:31:02 [notice] 30#30: gracefully shutting down
+2025/10/07 17:31:02 [notice] 30#30: exiting
+2025/10/07 17:31:02 [notice] 30#30: exit
+2025/10/07 17:31:02 [notice] 1#1: signal 17 (SIGCHLD) received from 30
+2025/10/07 17:31:02 [notice] 1#1: worker process 30 exited with code 0
+2025/10/07 17:31:02 [notice] 1#1: signal 29 (SIGIO) received
+2025/10/07 18:38:55 [notice] 1#1: using the "epoll" event method
+2025/10/07 18:38:55 [notice] 1#1: nginx/1.29.1
+2025/10/07 18:38:55 [notice] 1#1: built by gcc 14.2.0 (Alpine 14.2.0) 
+2025/10/07 18:38:55 [notice] 1#1: OS: Linux 6.6.96-0-virt
+2025/10/07 18:38:55 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2025/10/07 18:38:55 [notice] 1#1: start worker processes
+2025/10/07 18:38:55 [notice] 1#1: start worker process 29
+2025/10/07 18:38:55 [notice] 1#1: start worker process 30
+2025/10/07 18:40:57 [error] 29#29: *31 recv() failed (104: Connection reset by peer) while reading response header from upstream, client: 172.18.0.1, server: localhost, request: "GET /books?_rsc=5vsb2 HTTP/1.1", upstream: "http://172.18.0.5:3000/books?_rsc=5vsb2", host: "localhost:5500", referrer: "http://localhost:5500/authorprofiles"
+2025/10/07 18:40:57 [error] 29#29: *33 recv() failed (104: Connection reset by peer) while reading response header from upstream, client: 172.18.0.1, server: localhost, request: "GET /authorprofiles?_rsc=5vsb2 HTTP/1.1", upstream: "http://172.18.0.5:3000/authorprofiles?_rsc=5vsb2", host: "localhost:5500", referrer: "http://localhost:5500/authorprofiles"
+2025/10/07 18:40:57 [error] 29#29: *35 recv() failed (104: Connection reset by peer) while reading response header from upstream, client: 172.18.0.1, server: localhost, request: "GET /publishers?_rsc=5vsb2 HTTP/1.1", upstream: "http://172.18.0.5:3000/publishers?_rsc=5vsb2", host: "localhost:5500", referrer: "http://localhost:5500/authorprofiles"
+2025/10/07 18:40:57 [error] 29#29: *35 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET /publishers HTTP/1.1", upstream: "http://172.18.0.5:3000/publishers", host: "localhost:5500", referrer: "http://localhost:5500/authorprofiles"
+2025/10/07 18:40:57 [error] 29#29: *35 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1", upstream: "http://172.18.0.5:3000/.well-known/appspecific/com.chrome.devtools.json", host: "localhost:5500"
+2025/10/07 18:41:45 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2025/10/07 18:41:45 [notice] 29#29: gracefully shutting down
+2025/10/07 18:41:45 [notice] 30#30: gracefully shutting down
+2025/10/07 18:41:45 [notice] 30#30: exiting
+2025/10/07 18:41:45 [notice] 30#30: exit
+2025/10/07 18:41:45 [notice] 1#1: signal 17 (SIGCHLD) received from 30
+2025/10/07 18:41:45 [notice] 1#1: worker process 30 exited with code 0
+2025/10/07 18:41:45 [notice] 1#1: signal 29 (SIGIO) received
+2025/10/07 18:41:47 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2025/10/07 18:41:50 [error] 29#29: *35 connect() failed (113: Host is unreachable) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET /publishers HTTP/1.1", upstream: "http://172.18.0.5:3000/publishers", host: "localhost:5500"
+2025/10/07 18:41:50 [notice] 29#29: exiting
+2025/10/07 18:41:50 [notice] 29#29: exit
+2025/10/07 18:41:50 [notice] 1#1: signal 17 (SIGCHLD) received from 29
+2025/10/07 18:41:50 [notice] 1#1: worker process 29 exited with code 0
+2025/10/07 18:41:50 [notice] 1#1: exit
+2025/10/07 18:42:08 [notice] 1#1: using the "epoll" event method
+2025/10/07 18:42:08 [notice] 1#1: nginx/1.29.1
+2025/10/07 18:42:08 [notice] 1#1: built by gcc 14.2.0 (Alpine 14.2.0) 
+2025/10/07 18:42:08 [notice] 1#1: OS: Linux 6.6.96-0-virt
+2025/10/07 18:42:08 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2025/10/07 18:42:08 [notice] 1#1: start worker processes
+2025/10/07 18:42:08 [notice] 1#1: start worker process 29
+2025/10/07 18:42:08 [notice] 1#1: start worker process 30
+2025/10/07 18:44:45 [error] 30#30: *99 recv() failed (104: Connection reset by peer) while proxying upgraded connection, client: 172.18.0.1, server: localhost, request: "GET /_next/webpack-hmr HTTP/1.1", upstream: "http://172.18.0.5:3000/_next/webpack-hmr", host: "localhost:5500"
+2025/10/07 18:44:45 [error] 29#29: *5 recv() failed (104: Connection reset by peer) while reading response header from upstream, client: 172.18.0.1, server: localhost, request: "GET /books/1 HTTP/1.1", upstream: "http://172.18.0.5:3000/books/1", host: "localhost:5500", referrer: "http://localhost:5500/books"
+2025/10/07 18:44:45 [error] 29#29: *5 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1", upstream: "http://172.18.0.5:3000/.well-known/appspecific/com.chrome.devtools.json", host: "localhost:5500"
+2025/10/07 18:45:37 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2025/10/07 18:45:37 [notice] 29#29: gracefully shutting down
+2025/10/07 18:45:37 [notice] 30#30: gracefully shutting down
+2025/10/07 18:45:37 [notice] 29#29: exiting
+2025/10/07 18:45:37 [notice] 30#30: exiting
+2025/10/07 18:45:37 [notice] 30#30: exit
+2025/10/07 18:45:37 [notice] 29#29: exit
+2025/10/07 18:45:37 [notice] 1#1: signal 17 (SIGCHLD) received from 29
+2025/10/07 18:45:37 [notice] 1#1: worker process 29 exited with code 0
+2025/10/07 18:45:37 [notice] 1#1: signal 29 (SIGIO) received
+2025/10/07 18:45:37 [notice] 1#1: signal 17 (SIGCHLD) received from 30
+2025/10/07 18:45:37 [notice] 1#1: worker process 30 exited with code 0
+2025/10/07 18:45:37 [notice] 1#1: exit
+2025/10/07 18:46:16 [notice] 1#1: using the "epoll" event method
+2025/10/07 18:46:16 [notice] 1#1: nginx/1.29.1
+2025/10/07 18:46:16 [notice] 1#1: built by gcc 14.2.0 (Alpine 14.2.0) 
+2025/10/07 18:46:16 [notice] 1#1: OS: Linux 6.6.96-0-virt
+2025/10/07 18:46:16 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2025/10/07 18:46:16 [notice] 1#1: start worker processes
+2025/10/07 18:46:16 [notice] 1#1: start worker process 29
+2025/10/07 18:46:16 [notice] 1#1: start worker process 30
+2025/10/07 18:48:54 [error] 29#29: *132 recv() failed (104: Connection reset by peer) while proxying upgraded connection, client: 172.18.0.1, server: localhost, request: "GET /_next/webpack-hmr HTTP/1.1", upstream: "http://172.18.0.5:3000/_next/webpack-hmr", host: "localhost:5500"
+2025/10/07 18:48:54 [error] 29#29: *38 upstream prematurely closed connection while reading response header from upstream, client: 172.18.0.1, server: localhost, request: "GET /authorprofiles/1?_rsc=5vsb2 HTTP/1.1", upstream: "http://172.18.0.5:3000/authorprofiles/1?_rsc=5vsb2", host: "localhost:5500", referrer: "http://localhost:5500/authorprofiles"
+2025/10/07 18:48:54 [error] 29#29: *163 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET /authorprofiles/1 HTTP/1.1", upstream: "http://172.18.0.5:3000/authorprofiles/1", host: "localhost:5500", referrer: "http://localhost:5500/authorprofiles"
+2025/10/07 18:48:54 [error] 29#29: *163 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1", upstream: "http://172.18.0.5:3000/.well-known/appspecific/com.chrome.devtools.json", host: "localhost:5500"
+2025/10/07 18:49:34 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2025/10/07 18:49:34 [notice] 30#30: gracefully shutting down
+2025/10/07 18:49:34 [notice] 30#30: exiting
+2025/10/07 18:49:34 [notice] 30#30: exit
+2025/10/07 18:49:34 [notice] 29#29: gracefully shutting down
+2025/10/07 18:49:34 [notice] 1#1: signal 17 (SIGCHLD) received from 30
+2025/10/07 18:49:34 [notice] 1#1: worker process 30 exited with code 0
+2025/10/07 18:49:34 [notice] 1#1: signal 29 (SIGIO) received
+2025/10/07 18:52:29 [notice] 1#1: using the "epoll" event method
+2025/10/07 18:52:29 [notice] 1#1: nginx/1.29.1
+2025/10/07 18:52:29 [notice] 1#1: built by gcc 14.2.0 (Alpine 14.2.0) 
+2025/10/07 18:52:29 [notice] 1#1: OS: Linux 6.6.96-0-virt
+2025/10/07 18:52:29 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2025/10/07 18:52:29 [notice] 1#1: start worker processes
+2025/10/07 18:52:29 [notice] 1#1: start worker process 29
+2025/10/07 18:52:29 [notice] 1#1: start worker process 30
+2025/10/07 18:55:53 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2025/10/07 18:55:53 [notice] 30#30: gracefully shutting down
+2025/10/07 18:55:53 [notice] 29#29: gracefully shutting down
+2025/10/07 18:55:53 [notice] 29#29: exiting
+2025/10/07 18:55:53 [notice] 29#29: exit
+2025/10/07 18:55:53 [notice] 1#1: signal 17 (SIGCHLD) received from 29
+2025/10/07 18:55:53 [notice] 1#1: worker process 29 exited with code 0
+2025/10/07 18:55:53 [notice] 1#1: signal 29 (SIGIO) received
+2025/10/07 18:56:57 [notice] 1#1: using the "epoll" event method
+2025/10/07 18:56:57 [notice] 1#1: nginx/1.29.1
+2025/10/07 18:56:57 [notice] 1#1: built by gcc 14.2.0 (Alpine 14.2.0) 
+2025/10/07 18:56:57 [notice] 1#1: OS: Linux 6.6.96-0-virt
+2025/10/07 18:56:57 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2025/10/07 18:56:57 [notice] 1#1: start worker processes
+2025/10/07 18:56:57 [notice] 1#1: start worker process 29
+2025/10/07 18:56:57 [notice] 1#1: start worker process 30
+2025/10/07 18:57:41 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2025/10/07 18:57:41 [notice] 29#29: gracefully shutting down
+2025/10/07 18:57:41 [notice] 30#30: gracefully shutting down
+2025/10/07 18:57:41 [notice] 29#29: exiting
+2025/10/07 18:57:41 [notice] 29#29: exit
+2025/10/07 18:57:42 [notice] 1#1: signal 17 (SIGCHLD) received from 29
+2025/10/07 18:57:42 [notice] 1#1: worker process 29 exited with code 0
+2025/10/07 18:57:42 [notice] 1#1: signal 29 (SIGIO) received
+2025/10/07 18:58:25 [notice] 1#1: using the "epoll" event method
+2025/10/07 18:58:25 [notice] 1#1: nginx/1.29.1
+2025/10/07 18:58:25 [notice] 1#1: built by gcc 14.2.0 (Alpine 14.2.0) 
+2025/10/07 18:58:25 [notice] 1#1: OS: Linux 6.6.96-0-virt
+2025/10/07 18:58:25 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2025/10/07 18:58:25 [notice] 1#1: start worker processes
+2025/10/07 18:58:25 [notice] 1#1: start worker process 28
+2025/10/07 18:58:25 [notice] 1#1: start worker process 29
+2025/10/07 18:58:43 [warn] 28#28: *8 an upstream response is buffered to a temporary file /var/cache/nginx/proxy_temp/1/00/0000000001 while reading upstream, client: 172.18.0.1, server: localhost, request: "GET /api/books/5/ HTTP/1.1", upstream: "http://172.18.0.4:8000/api/books/5/", host: "localhost:5500", referrer: "http://localhost:5500/books/5"
+2025/10/07 18:58:43 [warn] 28#28: *9 an upstream response is buffered to a temporary file /var/cache/nginx/proxy_temp/2/00/0000000002 while reading upstream, client: 172.18.0.1, server: localhost, request: "GET /api/books/5/ HTTP/1.1", upstream: "http://172.18.0.4:8000/api/books/5/", host: "localhost:5500", referrer: "http://localhost:5500/books/5"
+2025/10/07 18:58:53 [warn] 28#28: *11 an upstream response is buffered to a temporary file /var/cache/nginx/proxy_temp/3/00/0000000003 while reading upstream, client: 172.18.0.1, server: localhost, request: "GET /api/books/5/ HTTP/1.1", upstream: "http://172.18.0.4:8000/api/books/5/", host: "localhost:5500", referrer: "http://localhost:5500/books/5"
+2025/10/07 18:59:16 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2025/10/07 18:59:16 [notice] 28#28: gracefully shutting down
+2025/10/07 18:59:16 [notice] 29#29: gracefully shutting down
+2025/10/07 18:59:16 [notice] 29#29: exiting
+2025/10/07 18:59:16 [notice] 29#29: exit
+2025/10/07 18:59:16 [notice] 1#1: signal 17 (SIGCHLD) received from 29
+2025/10/07 18:59:16 [notice] 1#1: worker process 29 exited with code 0
+2025/10/07 18:59:16 [notice] 1#1: signal 29 (SIGIO) received
+2025/10/07 19:01:31 [notice] 1#1: using the "epoll" event method
+2025/10/07 19:01:31 [notice] 1#1: nginx/1.29.1
+2025/10/07 19:01:31 [notice] 1#1: built by gcc 14.2.0 (Alpine 14.2.0) 
+2025/10/07 19:01:31 [notice] 1#1: OS: Linux 6.6.96-0-virt
+2025/10/07 19:01:31 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2025/10/07 19:01:31 [notice] 1#1: start worker processes
+2025/10/07 19:01:31 [notice] 1#1: start worker process 29
+2025/10/07 19:01:31 [notice] 1#1: start worker process 30
+2025/10/07 19:07:37 [warn] 29#29: *62 an upstream response is buffered to a temporary file /var/cache/nginx/proxy_temp/1/00/0000000001 while reading upstream, client: 172.18.0.1, server: localhost, request: "GET /api/books/5/ HTTP/1.1", upstream: "http://172.18.0.4:8000/api/books/5/", host: "localhost:5500", referrer: "http://localhost:5500/books/5"
+2025/10/07 19:07:37 [warn] 29#29: *45 an upstream response is buffered to a temporary file /var/cache/nginx/proxy_temp/2/00/0000000002 while reading upstream, client: 172.18.0.1, server: localhost, request: "GET /api/books/5/ HTTP/1.1", upstream: "http://172.18.0.4:8000/api/books/5/", host: "localhost:5500", referrer: "http://localhost:5500/books/5"
+2025/10/07 19:08:00 [warn] 29#29: *57 an upstream response is buffered to a temporary file /var/cache/nginx/proxy_temp/3/00/0000000003 while reading upstream, client: 172.18.0.1, server: localhost, request: "GET /api/books/5/ HTTP/1.1", upstream: "http://172.18.0.4:8000/api/books/5/", host: "localhost:5500", referrer: "http://localhost:5500/books/5"
+2025/10/07 19:08:01 [warn] 29#29: *63 an upstream response is buffered to a temporary file /var/cache/nginx/proxy_temp/4/00/0000000004 while reading upstream, client: 172.18.0.1, server: localhost, request: "GET /api/books/5/ HTTP/1.1", upstream: "http://172.18.0.4:8000/api/books/5/", host: "localhost:5500", referrer: "http://localhost:5500/books/5"
+2025/10/07 19:08:03 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2025/10/07 19:08:03 [notice] 29#29: gracefully shutting down
+2025/10/07 19:08:03 [notice] 30#30: gracefully shutting down
+2025/10/07 19:08:03 [notice] 30#30: exiting
+2025/10/07 19:08:03 [notice] 30#30: exit
+2025/10/07 19:08:03 [notice] 1#1: signal 17 (SIGCHLD) received from 30
+2025/10/07 19:08:03 [notice] 1#1: worker process 30 exited with code 0
+2025/10/07 19:08:03 [notice] 1#1: signal 29 (SIGIO) received
+2025/10/07 19:08:10 [warn] 29#29: *59 an upstream response is buffered to a temporary file /var/cache/nginx/proxy_temp/5/00/0000000005 while reading upstream, client: 172.18.0.1, server: localhost, request: "GET /api/books/5/ HTTP/1.1", upstream: "http://172.18.0.4:8000/api/books/5/", host: "localhost:5500", referrer: "http://localhost:5500/books/5"
+2025/10/07 19:20:26 [notice] 1#1: using the "epoll" event method
+2025/10/07 19:20:26 [notice] 1#1: nginx/1.29.1
+2025/10/07 19:20:26 [notice] 1#1: built by gcc 14.2.0 (Alpine 14.2.0) 
+2025/10/07 19:20:26 [notice] 1#1: OS: Linux 6.6.96-0-virt
+2025/10/07 19:20:26 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2025/10/07 19:20:26 [notice] 1#1: start worker processes
+2025/10/07 19:20:26 [notice] 1#1: start worker process 29
+2025/10/07 19:20:26 [notice] 1#1: start worker process 30
+2025/10/07 19:22:10 [warn] 30#30: *8 an upstream response is buffered to a temporary file /var/cache/nginx/proxy_temp/1/00/0000000001 while reading upstream, client: 172.18.0.1, server: localhost, request: "GET /api/books/?title=b HTTP/1.1", upstream: "http://172.18.0.4:8000/api/books/?title=b", host: "localhost:5500", referrer: "http://localhost:5500/books"
+2025/10/07 19:37:12 [error] 30#30: *183 recv() failed (104: Connection reset by peer) while proxying upgraded connection, client: 172.18.0.1, server: localhost, request: "GET /_next/webpack-hmr HTTP/1.1", upstream: "http://172.18.0.5:3000/_next/webpack-hmr", host: "localhost:5500"
+2025/10/07 19:37:12 [error] 29#29: *166 upstream prematurely closed connection while reading response header from upstream, client: 172.18.0.1, server: localhost, request: "GET /authors?_rsc=gnca4 HTTP/1.1", upstream: "http://172.18.0.5:3000/authors?_rsc=gnca4", host: "localhost:5500", referrer: "http://localhost:5500/authorprofiles/1"
+2025/10/07 19:37:12 [error] 29#29: *166 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET /authors HTTP/1.1", upstream: "http://172.18.0.5:3000/authors", host: "localhost:5500", referrer: "http://localhost:5500/authorprofiles/1"
+2025/10/07 19:37:12 [error] 29#29: *166 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1", upstream: "http://172.18.0.5:3000/.well-known/appspecific/com.chrome.devtools.json", host: "localhost:5500"
+2025/10/07 19:37:47 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2025/10/07 19:37:47 [notice] 29#29: gracefully shutting down
+2025/10/07 19:37:47 [notice] 30#30: gracefully shutting down
+2025/10/07 19:38:43 [notice] 1#1: using the "epoll" event method
+2025/10/07 19:38:43 [notice] 1#1: nginx/1.29.1
+2025/10/07 19:38:43 [notice] 1#1: built by gcc 14.2.0 (Alpine 14.2.0) 
+2025/10/07 19:38:43 [notice] 1#1: OS: Linux 6.6.96-0-virt
+2025/10/07 19:38:43 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2025/10/07 19:38:43 [notice] 1#1: start worker processes
+2025/10/07 19:38:43 [notice] 1#1: start worker process 28
+2025/10/07 19:38:43 [notice] 1#1: start worker process 29
+2025/10/07 19:41:32 [error] 28#28: *9 upstream timed out (110: Operation timed out) while reading response header from upstream, client: 172.18.0.1, server: localhost, request: "GET / HTTP/1.1", upstream: "http://172.18.0.5:3000/", host: "localhost:5500", referrer: "http://localhost:5500/books/5"
+2025/10/07 19:41:45 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2025/10/07 19:41:45 [notice] 29#29: gracefully shutting down
+2025/10/07 19:41:45 [notice] 29#29: exiting
+2025/10/07 19:41:45 [notice] 28#28: gracefully shutting down
+2025/10/07 19:41:45 [notice] 29#29: exit
+2025/10/07 19:41:45 [notice] 28#28: exiting
+2025/10/07 19:41:45 [notice] 28#28: exit
+2025/10/07 19:41:45 [notice] 1#1: signal 17 (SIGCHLD) received from 28
+2025/10/07 19:41:45 [notice] 1#1: worker process 28 exited with code 0
+2025/10/07 19:41:45 [notice] 1#1: worker process 29 exited with code 0
+2025/10/07 19:41:45 [notice] 1#1: exit
+2025/10/07 19:42:23 [notice] 1#1: using the "epoll" event method
+2025/10/07 19:42:23 [notice] 1#1: nginx/1.29.1
+2025/10/07 19:42:23 [notice] 1#1: built by gcc 14.2.0 (Alpine 14.2.0) 
+2025/10/07 19:42:23 [notice] 1#1: OS: Linux 6.6.96-0-virt
+2025/10/07 19:42:23 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2025/10/07 19:42:23 [notice] 1#1: start worker processes
+2025/10/07 19:42:23 [notice] 1#1: start worker process 28
+2025/10/07 19:42:23 [notice] 1#1: start worker process 29
+2025/10/07 19:45:59 [error] 28#28: *7 upstream timed out (110: Operation timed out) while reading response header from upstream, client: 172.18.0.1, server: localhost, request: "GET /_next/static/css/app/bootstrap.css.map HTTP/1.1", upstream: "http://172.18.0.5:3000/_next/static/css/app/bootstrap.css.map", host: "localhost:5500"
+2025/10/07 19:46:48 [error] 29#29: *1 upstream timed out (110: Operation timed out) while reading upstream, client: 172.18.0.1, server: localhost, request: "GET /_next/static/chunks/main-app.js?v=1759866299103 HTTP/1.1", upstream: "http://172.18.0.5:3000/_next/static/chunks/main-app.js?v=1759866299103", host: "localhost:5500", referrer: "http://localhost:5500/books/5"
+2025/10/07 19:47:10 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2025/10/07 19:47:10 [notice] 29#29: gracefully shutting down
+2025/10/07 19:47:10 [notice] 28#28: gracefully shutting down
+2025/10/07 19:47:10 [notice] 28#28: exiting
+2025/10/07 19:47:10 [notice] 29#29: exiting
+2025/10/07 19:47:10 [notice] 29#29: exit
+2025/10/07 19:47:10 [notice] 28#28: exit
+2025/10/07 19:47:11 [notice] 1#1: signal 17 (SIGCHLD) received from 28
+2025/10/07 19:47:11 [notice] 1#1: worker process 28 exited with code 0
+2025/10/07 19:47:11 [notice] 1#1: worker process 29 exited with code 0
+2025/10/07 19:47:11 [notice] 1#1: exit
+2025/10/07 20:01:04 [notice] 1#1: using the "epoll" event method
+2025/10/07 20:01:04 [notice] 1#1: nginx/1.29.1
+2025/10/07 20:01:04 [notice] 1#1: built by gcc 14.2.0 (Alpine 14.2.0) 
+2025/10/07 20:01:04 [notice] 1#1: OS: Linux 6.6.96-0-virt
+2025/10/07 20:01:04 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2025/10/07 20:01:04 [notice] 1#1: start worker processes
+2025/10/07 20:01:04 [notice] 1#1: start worker process 28
+2025/10/07 20:01:04 [notice] 1#1: start worker process 29
+2025/10/07 20:15:50 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2025/10/07 20:15:50 [notice] 28#28: gracefully shutting down
+2025/10/07 20:15:50 [notice] 29#29: gracefully shutting down
+2025/10/07 20:15:50 [notice] 28#28: exiting
+2025/10/07 20:15:50 [notice] 28#28: exit
+2025/10/07 20:15:50 [notice] 1#1: signal 17 (SIGCHLD) received from 28
+2025/10/07 20:15:50 [notice] 1#1: worker process 28 exited with code 0
+2025/10/07 20:15:50 [notice] 1#1: signal 29 (SIGIO) received
+2025/10/07 20:16:57 [notice] 1#1: using the "epoll" event method
+2025/10/07 20:16:57 [notice] 1#1: nginx/1.29.1
+2025/10/07 20:16:57 [notice] 1#1: built by gcc 14.2.0 (Alpine 14.2.0) 
+2025/10/07 20:16:57 [notice] 1#1: OS: Linux 6.6.96-0-virt
+2025/10/07 20:16:57 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2025/10/07 20:16:57 [notice] 1#1: start worker processes
+2025/10/07 20:16:57 [notice] 1#1: start worker process 29
+2025/10/07 20:16:57 [notice] 1#1: start worker process 30
+2025/10/07 20:25:53 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2025/10/07 20:25:53 [notice] 29#29: gracefully shutting down
+2025/10/07 20:25:53 [notice] 30#30: gracefully shutting down
+2025/10/07 20:25:53 [notice] 30#30: exiting
+2025/10/07 20:25:53 [notice] 30#30: exit
+2025/10/07 20:25:53 [notice] 1#1: signal 17 (SIGCHLD) received from 30
+2025/10/07 20:25:53 [notice] 1#1: worker process 30 exited with code 0
+2025/10/07 20:25:53 [notice] 1#1: signal 29 (SIGIO) received
+2025/10/07 20:42:41 [notice] 1#1: using the "epoll" event method
+2025/10/07 20:42:41 [notice] 1#1: nginx/1.29.1
+2025/10/07 20:42:41 [notice] 1#1: built by gcc 14.2.0 (Alpine 14.2.0) 
+2025/10/07 20:42:41 [notice] 1#1: OS: Linux 6.6.96-0-virt
+2025/10/07 20:42:41 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2025/10/07 20:42:41 [notice] 1#1: start worker processes
+2025/10/07 20:42:41 [notice] 1#1: start worker process 30
+2025/10/07 20:42:41 [notice] 1#1: start worker process 31
+2025/10/07 20:44:20 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2025/10/07 20:44:20 [notice] 30#30: gracefully shutting down
+2025/10/07 20:44:20 [notice] 31#31: gracefully shutting down
+2025/10/07 20:44:20 [notice] 31#31: exiting
+2025/10/07 20:44:20 [notice] 31#31: exit
+2025/10/07 20:44:20 [notice] 1#1: signal 17 (SIGCHLD) received from 31
+2025/10/07 20:44:20 [notice] 1#1: worker process 31 exited with code 0
+2025/10/07 20:44:20 [notice] 1#1: signal 29 (SIGIO) received
+2025/10/07 20:45:04 [notice] 1#1: using the "epoll" event method
+2025/10/07 20:45:04 [notice] 1#1: nginx/1.29.1
+2025/10/07 20:45:04 [notice] 1#1: built by gcc 14.2.0 (Alpine 14.2.0) 
+2025/10/07 20:45:04 [notice] 1#1: OS: Linux 6.6.96-0-virt
+2025/10/07 20:45:04 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2025/10/07 20:45:04 [notice] 1#1: start worker processes
+2025/10/07 20:45:04 [notice] 1#1: start worker process 29
+2025/10/07 20:45:04 [notice] 1#1: start worker process 30
+2025/10/07 20:47:35 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2025/10/07 20:47:35 [notice] 29#29: gracefully shutting down
+2025/10/07 20:47:35 [notice] 30#30: gracefully shutting down
+2025/10/07 20:47:35 [notice] 30#30: exiting
+2025/10/07 20:47:35 [notice] 30#30: exit
+2025/10/07 20:47:35 [notice] 1#1: signal 17 (SIGCHLD) received from 30
+2025/10/07 20:47:35 [notice] 1#1: worker process 30 exited with code 0
+2025/10/07 20:47:35 [notice] 1#1: signal 29 (SIGIO) received
+2025/10/07 20:52:05 [notice] 1#1: using the "epoll" event method
+2025/10/07 20:52:05 [notice] 1#1: nginx/1.29.1
+2025/10/07 20:52:05 [notice] 1#1: built by gcc 14.2.0 (Alpine 14.2.0) 
+2025/10/07 20:52:05 [notice] 1#1: OS: Linux 6.6.96-0-virt
+2025/10/07 20:52:05 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2025/10/07 20:52:05 [notice] 1#1: start worker processes
+2025/10/07 20:52:05 [notice] 1#1: start worker process 28
+2025/10/07 20:52:05 [notice] 1#1: start worker process 29
+2025/10/07 21:06:42 [error] 29#29: *171 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET /api/publishers/ HTTP/1.1", upstream: "http://172.18.0.4:8000/api/publishers/", host: "localhost:5500", referrer: "http://localhost:5500/publishers"
+2025/10/07 21:06:42 [error] 29#29: *171 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET /api/publishers/ HTTP/1.1", upstream: "http://172.18.0.4:8000/api/publishers/", host: "localhost:5500", referrer: "http://localhost:5500/publishers"
+2025/10/07 21:06:50 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2025/10/07 21:06:50 [notice] 28#28: gracefully shutting down
+2025/10/07 21:06:50 [notice] 29#29: gracefully shutting down
+2025/10/07 21:06:50 [notice] 28#28: exiting
+2025/10/07 21:06:50 [notice] 28#28: exit
+2025/10/07 21:06:50 [notice] 1#1: signal 17 (SIGCHLD) received from 28
+2025/10/07 21:06:50 [notice] 1#1: worker process 28 exited with code 0
+2025/10/07 21:06:50 [notice] 1#1: signal 29 (SIGIO) received
+2025/10/07 21:06:58 [error] 29#29: *179 upstream prematurely closed connection while reading response header from upstream, client: 172.18.0.1, server: localhost, request: "GET /createbook?_rsc=1v1od HTTP/1.1", upstream: "http://172.18.0.5:3000/createbook?_rsc=1v1od", host: "localhost:5500", referrer: "http://localhost:5500/authors"
+2025/10/07 21:06:58 [error] 29#29: *113 recv() failed (104: Connection reset by peer) while proxying upgraded connection, client: 172.18.0.1, server: localhost, request: "GET /_next/webpack-hmr HTTP/1.1", upstream: "http://172.18.0.5:3000/_next/webpack-hmr", host: "localhost:5500"
+2025/10/07 21:06:58 [notice] 29#29: exiting
+2025/10/07 21:06:58 [notice] 29#29: exit
+2025/10/07 21:06:58 [notice] 1#1: signal 17 (SIGCHLD) received from 29
+2025/10/07 21:06:58 [notice] 1#1: worker process 29 exited with code 0
+2025/10/07 21:06:58 [notice] 1#1: exit
+2025/10/07 21:09:10 [notice] 1#1: using the "epoll" event method
+2025/10/07 21:09:10 [notice] 1#1: nginx/1.29.1
+2025/10/07 21:09:10 [notice] 1#1: built by gcc 14.2.0 (Alpine 14.2.0) 
+2025/10/07 21:09:10 [notice] 1#1: OS: Linux 6.6.96-0-virt
+2025/10/07 21:09:10 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2025/10/07 21:09:10 [notice] 1#1: start worker processes
+2025/10/07 21:09:10 [notice] 1#1: start worker process 28
+2025/10/07 21:09:10 [notice] 1#1: start worker process 29
+2025/10/07 21:09:20 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2025/10/07 21:09:20 [notice] 28#28: gracefully shutting down
+2025/10/07 21:09:20 [notice] 28#28: exiting
+2025/10/07 21:09:20 [notice] 29#29: gracefully shutting down
+2025/10/07 21:09:20 [notice] 29#29: exiting
+2025/10/07 21:09:20 [notice] 29#29: exit
+2025/10/07 21:09:20 [notice] 28#28: exit
+2025/10/07 21:09:20 [notice] 1#1: signal 17 (SIGCHLD) received from 28
+2025/10/07 21:09:20 [notice] 1#1: worker process 28 exited with code 0
+2025/10/07 21:09:20 [notice] 1#1: signal 29 (SIGIO) received
+2025/10/07 21:09:20 [notice] 1#1: signal 17 (SIGCHLD) received from 29
+2025/10/07 21:09:20 [notice] 1#1: worker process 29 exited with code 0
+2025/10/07 21:09:20 [notice] 1#1: exit
+2025/10/07 21:09:45 [notice] 1#1: using the "epoll" event method
+2025/10/07 21:09:45 [notice] 1#1: nginx/1.29.1
+2025/10/07 21:09:45 [notice] 1#1: built by gcc 14.2.0 (Alpine 14.2.0) 
+2025/10/07 21:09:45 [notice] 1#1: OS: Linux 6.6.96-0-virt
+2025/10/07 21:09:45 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2025/10/07 21:09:45 [notice] 1#1: start worker processes
+2025/10/07 21:09:45 [notice] 1#1: start worker process 28
+2025/10/07 21:09:45 [notice] 1#1: start worker process 29
+2025/10/07 21:10:12 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2025/10/07 21:10:12 [notice] 28#28: gracefully shutting down
+2025/10/07 21:10:12 [notice] 29#29: gracefully shutting down
+2025/10/07 21:10:12 [notice] 29#29: exiting
+2025/10/07 21:10:12 [notice] 28#28: exiting
+2025/10/07 21:10:12 [notice] 28#28: exit
+2025/10/07 21:10:12 [notice] 29#29: exit
+2025/10/07 21:10:12 [notice] 1#1: signal 17 (SIGCHLD) received from 28
+2025/10/07 21:10:12 [notice] 1#1: worker process 28 exited with code 0
+2025/10/07 21:10:12 [notice] 1#1: worker process 29 exited with code 0
+2025/10/07 21:10:12 [notice] 1#1: exit
+2025/10/07 21:10:35 [notice] 1#1: using the "epoll" event method
+2025/10/07 21:10:35 [notice] 1#1: nginx/1.29.1
+2025/10/07 21:10:35 [notice] 1#1: built by gcc 14.2.0 (Alpine 14.2.0) 
+2025/10/07 21:10:35 [notice] 1#1: OS: Linux 6.6.96-0-virt
+2025/10/07 21:10:35 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2025/10/07 21:10:35 [notice] 1#1: start worker processes
+2025/10/07 21:10:35 [notice] 1#1: start worker process 29
+2025/10/07 21:10:35 [notice] 1#1: start worker process 30
+2025/10/07 21:11:40 [warn] 30#30: *10 an upstream response is buffered to a temporary file /var/cache/nginx/proxy_temp/1/00/0000000001 while reading upstream, client: 172.18.0.1, server: localhost, request: "GET /api/books/?title=ro HTTP/1.1", upstream: "http://172.18.0.4:8000/api/books/?title=ro", host: "localhost:5500", referrer: "http://localhost:5500/books"
+2025/10/07 21:12:37 [error] 30#30: *23 recv() failed (104: Connection reset by peer) while proxying upgraded connection, client: 172.18.0.1, server: localhost, request: "GET /_next/webpack-hmr HTTP/1.1", upstream: "http://172.18.0.5:3000/_next/webpack-hmr", host: "localhost:5500"
+2025/10/07 21:12:37 [error] 30#30: *10 upstream prematurely closed connection while reading response header from upstream, client: 172.18.0.1, server: localhost, request: "GET /books/5 HTTP/1.1", upstream: "http://172.18.0.5:3000/books/5", host: "localhost:5500", referrer: "http://localhost:5500/books"
+2025/10/07 21:12:38 [error] 30#30: *10 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1", upstream: "http://172.18.0.5:3000/.well-known/appspecific/com.chrome.devtools.json", host: "localhost:5500"
+2025/10/07 21:13:14 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2025/10/07 21:13:14 [notice] 30#30: gracefully shutting down
+2025/10/07 21:13:14 [notice] 29#29: gracefully shutting down
+2025/10/07 21:13:14 [notice] 29#29: exiting
+2025/10/07 21:13:14 [notice] 29#29: exit
+2025/10/07 21:13:15 [notice] 1#1: signal 17 (SIGCHLD) received from 29
+2025/10/07 21:13:15 [notice] 1#1: worker process 29 exited with code 0
+2025/10/07 21:13:15 [notice] 1#1: signal 29 (SIGIO) received
+2025/10/07 21:13:24 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2025/10/07 21:16:37 [notice] 1#1: using the "epoll" event method
+2025/10/07 21:16:37 [notice] 1#1: nginx/1.29.1
+2025/10/07 21:16:37 [notice] 1#1: built by gcc 14.2.0 (Alpine 14.2.0) 
+2025/10/07 21:16:37 [notice] 1#1: OS: Linux 6.6.96-0-virt
+2025/10/07 21:16:37 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2025/10/07 21:16:37 [notice] 1#1: start worker processes
+2025/10/07 21:16:37 [notice] 1#1: start worker process 28
+2025/10/07 21:16:37 [notice] 1#1: start worker process 29
+2025/10/07 21:21:04 [error] 28#28: *22 recv() failed (104: Connection reset by peer) while proxying upgraded connection, client: 172.18.0.1, server: localhost, request: "GET /_next/webpack-hmr HTTP/1.1", upstream: "http://172.18.0.5:3000/_next/webpack-hmr", host: "localhost:5500"
+2025/10/07 21:22:54 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2025/10/07 21:22:54 [notice] 28#28: gracefully shutting down
+2025/10/07 21:22:54 [notice] 28#28: exiting
+2025/10/07 21:22:54 [notice] 29#29: gracefully shutting down
+2025/10/07 21:22:54 [notice] 29#29: exiting
+2025/10/07 21:22:54 [notice] 28#28: exit
+2025/10/07 21:22:54 [notice] 29#29: exit
+2025/10/07 21:22:54 [notice] 1#1: signal 17 (SIGCHLD) received from 29
+2025/10/07 21:22:54 [notice] 1#1: worker process 29 exited with code 0
+2025/10/07 21:22:54 [notice] 1#1: signal 29 (SIGIO) received
+2025/10/07 21:22:54 [notice] 1#1: signal 17 (SIGCHLD) received from 28
+2025/10/07 21:22:54 [notice] 1#1: worker process 28 exited with code 0
+2025/10/07 21:22:54 [notice] 1#1: exit
+2025/10/07 21:23:18 [notice] 1#1: using the "epoll" event method
+2025/10/07 21:23:18 [notice] 1#1: nginx/1.29.1
+2025/10/07 21:23:18 [notice] 1#1: built by gcc 14.2.0 (Alpine 14.2.0) 
+2025/10/07 21:23:18 [notice] 1#1: OS: Linux 6.6.96-0-virt
+2025/10/07 21:23:18 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2025/10/07 21:23:18 [notice] 1#1: start worker processes
+2025/10/07 21:23:18 [notice] 1#1: start worker process 29
+2025/10/07 21:23:18 [notice] 1#1: start worker process 30
+2025/10/07 21:25:16 [error] 30#30: *50 upstream prematurely closed connection while reading response header from upstream, client: 172.18.0.1, server: localhost, request: "GET /createbook?_rsc=imjsq HTTP/1.1", upstream: "http://172.18.0.5:3000/createbook?_rsc=imjsq", host: "localhost:5500", referrer: "http://localhost:5500/user-profile"
+2025/10/07 21:25:16 [error] 29#29: *5 upstream prematurely closed connection while reading response header from upstream, client: 172.18.0.1, server: localhost, request: "GET /books?_rsc=imjsq HTTP/1.1", upstream: "http://172.18.0.5:3000/books?_rsc=imjsq", host: "localhost:5500", referrer: "http://localhost:5500/user-profile"
+2025/10/07 21:25:16 [error] 30#30: *48 upstream prematurely closed connection while reading response header from upstream, client: 172.18.0.1, server: localhost, request: "GET /authors?_rsc=imjsq HTTP/1.1", upstream: "http://172.18.0.5:3000/authors?_rsc=imjsq", host: "localhost:5500", referrer: "http://localhost:5500/user-profile"
+2025/10/07 21:25:16 [error] 30#30: *61 recv() failed (104: Connection reset by peer) while proxying upgraded connection, client: 172.18.0.1, server: localhost, request: "GET /_next/webpack-hmr HTTP/1.1", upstream: "http://172.18.0.5:3000/_next/webpack-hmr", host: "localhost:5500"
+2025/10/07 21:25:16 [error] 30#30: *48 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET /createbook HTTP/1.1", upstream: "http://172.18.0.5:3000/createbook", host: "localhost:5500", referrer: "http://localhost:5500/user-profile"
+2025/10/07 21:25:16 [error] 30#30: *48 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1", upstream: "http://172.18.0.5:3000/.well-known/appspecific/com.chrome.devtools.json", host: "localhost:5500"
+2025/10/07 21:27:28 [error] 30#30: *77 connect() failed (113: Host is unreachable) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET /createbook HTTP/1.1", upstream: "http://172.18.0.5:3000/createbook", host: "localhost:5500"
+2025/10/07 21:27:31 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2025/10/07 21:27:31 [notice] 29#29: gracefully shutting down
+2025/10/07 21:27:31 [notice] 30#30: gracefully shutting down
+2025/10/07 21:27:31 [notice] 29#29: exiting
+2025/10/07 21:27:31 [notice] 29#29: exit
+2025/10/07 21:27:31 [notice] 1#1: signal 17 (SIGCHLD) received from 29
+2025/10/07 21:27:31 [notice] 1#1: worker process 29 exited with code 0
+2025/10/07 21:27:31 [notice] 1#1: signal 29 (SIGIO) received
+2025/10/07 21:27:31 [error] 30#30: *77 connect() failed (113: Host is unreachable) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1", upstream: "http://172.18.0.5:3000/.well-known/appspecific/com.chrome.devtools.json", host: "localhost:5500"
+2025/10/07 21:27:45 [notice] 1#1: using the "epoll" event method
+2025/10/07 21:27:45 [notice] 1#1: nginx/1.29.1
+2025/10/07 21:27:45 [notice] 1#1: built by gcc 14.2.0 (Alpine 14.2.0) 
+2025/10/07 21:27:45 [notice] 1#1: OS: Linux 6.6.96-0-virt
+2025/10/07 21:27:45 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2025/10/07 21:27:45 [notice] 1#1: start worker processes
+2025/10/07 21:27:45 [notice] 1#1: start worker process 29
+2025/10/07 21:27:45 [notice] 1#1: start worker process 30
+2025/10/07 21:30:04 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2025/10/07 21:30:04 [notice] 29#29: gracefully shutting down
+2025/10/07 21:30:04 [notice] 30#30: gracefully shutting down
+2025/10/07 21:30:04 [notice] 30#30: exiting
+2025/10/07 21:30:04 [notice] 30#30: exit
+2025/10/07 21:30:04 [notice] 1#1: signal 17 (SIGCHLD) received from 30
+2025/10/07 21:30:04 [notice] 1#1: worker process 30 exited with code 0
+2025/10/07 21:30:04 [notice] 1#1: signal 29 (SIGIO) received
+2025/10/07 21:31:47 [notice] 1#1: using the "epoll" event method
+2025/10/07 21:31:47 [notice] 1#1: nginx/1.29.1
+2025/10/07 21:31:47 [notice] 1#1: built by gcc 14.2.0 (Alpine 14.2.0) 
+2025/10/07 21:31:47 [notice] 1#1: OS: Linux 6.6.96-0-virt
+2025/10/07 21:31:47 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2025/10/07 21:31:47 [notice] 1#1: start worker processes
+2025/10/07 21:31:47 [notice] 1#1: start worker process 29
+2025/10/07 21:31:47 [notice] 1#1: start worker process 30
+2025/10/07 21:36:02 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2025/10/07 21:36:02 [notice] 29#29: gracefully shutting down
+2025/10/07 21:36:02 [notice] 30#30: gracefully shutting down
+2025/10/07 21:36:02 [notice] 29#29: exiting
+2025/10/07 21:36:02 [notice] 30#30: exiting
+2025/10/07 21:36:02 [notice] 30#30: exit
+2025/10/07 21:36:02 [notice] 29#29: exit
+2025/10/07 21:36:02 [notice] 1#1: signal 17 (SIGCHLD) received from 29
+2025/10/07 21:36:02 [notice] 1#1: worker process 29 exited with code 0
+2025/10/07 21:36:02 [notice] 1#1: worker process 30 exited with code 0
+2025/10/07 21:36:02 [notice] 1#1: exit
+2025/10/08 11:43:37 [notice] 1#1: using the "epoll" event method
+2025/10/08 11:43:37 [notice] 1#1: nginx/1.29.1
+2025/10/08 11:43:37 [notice] 1#1: built by gcc 14.2.0 (Alpine 14.2.0) 
+2025/10/08 11:43:37 [notice] 1#1: OS: Linux 6.6.96-0-virt
+2025/10/08 11:43:37 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2025/10/08 11:43:37 [notice] 1#1: start worker processes
+2025/10/08 11:43:37 [notice] 1#1: start worker process 29
+2025/10/08 11:43:37 [notice] 1#1: start worker process 30
+2025/10/08 11:44:38 [warn] 30#30: *9 a client request body is buffered to a temporary file /var/cache/nginx/client_temp/0000000001, client: 172.18.0.1, server: localhost, request: "POST /api/books/ HTTP/1.1", host: "localhost:5500", referrer: "http://localhost:5500/createbook"
+2025/10/08 11:45:50 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2025/10/08 11:45:50 [notice] 29#29: gracefully shutting down
+2025/10/08 11:45:50 [notice] 30#30: gracefully shutting down
+2025/10/08 11:45:50 [notice] 29#29: exiting
+2025/10/08 11:45:50 [notice] 29#29: exit
+2025/10/08 11:45:50 [notice] 1#1: signal 17 (SIGCHLD) received from 29
+2025/10/08 11:45:50 [notice] 1#1: worker process 29 exited with code 0
+2025/10/08 11:45:50 [notice] 1#1: signal 29 (SIGIO) received
+2025/10/08 11:47:19 [notice] 1#1: using the "epoll" event method
+2025/10/08 11:47:19 [notice] 1#1: nginx/1.29.1
+2025/10/08 11:47:19 [notice] 1#1: built by gcc 14.2.0 (Alpine 14.2.0) 
+2025/10/08 11:47:19 [notice] 1#1: OS: Linux 6.6.96-0-virt
+2025/10/08 11:47:19 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2025/10/08 11:47:19 [notice] 1#1: start worker processes
+2025/10/08 11:47:19 [notice] 1#1: start worker process 28
+2025/10/08 11:47:19 [notice] 1#1: start worker process 29
+2025/10/08 11:50:06 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2025/10/08 11:50:06 [notice] 28#28: gracefully shutting down
+2025/10/08 11:50:06 [notice] 29#29: gracefully shutting down
+2025/10/08 11:50:06 [notice] 29#29: exiting
+2025/10/08 11:50:06 [notice] 29#29: exit
+2025/10/08 11:50:06 [notice] 1#1: signal 17 (SIGCHLD) received from 29
+2025/10/08 11:50:06 [notice] 1#1: worker process 29 exited with code 0
+2025/10/08 11:50:06 [notice] 1#1: signal 29 (SIGIO) received
+2025/10/08 11:50:17 [notice] 1#1: using the "epoll" event method
+2025/10/08 11:50:17 [notice] 1#1: nginx/1.29.1
+2025/10/08 11:50:17 [notice] 1#1: built by gcc 14.2.0 (Alpine 14.2.0) 
+2025/10/08 11:50:17 [notice] 1#1: OS: Linux 6.6.96-0-virt
+2025/10/08 11:50:17 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2025/10/08 11:50:17 [notice] 1#1: start worker processes
+2025/10/08 11:50:17 [notice] 1#1: start worker process 29
+2025/10/08 11:50:17 [notice] 1#1: start worker process 30
+2025/10/08 11:52:50 [error] 30#30: *84 recv() failed (104: Connection reset by peer) while proxying upgraded connection, client: 172.18.0.1, server: localhost, request: "GET /_next/webpack-hmr HTTP/1.1", upstream: "http://172.18.0.5:3000/_next/webpack-hmr", host: "localhost:5500"
+2025/10/08 11:52:53 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2025/10/08 11:52:53 [notice] 30#30: gracefully shutting down
+2025/10/08 11:52:53 [notice] 30#30: exiting
+2025/10/08 11:52:53 [notice] 30#30: exit
+2025/10/08 11:52:53 [notice] 29#29: gracefully shutting down
+2025/10/08 11:52:53 [notice] 29#29: exiting
+2025/10/08 11:52:53 [notice] 29#29: exit
+2025/10/08 11:52:53 [notice] 1#1: signal 17 (SIGCHLD) received from 30
+2025/10/08 11:52:53 [notice] 1#1: worker process 29 exited with code 0
+2025/10/08 11:52:53 [notice] 1#1: worker process 30 exited with code 0
+2025/10/08 11:52:53 [notice] 1#1: exit
+2025/10/08 12:04:37 [notice] 1#1: using the "epoll" event method
+2025/10/08 12:04:37 [notice] 1#1: nginx/1.29.1
+2025/10/08 12:04:37 [notice] 1#1: built by gcc 14.2.0 (Alpine 14.2.0) 
+2025/10/08 12:04:37 [notice] 1#1: OS: Linux 6.6.96-0-virt
+2025/10/08 12:04:37 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2025/10/08 12:04:37 [notice] 1#1: start worker processes
+2025/10/08 12:04:37 [notice] 1#1: start worker process 28
+2025/10/08 12:04:37 [notice] 1#1: start worker process 29
+2025/10/08 12:07:21 [warn] 28#28: *1 a client request body is buffered to a temporary file /var/cache/nginx/client_temp/0000000001, client: 172.18.0.1, server: localhost, request: "POST /api/books/ HTTP/1.1", host: "localhost:5500", referrer: "http://localhost:5500/createbook"
+2025/10/08 12:07:29 [warn] 28#28: *151 a client request body is buffered to a temporary file /var/cache/nginx/client_temp/0000000002, client: 172.18.0.1, server: localhost, request: "POST /api/books/ HTTP/1.1", host: "localhost:5500", referrer: "http://localhost:5500/createbook"
+2025/10/08 12:07:30 [warn] 28#28: *153 a client request body is buffered to a temporary file /var/cache/nginx/client_temp/0000000003, client: 172.18.0.1, server: localhost, request: "POST /api/books/ HTTP/1.1", host: "localhost:5500", referrer: "http://localhost:5500/createbook"
+2025/10/08 12:08:46 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2025/10/08 12:08:46 [notice] 29#29: gracefully shutting down
+2025/10/08 12:08:46 [notice] 29#29: exiting
+2025/10/08 12:08:46 [notice] 28#28: gracefully shutting down
+2025/10/08 12:08:46 [notice] 29#29: exit
+2025/10/08 12:08:46 [notice] 1#1: signal 17 (SIGCHLD) received from 29
+2025/10/08 12:08:46 [notice] 1#1: worker process 29 exited with code 0
+2025/10/08 12:08:46 [notice] 1#1: signal 29 (SIGIO) received
+2025/10/08 12:11:00 [notice] 1#1: using the "epoll" event method
+2025/10/08 12:11:00 [notice] 1#1: nginx/1.29.1
+2025/10/08 12:11:00 [notice] 1#1: built by gcc 14.2.0 (Alpine 14.2.0) 
+2025/10/08 12:11:00 [notice] 1#1: OS: Linux 6.6.96-0-virt
+2025/10/08 12:11:00 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2025/10/08 12:11:00 [notice] 1#1: start worker processes
+2025/10/08 12:11:00 [notice] 1#1: start worker process 29
+2025/10/08 12:11:00 [notice] 1#1: start worker process 30
+2025/10/08 12:17:09 [warn] 30#30: *28 a client request body is buffered to a temporary file /var/cache/nginx/client_temp/0000000001, client: 172.18.0.1, server: localhost, request: "POST /api/books/ HTTP/1.1", host: "localhost:5500", referrer: "http://localhost:5500/createbook"
+2025/10/08 12:19:31 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2025/10/08 12:19:31 [notice] 29#29: gracefully shutting down
+2025/10/08 12:19:31 [notice] 30#30: gracefully shutting down
+2025/10/08 12:19:31 [notice] 30#30: exiting
+2025/10/08 12:19:31 [notice] 30#30: exit
+2025/10/08 12:19:31 [notice] 1#1: signal 17 (SIGCHLD) received from 30
+2025/10/08 12:19:31 [notice] 1#1: worker process 30 exited with code 0
+2025/10/08 12:19:31 [notice] 1#1: signal 29 (SIGIO) received
+2025/10/08 12:42:37 [notice] 1#1: using the "epoll" event method
+2025/10/08 12:42:37 [notice] 1#1: nginx/1.29.1
+2025/10/08 12:42:37 [notice] 1#1: built by gcc 14.2.0 (Alpine 14.2.0) 
+2025/10/08 12:42:37 [notice] 1#1: OS: Linux 6.6.96-0-virt
+2025/10/08 12:42:37 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2025/10/08 12:42:37 [notice] 1#1: start worker processes
+2025/10/08 12:42:37 [notice] 1#1: start worker process 29
+2025/10/08 12:42:37 [notice] 1#1: start worker process 30
+2025/10/08 12:44:18 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2025/10/08 12:44:18 [notice] 29#29: gracefully shutting down
+2025/10/08 12:44:18 [notice] 30#30: gracefully shutting down
+2025/10/08 12:44:18 [notice] 29#29: exiting
+2025/10/08 12:44:18 [notice] 29#29: exit
+2025/10/08 12:44:18 [notice] 1#1: signal 17 (SIGCHLD) received from 29
+2025/10/08 12:44:18 [notice] 1#1: worker process 29 exited with code 0
+2025/10/08 12:44:18 [notice] 1#1: signal 29 (SIGIO) received
+2025/10/08 12:45:12 [notice] 1#1: using the "epoll" event method
+2025/10/08 12:45:12 [notice] 1#1: nginx/1.29.1
+2025/10/08 12:45:12 [notice] 1#1: built by gcc 14.2.0 (Alpine 14.2.0) 
+2025/10/08 12:45:12 [notice] 1#1: OS: Linux 6.6.96-0-virt
+2025/10/08 12:45:12 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2025/10/08 12:45:12 [notice] 1#1: start worker processes
+2025/10/08 12:45:12 [notice] 1#1: start worker process 29
+2025/10/08 12:45:12 [notice] 1#1: start worker process 30
+2025/10/08 12:45:38 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2025/10/08 12:45:38 [notice] 29#29: gracefully shutting down
+2025/10/08 12:45:38 [notice] 29#29: exiting
+2025/10/08 12:45:38 [notice] 29#29: exit
+2025/10/08 12:45:38 [notice] 30#30: gracefully shutting down
+2025/10/08 12:45:38 [notice] 30#30: exiting
+2025/10/08 12:45:38 [notice] 30#30: exit
+2025/10/08 12:45:38 [notice] 1#1: signal 17 (SIGCHLD) received from 30
+2025/10/08 12:45:38 [notice] 1#1: worker process 29 exited with code 0
+2025/10/08 12:45:38 [notice] 1#1: worker process 30 exited with code 0
+2025/10/08 12:45:38 [notice] 1#1: exit
+2025/10/08 12:47:34 [notice] 1#1: using the "epoll" event method
+2025/10/08 12:47:34 [notice] 1#1: nginx/1.29.1
+2025/10/08 12:47:34 [notice] 1#1: built by gcc 14.2.0 (Alpine 14.2.0) 
+2025/10/08 12:47:34 [notice] 1#1: OS: Linux 6.6.96-0-virt
+2025/10/08 12:47:34 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2025/10/08 12:47:34 [notice] 1#1: start worker processes
+2025/10/08 12:47:34 [notice] 1#1: start worker process 28
+2025/10/08 12:47:34 [notice] 1#1: start worker process 29
+2025/10/08 12:48:11 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2025/10/08 12:48:11 [notice] 28#28: gracefully shutting down
+2025/10/08 12:48:11 [notice] 29#29: gracefully shutting down
+2025/10/08 12:48:15 [notice] 28#28: exiting
+2025/10/08 12:48:15 [notice] 28#28: exit
+2025/10/08 12:48:15 [notice] 29#29: exiting
+2025/10/08 12:48:15 [notice] 29#29: exit
+2025/10/08 12:48:15 [notice] 1#1: signal 17 (SIGCHLD) received from 29
+2025/10/08 12:48:15 [notice] 1#1: worker process 29 exited with code 0
+2025/10/08 12:48:15 [notice] 1#1: signal 17 (SIGCHLD) received from 28
+2025/10/08 12:48:15 [notice] 1#1: worker process 28 exited with code 0
+2025/10/08 12:48:15 [notice] 1#1: exit
+2025/10/08 15:14:40 [notice] 1#1: using the "epoll" event method
+2025/10/08 15:14:40 [notice] 1#1: nginx/1.29.1
+2025/10/08 15:14:40 [notice] 1#1: built by gcc 14.2.0 (Alpine 14.2.0) 
+2025/10/08 15:14:40 [notice] 1#1: OS: Linux 6.6.96-0-virt
+2025/10/08 15:14:40 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2025/10/08 15:14:40 [notice] 1#1: start worker processes
+2025/10/08 15:14:40 [notice] 1#1: start worker process 29
+2025/10/08 15:14:40 [notice] 1#1: start worker process 30
+2025/10/08 15:17:46 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2025/10/08 15:17:46 [notice] 29#29: gracefully shutting down
+2025/10/08 15:17:46 [notice] 29#29: exiting
+2025/10/08 15:17:46 [notice] 30#30: gracefully shutting down
+2025/10/08 15:17:46 [notice] 30#30: exiting
+2025/10/08 15:17:46 [notice] 29#29: exit
+2025/10/08 15:17:46 [notice] 30#30: exit
+2025/10/08 15:17:46 [notice] 1#1: signal 17 (SIGCHLD) received from 30
+2025/10/08 15:17:46 [notice] 1#1: worker process 30 exited with code 0
+2025/10/08 15:17:46 [notice] 1#1: signal 29 (SIGIO) received
+2025/10/08 15:17:46 [notice] 1#1: signal 17 (SIGCHLD) received from 29
+2025/10/08 15:17:46 [notice] 1#1: worker process 29 exited with code 0
+2025/10/08 15:17:46 [notice] 1#1: exit
+2025/10/08 15:18:09 [notice] 1#1: using the "epoll" event method
+2025/10/08 15:18:09 [notice] 1#1: nginx/1.29.1
+2025/10/08 15:18:09 [notice] 1#1: built by gcc 14.2.0 (Alpine 14.2.0) 
+2025/10/08 15:18:09 [notice] 1#1: OS: Linux 6.6.96-0-virt
+2025/10/08 15:18:09 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2025/10/08 15:18:09 [notice] 1#1: start worker processes
+2025/10/08 15:18:09 [notice] 1#1: start worker process 29
+2025/10/08 15:18:09 [notice] 1#1: start worker process 30
+2025/10/08 15:19:29 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2025/10/08 15:19:29 [notice] 29#29: gracefully shutting down
+2025/10/08 15:19:29 [notice] 30#30: gracefully shutting down
+2025/10/08 15:19:29 [notice] 30#30: exiting
+2025/10/08 15:19:29 [notice] 30#30: exit
+2025/10/08 15:19:29 [notice] 1#1: signal 17 (SIGCHLD) received from 30
+2025/10/08 15:19:29 [notice] 1#1: worker process 30 exited with code 0
+2025/10/08 15:19:29 [notice] 1#1: signal 29 (SIGIO) received
+2025/10/08 15:25:03 [notice] 1#1: using the "epoll" event method
+2025/10/08 15:25:03 [notice] 1#1: nginx/1.29.1
+2025/10/08 15:25:03 [notice] 1#1: built by gcc 14.2.0 (Alpine 14.2.0) 
+2025/10/08 15:25:03 [notice] 1#1: OS: Linux 6.6.96-0-virt
+2025/10/08 15:25:03 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2025/10/08 15:25:03 [notice] 1#1: start worker processes
+2025/10/08 15:25:03 [notice] 1#1: start worker process 28
+2025/10/08 15:25:03 [notice] 1#1: start worker process 29
+2025/10/08 15:34:49 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2025/10/08 15:34:49 [notice] 28#28: gracefully shutting down
+2025/10/08 15:34:49 [notice] 29#29: gracefully shutting down
+2025/10/08 15:34:49 [notice] 29#29: exiting
+2025/10/08 15:34:49 [notice] 29#29: exit
+2025/10/08 15:34:49 [notice] 1#1: signal 17 (SIGCHLD) received from 29
+2025/10/08 15:34:49 [notice] 1#1: worker process 29 exited with code 0
+2025/10/08 15:34:49 [notice] 1#1: signal 29 (SIGIO) received
+2025/10/08 21:10:48 [notice] 1#1: using the "epoll" event method
+2025/10/08 21:10:48 [notice] 1#1: nginx/1.29.1
+2025/10/08 21:10:48 [notice] 1#1: built by gcc 14.2.0 (Alpine 14.2.0) 
+2025/10/08 21:10:48 [notice] 1#1: OS: Linux 6.6.96-0-virt
+2025/10/08 21:10:48 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2025/10/08 21:10:48 [notice] 1#1: start worker processes
+2025/10/08 21:10:48 [notice] 1#1: start worker process 29
+2025/10/08 21:10:48 [notice] 1#1: start worker process 30
+2025/10/08 21:12:24 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2025/10/08 21:12:24 [notice] 29#29: gracefully shutting down
+2025/10/08 21:12:24 [notice] 29#29: exiting
+2025/10/08 21:12:24 [notice] 30#30: gracefully shutting down
+2025/10/08 21:12:24 [notice] 29#29: exit
+2025/10/08 21:12:24 [notice] 30#30: exiting
+2025/10/08 21:12:24 [notice] 30#30: exit
+2025/10/08 21:12:24 [notice] 1#1: signal 17 (SIGCHLD) received from 30
+2025/10/08 21:12:24 [notice] 1#1: worker process 30 exited with code 0
+2025/10/08 21:12:24 [notice] 1#1: signal 29 (SIGIO) received
+2025/10/08 21:12:24 [notice] 1#1: signal 17 (SIGCHLD) received from 29
+2025/10/08 21:12:24 [notice] 1#1: worker process 29 exited with code 0
+2025/10/08 21:12:24 [notice] 1#1: exit
+2025/10/08 21:41:52 [notice] 1#1: using the "epoll" event method
+2025/10/08 21:41:52 [notice] 1#1: nginx/1.29.1
+2025/10/08 21:41:52 [notice] 1#1: built by gcc 14.2.0 (Alpine 14.2.0) 
+2025/10/08 21:41:52 [notice] 1#1: OS: Linux 6.6.96-0-virt
+2025/10/08 21:41:52 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2025/10/08 21:41:52 [notice] 1#1: start worker processes
+2025/10/08 21:41:52 [notice] 1#1: start worker process 28
+2025/10/08 21:41:52 [notice] 1#1: start worker process 29
+2025/10/08 21:49:17 [error] 28#28: *123 upstream timed out (110: Operation timed out) while reading response header from upstream, client: 172.18.0.1, server: localhost, request: "GET /createbook?_rsc=1v1od HTTP/1.1", upstream: "http://172.18.0.5:3000/createbook?_rsc=1v1od", host: "localhost:5500", referrer: "http://localhost:5500/authors"
+2025/10/08 21:49:48 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2025/10/08 21:49:48 [notice] 28#28: gracefully shutting down
+2025/10/08 21:49:48 [notice] 29#29: gracefully shutting down
+2025/10/08 21:49:48 [notice] 29#29: exiting
+2025/10/08 21:49:48 [notice] 29#29: exit
+2025/10/08 21:49:48 [notice] 1#1: signal 17 (SIGCHLD) received from 29
+2025/10/08 21:49:48 [notice] 1#1: worker process 29 exited with code 0
+2025/10/08 21:49:48 [notice] 1#1: signal 29 (SIGIO) received
+2025/10/08 21:51:26 [notice] 1#1: using the "epoll" event method
+2025/10/08 21:51:26 [notice] 1#1: nginx/1.29.1
+2025/10/08 21:51:26 [notice] 1#1: built by gcc 14.2.0 (Alpine 14.2.0) 
+2025/10/08 21:51:26 [notice] 1#1: OS: Linux 6.6.96-0-virt
+2025/10/08 21:51:26 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2025/10/08 21:51:26 [notice] 1#1: start worker processes
+2025/10/08 21:51:26 [notice] 1#1: start worker process 29
+2025/10/08 21:51:26 [notice] 1#1: start worker process 30
+2025/10/08 21:54:10 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2025/10/08 21:54:10 [notice] 29#29: gracefully shutting down
+2025/10/08 21:54:10 [notice] 30#30: gracefully shutting down
+2025/10/08 21:54:10 [notice] 30#30: exiting
+2025/10/08 21:54:10 [notice] 30#30: exit
+2025/10/08 21:54:10 [notice] 1#1: signal 17 (SIGCHLD) received from 30
+2025/10/08 21:54:10 [notice] 1#1: worker process 30 exited with code 0
+2025/10/08 21:54:10 [notice] 1#1: signal 29 (SIGIO) received
+2025/10/08 21:54:51 [notice] 1#1: using the "epoll" event method
+2025/10/08 21:54:51 [notice] 1#1: nginx/1.29.1
+2025/10/08 21:54:51 [notice] 1#1: built by gcc 14.2.0 (Alpine 14.2.0) 
+2025/10/08 21:54:51 [notice] 1#1: OS: Linux 6.6.96-0-virt
+2025/10/08 21:54:51 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2025/10/08 21:54:51 [notice] 1#1: start worker processes
+2025/10/08 21:54:51 [notice] 1#1: start worker process 29
+2025/10/08 21:54:51 [notice] 1#1: start worker process 30
+2025/10/08 21:59:57 [warn] 29#29: *28 a client request body is buffered to a temporary file /var/cache/nginx/client_temp/0000000001, client: 172.18.0.1, server: localhost, request: "POST /api/books/ HTTP/1.1", host: "localhost:5500", referrer: "http://localhost:5500/createbook"
+2025/10/08 22:03:06 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2025/10/08 22:03:06 [notice] 30#30: gracefully shutting down
+2025/10/08 22:03:06 [notice] 30#30: exiting
+2025/10/08 22:03:06 [notice] 29#29: gracefully shutting down
+2025/10/08 22:03:06 [notice] 30#30: exit
+2025/10/08 22:03:06 [notice] 1#1: signal 17 (SIGCHLD) received from 30
+2025/10/08 22:03:06 [notice] 1#1: worker process 30 exited with code 0
+2025/10/08 22:03:06 [notice] 1#1: signal 29 (SIGIO) received
+2025/10/08 22:05:43 [notice] 1#1: using the "epoll" event method
+2025/10/08 22:05:43 [notice] 1#1: nginx/1.29.1
+2025/10/08 22:05:43 [notice] 1#1: built by gcc 14.2.0 (Alpine 14.2.0) 
+2025/10/08 22:05:43 [notice] 1#1: OS: Linux 6.6.96-0-virt
+2025/10/08 22:05:43 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2025/10/08 22:05:43 [notice] 1#1: start worker processes
+2025/10/08 22:05:43 [notice] 1#1: start worker process 28
+2025/10/08 22:05:43 [notice] 1#1: start worker process 29
+2025/10/08 22:07:36 [warn] 29#29: *7 a client request body is buffered to a temporary file /var/cache/nginx/client_temp/0000000001, client: 172.18.0.1, server: localhost, request: "POST /api/books/ HTTP/1.1", host: "localhost:5500", referrer: "http://localhost:5500/createbook"
+2025/10/08 22:13:47 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2025/10/08 22:13:47 [notice] 28#28: gracefully shutting down
+2025/10/08 22:13:47 [notice] 29#29: gracefully shutting down
+2025/10/08 22:13:47 [notice] 29#29: exiting
+2025/10/08 22:13:47 [notice] 29#29: exit
+2025/10/08 22:13:47 [notice] 1#1: signal 17 (SIGCHLD) received from 29
+2025/10/08 22:13:47 [notice] 1#1: worker process 29 exited with code 0
+2025/10/08 22:13:47 [notice] 1#1: signal 29 (SIGIO) received
+2025/10/08 22:14:20 [notice] 1#1: using the "epoll" event method
+2025/10/08 22:14:20 [notice] 1#1: nginx/1.29.1
+2025/10/08 22:14:20 [notice] 1#1: built by gcc 14.2.0 (Alpine 14.2.0) 
+2025/10/08 22:14:20 [notice] 1#1: OS: Linux 6.6.96-0-virt
+2025/10/08 22:14:20 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2025/10/08 22:14:20 [notice] 1#1: start worker processes
+2025/10/08 22:14:20 [notice] 1#1: start worker process 29
+2025/10/08 22:14:20 [notice] 1#1: start worker process 30
+2025/10/08 22:15:43 [warn] 29#29: *8 a client request body is buffered to a temporary file /var/cache/nginx/client_temp/0000000001, client: 172.18.0.1, server: localhost, request: "POST /api/books/ HTTP/1.1", host: "localhost:5500", referrer: "http://localhost:5500/createbook"
+2025/10/08 22:18:07 [error] 29#29: *8 upstream timed out (110: Operation timed out) while reading response header from upstream, client: 172.18.0.1, server: localhost, request: "GET /authors?_rsc=1uaxp HTTP/1.1", upstream: "http://172.18.0.5:3000/authors?_rsc=1uaxp", host: "localhost:5500", referrer: "http://localhost:5500/books/22"
+2025/10/08 22:18:10 [error] 29#29: *152 upstream timed out (110: Operation timed out) while reading response header from upstream, client: 172.18.0.1, server: localhost, request: "GET /authorprofiles?_rsc=1uaxp HTTP/1.1", upstream: "http://172.18.0.5:3000/authorprofiles?_rsc=1uaxp", host: "localhost:5500", referrer: "http://localhost:5500/books/22"
+2025/10/08 22:18:31 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2025/10/08 22:18:31 [notice] 29#29: gracefully shutting down
+2025/10/08 22:18:31 [notice] 30#30: gracefully shutting down
+2025/10/08 22:18:31 [notice] 30#30: exiting
+2025/10/08 22:18:31 [notice] 30#30: exit
+2025/10/08 22:18:31 [notice] 1#1: signal 17 (SIGCHLD) received from 30
+2025/10/08 22:18:31 [notice] 1#1: worker process 30 exited with code 0
+2025/10/08 22:18:31 [notice] 1#1: signal 29 (SIGIO) received
+2025/10/08 22:18:45 [notice] 1#1: using the "epoll" event method
+2025/10/08 22:18:45 [notice] 1#1: nginx/1.29.1
+2025/10/08 22:18:45 [notice] 1#1: built by gcc 14.2.0 (Alpine 14.2.0) 
+2025/10/08 22:18:45 [notice] 1#1: OS: Linux 6.6.96-0-virt
+2025/10/08 22:18:45 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2025/10/08 22:18:45 [notice] 1#1: start worker processes
+2025/10/08 22:18:45 [notice] 1#1: start worker process 28
+2025/10/08 22:18:45 [notice] 1#1: start worker process 29
+2025/10/08 22:25:25 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2025/10/08 22:25:25 [notice] 29#29: gracefully shutting down
+2025/10/08 22:25:25 [notice] 28#28: gracefully shutting down
+2025/10/08 22:32:53 [notice] 1#1: using the "epoll" event method
+2025/10/08 22:32:53 [notice] 1#1: nginx/1.29.1
+2025/10/08 22:32:53 [notice] 1#1: built by gcc 14.2.0 (Alpine 14.2.0) 
+2025/10/08 22:32:53 [notice] 1#1: OS: Linux 6.6.96-0-virt
+2025/10/08 22:32:53 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2025/10/08 22:32:53 [notice] 1#1: start worker processes
+2025/10/08 22:32:53 [notice] 1#1: start worker process 29
+2025/10/08 22:32:53 [notice] 1#1: start worker process 30
+2025/10/08 22:49:53 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2025/10/08 22:49:53 [notice] 29#29: gracefully shutting down
+2025/10/08 22:49:53 [notice] 29#29: exiting
+2025/10/08 22:49:53 [notice] 30#30: gracefully shutting down
+2025/10/08 22:49:53 [notice] 29#29: exit
+2025/10/08 22:49:53 [notice] 1#1: signal 17 (SIGCHLD) received from 29
+2025/10/08 22:49:53 [notice] 1#1: worker process 29 exited with code 0
+2025/10/08 22:49:53 [notice] 1#1: signal 29 (SIGIO) received
+2025/10/09 10:46:12 [notice] 1#1: using the "epoll" event method
+2025/10/09 10:46:12 [notice] 1#1: nginx/1.29.1
+2025/10/09 10:46:12 [notice] 1#1: built by gcc 14.2.0 (Alpine 14.2.0) 
+2025/10/09 10:46:12 [notice] 1#1: OS: Linux 6.6.96-0-virt
+2025/10/09 10:46:12 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2025/10/09 10:46:12 [notice] 1#1: start worker processes
+2025/10/09 10:46:12 [notice] 1#1: start worker process 29
+2025/10/09 10:46:12 [notice] 1#1: start worker process 30
+2025/10/09 11:27:46 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2025/10/09 11:27:46 [notice] 29#29: gracefully shutting down
+2025/10/09 11:27:46 [notice] 30#30: gracefully shutting down
+2025/10/09 11:27:46 [notice] 30#30: exiting
+2025/10/09 11:27:46 [notice] 30#30: exit
+2025/10/09 11:27:47 [notice] 1#1: signal 17 (SIGCHLD) received from 30
+2025/10/09 11:27:47 [notice] 1#1: worker process 30 exited with code 0
+2025/10/09 11:27:47 [notice] 1#1: signal 29 (SIGIO) received
+2025/10/09 11:28:00 [notice] 1#1: using the "epoll" event method
+2025/10/09 11:28:00 [notice] 1#1: nginx/1.29.1
+2025/10/09 11:28:00 [notice] 1#1: built by gcc 14.2.0 (Alpine 14.2.0) 
+2025/10/09 11:28:00 [notice] 1#1: OS: Linux 6.6.96-0-virt
+2025/10/09 11:28:00 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2025/10/09 11:28:00 [notice] 1#1: start worker processes
+2025/10/09 11:28:00 [notice] 1#1: start worker process 29
+2025/10/09 11:28:00 [notice] 1#1: start worker process 30
+2025/10/09 11:29:48 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2025/10/09 11:29:48 [notice] 29#29: gracefully shutting down
+2025/10/09 11:29:48 [notice] 30#30: gracefully shutting down
+2025/10/09 11:29:48 [notice] 30#30: exiting
+2025/10/09 11:29:48 [notice] 30#30: exit
+2025/10/09 11:29:48 [notice] 1#1: signal 17 (SIGCHLD) received from 30
+2025/10/09 11:29:48 [notice] 1#1: worker process 30 exited with code 0
+2025/10/09 11:29:48 [notice] 1#1: signal 29 (SIGIO) received
+2025/10/09 11:30:09 [notice] 1#1: using the "epoll" event method
+2025/10/09 11:30:09 [notice] 1#1: nginx/1.29.1
+2025/10/09 11:30:09 [notice] 1#1: built by gcc 14.2.0 (Alpine 14.2.0) 
+2025/10/09 11:30:09 [notice] 1#1: OS: Linux 6.6.96-0-virt
+2025/10/09 11:30:09 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2025/10/09 11:30:09 [notice] 1#1: start worker processes
+2025/10/09 11:30:09 [notice] 1#1: start worker process 29
+2025/10/09 11:30:09 [notice] 1#1: start worker process 30
+2025/10/09 11:31:40 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2025/10/09 11:31:40 [notice] 29#29: gracefully shutting down
+2025/10/09 11:31:40 [notice] 30#30: gracefully shutting down
+2025/10/09 11:31:40 [notice] 30#30: exiting
+2025/10/09 11:31:40 [notice] 30#30: exit
+2025/10/09 11:31:40 [notice] 1#1: signal 17 (SIGCHLD) received from 30
+2025/10/09 11:31:40 [notice] 1#1: worker process 30 exited with code 0
+2025/10/09 11:31:40 [notice] 1#1: signal 29 (SIGIO) received
+2025/10/09 13:07:23 [notice] 1#1: using the "epoll" event method
+2025/10/09 13:07:23 [notice] 1#1: nginx/1.29.1
+2025/10/09 13:07:23 [notice] 1#1: built by gcc 14.2.0 (Alpine 14.2.0) 
+2025/10/09 13:07:23 [notice] 1#1: OS: Linux 6.6.96-0-virt
+2025/10/09 13:07:23 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2025/10/09 13:07:23 [notice] 1#1: start worker processes
+2025/10/09 13:07:23 [notice] 1#1: start worker process 29
+2025/10/09 13:07:23 [notice] 1#1: start worker process 30
+2025/10/09 13:09:53 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2025/10/09 13:09:53 [notice] 30#30: gracefully shutting down
+2025/10/09 13:09:53 [notice] 29#29: gracefully shutting down
+2025/10/09 13:09:53 [notice] 30#30: exiting
+2025/10/09 13:09:53 [notice] 30#30: exit
+2025/10/09 13:09:53 [notice] 1#1: signal 17 (SIGCHLD) received from 30
+2025/10/09 13:09:53 [notice] 1#1: worker process 30 exited with code 0
+2025/10/09 13:09:53 [notice] 1#1: signal 29 (SIGIO) received
+2025/10/09 13:10:21 [notice] 1#1: using the "epoll" event method
+2025/10/09 13:10:21 [notice] 1#1: nginx/1.29.1
+2025/10/09 13:10:21 [notice] 1#1: built by gcc 14.2.0 (Alpine 14.2.0) 
+2025/10/09 13:10:21 [notice] 1#1: OS: Linux 6.6.96-0-virt
+2025/10/09 13:10:21 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2025/10/09 13:10:21 [notice] 1#1: start worker processes
+2025/10/09 13:10:21 [notice] 1#1: start worker process 29
+2025/10/09 13:10:21 [notice] 1#1: start worker process 30
+2025/10/09 13:12:48 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2025/10/09 13:12:48 [notice] 29#29: gracefully shutting down
+2025/10/09 13:12:48 [notice] 29#29: exiting
+2025/10/09 13:12:48 [notice] 29#29: exit
+2025/10/09 13:12:48 [notice] 30#30: gracefully shutting down
+2025/10/09 13:12:48 [notice] 1#1: signal 17 (SIGCHLD) received from 29
+2025/10/09 13:12:48 [notice] 1#1: worker process 29 exited with code 0
+2025/10/09 13:12:48 [notice] 1#1: signal 29 (SIGIO) received
+2025/10/09 13:14:38 [notice] 1#1: using the "epoll" event method
+2025/10/09 13:14:38 [notice] 1#1: nginx/1.29.1
+2025/10/09 13:14:38 [notice] 1#1: built by gcc 14.2.0 (Alpine 14.2.0) 
+2025/10/09 13:14:38 [notice] 1#1: OS: Linux 6.6.96-0-virt
+2025/10/09 13:14:38 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2025/10/09 13:14:38 [notice] 1#1: start worker processes
+2025/10/09 13:14:38 [notice] 1#1: start worker process 29
+2025/10/09 13:14:38 [notice] 1#1: start worker process 30
+2025/10/09 13:19:21 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2025/10/09 13:19:21 [notice] 30#30: gracefully shutting down
+2025/10/09 13:19:21 [notice] 30#30: exiting
+2025/10/09 13:19:21 [notice] 29#29: gracefully shutting down
+2025/10/09 13:19:21 [notice] 30#30: exit
+2025/10/09 13:19:21 [notice] 1#1: signal 17 (SIGCHLD) received from 30
+2025/10/09 13:19:21 [notice] 1#1: worker process 30 exited with code 0
+2025/10/09 13:19:21 [notice] 1#1: signal 29 (SIGIO) received
+2025/10/09 13:20:04 [notice] 1#1: using the "epoll" event method
+2025/10/09 13:20:04 [notice] 1#1: nginx/1.29.1
+2025/10/09 13:20:04 [notice] 1#1: built by gcc 14.2.0 (Alpine 14.2.0) 
+2025/10/09 13:20:04 [notice] 1#1: OS: Linux 6.6.96-0-virt
+2025/10/09 13:20:04 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2025/10/09 13:20:04 [notice] 1#1: start worker processes
+2025/10/09 13:20:04 [notice] 1#1: start worker process 28
+2025/10/09 13:20:04 [notice] 1#1: start worker process 29
+2025/10/09 13:22:11 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2025/10/09 13:22:11 [notice] 29#29: gracefully shutting down
+2025/10/09 13:22:11 [notice] 28#28: gracefully shutting down
+2025/10/09 13:56:25 [notice] 1#1: using the "epoll" event method
+2025/10/09 13:56:25 [notice] 1#1: nginx/1.29.1
+2025/10/09 13:56:25 [notice] 1#1: built by gcc 14.2.0 (Alpine 14.2.0) 
+2025/10/09 13:56:25 [notice] 1#1: OS: Linux 6.6.96-0-virt
+2025/10/09 13:56:25 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2025/10/09 13:56:25 [notice] 1#1: start worker processes
+2025/10/09 13:56:25 [notice] 1#1: start worker process 29
+2025/10/09 13:56:25 [notice] 1#1: start worker process 30
+2025/10/09 13:59:29 [error] 29#29: *6 upstream timed out (110: Operation timed out) while reading response header from upstream, client: 172.18.0.1, server: localhost, request: "GET /authors?_rsc=1gbam HTTP/1.1", upstream: "http://172.18.0.5:3000/authors?_rsc=1gbam", host: "localhost:5500", referrer: "http://localhost:5500/createbook"
+2025/10/09 13:59:33 [error] 30#30: *7 upstream timed out (110: Operation timed out) while reading response header from upstream, client: 172.18.0.1, server: localhost, request: "GET /?_rsc=1gbam HTTP/1.1", upstream: "http://172.18.0.5:3000/?_rsc=1gbam", host: "localhost:5500", referrer: "http://localhost:5500/createbook"
+2025/10/09 13:59:36 [error] 30#30: *8 upstream timed out (110: Operation timed out) while reading response header from upstream, client: 172.18.0.1, server: localhost, request: "GET /publishers?_rsc=1gbam HTTP/1.1", upstream: "http://172.18.0.5:3000/publishers?_rsc=1gbam", host: "localhost:5500", referrer: "http://localhost:5500/createbook"
+2025/10/09 13:59:52 [error] 29#29: *58 upstream timed out (110: Operation timed out) while reading response header from upstream, client: 172.18.0.1, server: localhost, request: "GET /_next/static/webpack/webpack.bca8c343f539d63b.hot-update.js HTTP/1.1", upstream: "http://172.18.0.5:3000/_next/static/webpack/webpack.bca8c343f539d63b.hot-update.js", host: "localhost:5500", referrer: "http://localhost:5500/createbook"
+2025/10/09 14:00:38 [error] 30#30: *8 upstream timed out (110: Operation timed out) while reading response header from upstream, client: 172.18.0.1, server: localhost, request: "GET /publishers HTTP/1.1", upstream: "http://172.18.0.5:3000/publishers", host: "localhost:5500", referrer: "http://localhost:5500/createbook"
+2025/10/09 14:01:41 [error] 29#29: *58 upstream prematurely closed connection while reading response header from upstream, client: 172.18.0.1, server: localhost, request: "GET /createbook HTTP/1.1", upstream: "http://172.18.0.5:3000/createbook", host: "localhost:5500", referrer: "http://localhost:5500/createbook"
+2025/10/09 14:01:41 [error] 29#29: *23 recv() failed (104: Connection reset by peer) while proxying upgraded connection, client: 172.18.0.1, server: localhost, request: "GET /_next/webpack-hmr HTTP/1.1", upstream: "http://172.18.0.5:3000/_next/webpack-hmr", host: "localhost:5500"
+2025/10/09 14:06:26 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2025/10/09 14:06:26 [notice] 29#29: gracefully shutting down
+2025/10/09 14:06:26 [notice] 29#29: exiting
+2025/10/09 14:06:26 [notice] 30#30: gracefully shutting down
+2025/10/09 14:06:26 [notice] 30#30: exiting
+2025/10/09 14:06:26 [notice] 29#29: exit
+2025/10/09 14:06:26 [notice] 30#30: exit
+2025/10/09 14:06:26 [notice] 1#1: signal 17 (SIGCHLD) received from 29
+2025/10/09 14:06:26 [notice] 1#1: worker process 29 exited with code 0
+2025/10/09 14:06:26 [notice] 1#1: signal 29 (SIGIO) received
+2025/10/09 14:06:26 [notice] 1#1: signal 17 (SIGCHLD) received from 30
+2025/10/09 14:06:26 [notice] 1#1: worker process 30 exited with code 0
+2025/10/09 14:06:26 [notice] 1#1: exit
+2025/10/09 14:16:46 [notice] 1#1: using the "epoll" event method
+2025/10/09 14:16:46 [notice] 1#1: nginx/1.29.1
+2025/10/09 14:16:46 [notice] 1#1: built by gcc 14.2.0 (Alpine 14.2.0) 
+2025/10/09 14:16:46 [notice] 1#1: OS: Linux 6.6.96-0-virt
+2025/10/09 14:16:46 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2025/10/09 14:16:46 [notice] 1#1: start worker processes
+2025/10/09 14:16:46 [notice] 1#1: start worker process 28
+2025/10/09 14:16:46 [notice] 1#1: start worker process 29
+2025/10/09 14:18:13 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2025/10/09 14:18:13 [notice] 28#28: gracefully shutting down
+2025/10/09 14:18:13 [notice] 29#29: gracefully shutting down
+2025/10/09 14:18:13 [notice] 28#28: exiting
+2025/10/09 14:18:13 [notice] 28#28: exit
+2025/10/09 14:18:13 [notice] 1#1: signal 17 (SIGCHLD) received from 28
+2025/10/09 14:18:13 [notice] 1#1: worker process 28 exited with code 0
+2025/10/09 14:18:13 [notice] 1#1: signal 29 (SIGIO) received
+2025/10/11 13:21:42 [notice] 1#1: using the "epoll" event method
+2025/10/11 13:21:42 [notice] 1#1: nginx/1.29.2
+2025/10/11 13:21:42 [notice] 1#1: built by gcc 14.2.0 (Alpine 14.2.0) 
+2025/10/11 13:21:42 [notice] 1#1: OS: Linux 6.6.96-0-virt
+2025/10/11 13:21:42 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2025/10/11 13:21:42 [notice] 1#1: start worker processes
+2025/10/11 13:21:42 [notice] 1#1: start worker process 29
+2025/10/11 13:21:42 [notice] 1#1: start worker process 30
+2025/10/11 13:24:28 [error] 29#29: *7 upstream timed out (110: Operation timed out) while reading response header from upstream, client: 172.18.0.1, server: localhost, request: "GET /user-profile?_rsc=970e3 HTTP/1.1", upstream: "http://172.18.0.5:3000/user-profile?_rsc=970e3", host: "localhost:5500", referrer: "http://localhost:5500/login"
+2025/10/11 13:24:28 [error] 30#30: *3 upstream timed out (110: Operation timed out) while reading response header from upstream, client: 172.18.0.1, server: localhost, request: "GET /login?_rsc=1hf38 HTTP/1.1", upstream: "http://172.18.0.5:3000/login?_rsc=1hf38", host: "localhost:5500", referrer: "http://localhost:5500/login"
+2025/10/11 13:25:16 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2025/10/11 13:25:16 [notice] 29#29: gracefully shutting down
+2025/10/11 13:25:16 [notice] 30#30: gracefully shutting down
+2025/10/11 13:25:16 [notice] 30#30: exiting
+2025/10/11 13:25:16 [notice] 30#30: exit
+2025/10/11 13:25:17 [notice] 1#1: signal 17 (SIGCHLD) received from 30
+2025/10/11 13:25:17 [notice] 1#1: worker process 30 exited with code 0
+2025/10/11 13:25:17 [notice] 1#1: signal 29 (SIGIO) received
+2025/10/11 13:30:17 [notice] 1#1: using the "epoll" event method
+2025/10/11 13:30:17 [notice] 1#1: nginx/1.29.2
+2025/10/11 13:30:17 [notice] 1#1: built by gcc 14.2.0 (Alpine 14.2.0) 
+2025/10/11 13:30:17 [notice] 1#1: OS: Linux 6.6.96-0-virt
+2025/10/11 13:30:17 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2025/10/11 13:30:17 [notice] 1#1: start worker processes
+2025/10/11 13:30:17 [notice] 1#1: start worker process 29
+2025/10/11 13:30:17 [notice] 1#1: start worker process 30
+2025/10/11 13:34:45 [error] 29#29: *145 recv() failed (104: Connection reset by peer) while proxying upgraded connection, client: 172.18.0.1, server: localhost, request: "GET /_next/webpack-hmr HTTP/1.1", upstream: "http://172.18.0.5:3000/_next/webpack-hmr", host: "localhost:5500"
+2025/10/11 14:32:42 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2025/10/11 14:32:42 [notice] 30#30: gracefully shutting down
+2025/10/11 14:32:42 [notice] 30#30: exiting
+2025/10/11 14:32:42 [notice] 29#29: gracefully shutting down
+2025/10/11 14:32:42 [notice] 29#29: exiting
+2025/10/11 14:32:42 [notice] 29#29: exit
+2025/10/11 14:32:42 [notice] 30#30: exit
+2025/10/11 14:32:42 [notice] 1#1: signal 17 (SIGCHLD) received from 30
+2025/10/11 14:32:42 [notice] 1#1: worker process 30 exited with code 0
+2025/10/11 14:32:42 [notice] 1#1: signal 29 (SIGIO) received
+2025/10/11 14:32:42 [notice] 1#1: signal 17 (SIGCHLD) received from 29
+2025/10/11 14:32:42 [notice] 1#1: worker process 29 exited with code 0
+2025/10/11 14:32:42 [notice] 1#1: exit
+2025/10/12 11:22:23 [notice] 1#1: using the "epoll" event method
+2025/10/12 11:22:23 [notice] 1#1: nginx/1.29.2
+2025/10/12 11:22:23 [notice] 1#1: built by gcc 14.2.0 (Alpine 14.2.0) 
+2025/10/12 11:22:23 [notice] 1#1: OS: Linux 6.6.96-0-virt
+2025/10/12 11:22:23 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2025/10/12 11:22:23 [notice] 1#1: start worker processes
+2025/10/12 11:22:23 [notice] 1#1: start worker process 29
+2025/10/12 11:22:23 [notice] 1#1: start worker process 30
+2025/10/12 11:26:38 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2025/10/12 11:26:38 [notice] 29#29: gracefully shutting down
+2025/10/12 11:26:38 [notice] 30#30: gracefully shutting down
+2025/10/12 11:26:38 [notice] 30#30: exiting
+2025/10/12 11:26:38 [notice] 30#30: exit
+2025/10/12 11:26:39 [notice] 1#1: signal 17 (SIGCHLD) received from 30
+2025/10/12 11:26:39 [notice] 1#1: worker process 30 exited with code 0
+2025/10/12 11:26:39 [notice] 1#1: signal 29 (SIGIO) received
+2025/10/12 11:29:50 [notice] 1#1: using the "epoll" event method
+2025/10/12 11:29:50 [notice] 1#1: nginx/1.29.2
+2025/10/12 11:29:50 [notice] 1#1: built by gcc 14.2.0 (Alpine 14.2.0) 
+2025/10/12 11:29:50 [notice] 1#1: OS: Linux 6.6.96-0-virt
+2025/10/12 11:29:50 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2025/10/12 11:29:50 [notice] 1#1: start worker processes
+2025/10/12 11:29:50 [notice] 1#1: start worker process 29
+2025/10/12 11:29:50 [notice] 1#1: start worker process 30
+2025/10/12 11:45:20 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2025/10/12 11:45:20 [notice] 29#29: gracefully shutting down
+2025/10/12 11:45:20 [notice] 30#30: gracefully shutting down
+2025/10/12 11:45:20 [notice] 30#30: exiting
+2025/10/12 11:45:20 [notice] 30#30: exit
+2025/10/12 11:45:20 [notice] 1#1: signal 17 (SIGCHLD) received from 30
+2025/10/12 11:45:20 [notice] 1#1: worker process 30 exited with code 0
+2025/10/12 11:45:20 [notice] 1#1: signal 29 (SIGIO) received
+2025/10/13 11:51:19 [notice] 1#1: using the "epoll" event method
+2025/10/13 11:51:19 [notice] 1#1: nginx/1.29.2
+2025/10/13 11:51:19 [notice] 1#1: built by gcc 14.2.0 (Alpine 14.2.0) 
+2025/10/13 11:51:19 [notice] 1#1: OS: Linux 6.6.96-0-virt
+2025/10/13 11:51:19 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2025/10/13 11:51:19 [notice] 1#1: start worker processes
+2025/10/13 11:51:19 [notice] 1#1: start worker process 29
+2025/10/13 11:51:19 [notice] 1#1: start worker process 30
+2025/10/13 11:52:02 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2025/10/13 11:52:02 [notice] 30#30: gracefully shutting down
+2025/10/13 11:52:02 [notice] 30#30: exiting
+2025/10/13 11:52:02 [notice] 29#29: gracefully shutting down
+2025/10/13 11:52:02 [notice] 29#29: exiting
+2025/10/13 11:52:02 [notice] 30#30: exit
+2025/10/13 11:52:02 [notice] 29#29: exit
+2025/10/13 11:52:03 [notice] 1#1: signal 17 (SIGCHLD) received from 30
+2025/10/13 11:52:03 [notice] 1#1: worker process 29 exited with code 0
+2025/10/13 11:52:03 [notice] 1#1: worker process 30 exited with code 0
+2025/10/13 11:52:03 [notice] 1#1: exit
+2025/10/13 11:53:32 [notice] 1#1: using the "epoll" event method
+2025/10/13 11:53:32 [notice] 1#1: nginx/1.29.2
+2025/10/13 11:53:32 [notice] 1#1: built by gcc 14.2.0 (Alpine 14.2.0) 
+2025/10/13 11:53:32 [notice] 1#1: OS: Linux 6.6.96-0-virt
+2025/10/13 11:53:32 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2025/10/13 11:53:32 [notice] 1#1: start worker processes
+2025/10/13 11:53:32 [notice] 1#1: start worker process 29
+2025/10/13 11:53:32 [notice] 1#1: start worker process 30
+2025/10/13 11:57:32 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2025/10/13 11:57:32 [notice] 30#30: gracefully shutting down
+2025/10/13 11:57:32 [notice] 29#29: gracefully shutting down
+2025/10/13 11:57:32 [notice] 29#29: exiting
+2025/10/13 11:57:32 [notice] 29#29: exit
+2025/10/13 11:57:32 [notice] 1#1: signal 17 (SIGCHLD) received from 29
+2025/10/13 11:57:32 [notice] 1#1: worker process 29 exited with code 0
+2025/10/13 11:57:32 [notice] 1#1: signal 29 (SIGIO) received
+2025/10/13 11:59:35 [notice] 1#1: using the "epoll" event method
+2025/10/13 11:59:35 [notice] 1#1: nginx/1.29.2
+2025/10/13 11:59:35 [notice] 1#1: built by gcc 14.2.0 (Alpine 14.2.0) 
+2025/10/13 11:59:35 [notice] 1#1: OS: Linux 6.6.96-0-virt
+2025/10/13 11:59:35 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2025/10/13 11:59:35 [notice] 1#1: start worker processes
+2025/10/13 11:59:35 [notice] 1#1: start worker process 29
+2025/10/13 11:59:35 [notice] 1#1: start worker process 30
+2025/10/13 12:02:55 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2025/10/13 12:02:55 [notice] 29#29: gracefully shutting down
+2025/10/13 12:02:55 [notice] 30#30: gracefully shutting down
+2025/10/13 12:02:55 [notice] 29#29: exiting
+2025/10/13 12:02:55 [notice] 29#29: exit
+2025/10/13 12:02:55 [notice] 1#1: signal 17 (SIGCHLD) received from 29
+2025/10/13 12:02:55 [notice] 1#1: worker process 29 exited with code 0
+2025/10/13 12:02:55 [notice] 1#1: signal 29 (SIGIO) received
+2025/10/14 06:55:08 [notice] 1#1: using the "epoll" event method
+2025/10/14 06:55:08 [notice] 1#1: nginx/1.29.2
+2025/10/14 06:55:08 [notice] 1#1: built by gcc 14.2.0 (Alpine 14.2.0) 
+2025/10/14 06:55:08 [notice] 1#1: OS: Linux 6.6.96-0-virt
+2025/10/14 06:55:08 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2025/10/14 06:55:08 [notice] 1#1: start worker processes
+2025/10/14 06:55:08 [notice] 1#1: start worker process 29
+2025/10/14 06:55:08 [notice] 1#1: start worker process 30
+2025/10/14 07:05:06 [error] 29#29: *193 upstream timed out (110: Operation timed out) while reading response header from upstream, client: 172.18.0.1, server: localhost, request: "GET /createbook?_rsc=412is HTTP/1.1", upstream: "http://172.18.0.5:3000/createbook?_rsc=412is", host: "localhost:5500", referrer: "http://localhost:5500/publishers"
+2025/10/14 07:05:07 [error] 29#29: *166 recv() failed (104: Connection reset by peer) while reading response header from upstream, client: 172.18.0.1, server: localhost, request: "GET /createbook?_rsc=412is HTTP/1.1", upstream: "http://172.18.0.5:3000/createbook?_rsc=412is", host: "localhost:5500", referrer: "http://localhost:5500/publishers"
+2025/10/14 07:05:07 [error] 29#29: *217 recv() failed (104: Connection reset by peer) while proxying upgraded connection, client: 172.18.0.1, server: localhost, request: "GET /_next/webpack-hmr HTTP/1.1", upstream: "http://172.18.0.5:3000/_next/webpack-hmr", host: "localhost:5500"
+2025/10/14 07:05:07 [error] 29#29: *164 recv() failed (104: Connection reset by peer) while reading response header from upstream, client: 172.18.0.1, server: localhost, request: "GET /createbook?_rsc=412is HTTP/1.1", upstream: "http://172.18.0.5:3000/createbook?_rsc=412is", host: "localhost:5500", referrer: "http://localhost:5500/publishers"
+2025/10/14 07:05:07 [error] 29#29: *172 recv() failed (104: Connection reset by peer) while reading response header from upstream, client: 172.18.0.1, server: localhost, request: "GET /createbook?_rsc=412is HTTP/1.1", upstream: "http://172.18.0.5:3000/createbook?_rsc=412is", host: "localhost:5500", referrer: "http://localhost:5500/publishers"
+2025/10/14 07:05:07 [error] 29#29: *170 recv() failed (104: Connection reset by peer) while reading response header from upstream, client: 172.18.0.1, server: localhost, request: "GET /authors?_rsc=412is HTTP/1.1", upstream: "http://172.18.0.5:3000/authors?_rsc=412is", host: "localhost:5500", referrer: "http://localhost:5500/publishers"
+2025/10/14 07:05:07 [error] 29#29: *193 recv() failed (104: Connection reset by peer) while reading response header from upstream, client: 172.18.0.1, server: localhost, request: "GET /createbook?_rsc=412is HTTP/1.1", upstream: "http://172.18.0.5:3000/createbook?_rsc=412is", host: "localhost:5500", referrer: "http://localhost:5500/publishers"
+2025/10/14 07:05:07 [error] 29#29: *193 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET /authors HTTP/1.1", upstream: "http://172.18.0.5:3000/authors", host: "localhost:5500", referrer: "http://localhost:5500/publishers"
+2025/10/14 07:05:07 [error] 29#29: *193 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1", upstream: "http://172.18.0.5:3000/.well-known/appspecific/com.chrome.devtools.json", host: "localhost:5500"
+2025/10/14 07:05:09 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2025/10/14 07:05:09 [notice] 29#29: gracefully shutting down
+2025/10/14 07:05:09 [notice] 30#30: gracefully shutting down
+2025/10/14 07:05:09 [notice] 30#30: exiting
+2025/10/14 07:05:09 [notice] 30#30: exit
+2025/10/14 07:05:09 [notice] 29#29: exiting
+2025/10/14 07:05:09 [notice] 29#29: exit
+2025/10/14 07:05:09 [notice] 1#1: signal 17 (SIGCHLD) received from 30
+2025/10/14 07:05:09 [notice] 1#1: worker process 29 exited with code 0
+2025/10/14 07:05:09 [notice] 1#1: worker process 30 exited with code 0
+2025/10/14 07:05:09 [notice] 1#1: exit
+2025/10/14 07:05:22 [notice] 1#1: using the "epoll" event method
+2025/10/14 07:05:22 [notice] 1#1: nginx/1.29.2
+2025/10/14 07:05:22 [notice] 1#1: built by gcc 14.2.0 (Alpine 14.2.0) 
+2025/10/14 07:05:22 [notice] 1#1: OS: Linux 6.6.96-0-virt
+2025/10/14 07:05:22 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2025/10/14 07:05:22 [notice] 1#1: start worker processes
+2025/10/14 07:05:22 [notice] 1#1: start worker process 29
+2025/10/14 07:05:22 [notice] 1#1: start worker process 30
+2025/10/14 07:13:22 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2025/10/14 07:13:22 [notice] 29#29: gracefully shutting down
+2025/10/14 07:13:22 [notice] 30#30: gracefully shutting down
+2025/10/14 07:13:22 [notice] 29#29: exiting
+2025/10/14 07:13:22 [notice] 29#29: exit
+2025/10/14 07:13:22 [notice] 1#1: signal 17 (SIGCHLD) received from 29
+2025/10/14 07:13:22 [notice] 1#1: worker process 29 exited with code 0
+2025/10/14 07:13:22 [notice] 1#1: signal 29 (SIGIO) received
+2025/10/14 07:14:59 [notice] 1#1: using the "epoll" event method
+2025/10/14 07:14:59 [notice] 1#1: nginx/1.29.2
+2025/10/14 07:14:59 [notice] 1#1: built by gcc 14.2.0 (Alpine 14.2.0) 
+2025/10/14 07:14:59 [notice] 1#1: OS: Linux 6.6.96-0-virt
+2025/10/14 07:14:59 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2025/10/14 07:14:59 [notice] 1#1: start worker processes
+2025/10/14 07:14:59 [notice] 1#1: start worker process 29
+2025/10/14 07:14:59 [notice] 1#1: start worker process 30
+2025/10/14 07:19:55 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2025/10/14 07:19:55 [notice] 29#29: gracefully shutting down
+2025/10/14 07:19:55 [notice] 30#30: gracefully shutting down
+2025/10/14 07:19:55 [notice] 30#30: exiting
+2025/10/14 07:19:55 [notice] 30#30: exit
+2025/10/14 07:19:55 [notice] 1#1: signal 17 (SIGCHLD) received from 30
+2025/10/14 07:19:55 [notice] 1#1: worker process 30 exited with code 0
+2025/10/14 07:19:55 [notice] 1#1: signal 29 (SIGIO) received
+2025/10/14 07:20:26 [notice] 1#1: using the "epoll" event method
+2025/10/14 07:20:26 [notice] 1#1: nginx/1.29.2
+2025/10/14 07:20:26 [notice] 1#1: built by gcc 14.2.0 (Alpine 14.2.0) 
+2025/10/14 07:20:26 [notice] 1#1: OS: Linux 6.6.96-0-virt
+2025/10/14 07:20:26 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2025/10/14 07:20:26 [notice] 1#1: start worker processes
+2025/10/14 07:20:26 [notice] 1#1: start worker process 28
+2025/10/14 07:20:26 [notice] 1#1: start worker process 29
+2025/10/14 07:26:48 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2025/10/14 07:26:48 [notice] 28#28: gracefully shutting down
+2025/10/14 07:26:48 [notice] 29#29: gracefully shutting down
+2025/10/14 07:26:48 [notice] 29#29: exiting
+2025/10/14 07:26:48 [notice] 29#29: exit
+2025/10/14 07:26:48 [notice] 1#1: signal 17 (SIGCHLD) received from 29
+2025/10/14 07:26:48 [notice] 1#1: worker process 29 exited with code 0
+2025/10/14 07:26:48 [notice] 1#1: signal 29 (SIGIO) received
+2025/10/14 07:27:44 [notice] 1#1: using the "epoll" event method
+2025/10/14 07:27:44 [notice] 1#1: nginx/1.29.2
+2025/10/14 07:27:44 [notice] 1#1: built by gcc 14.2.0 (Alpine 14.2.0) 
+2025/10/14 07:27:44 [notice] 1#1: OS: Linux 6.6.96-0-virt
+2025/10/14 07:27:44 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2025/10/14 07:27:44 [notice] 1#1: start worker processes
+2025/10/14 07:27:44 [notice] 1#1: start worker process 29
+2025/10/14 07:27:44 [notice] 1#1: start worker process 30
+2025/10/14 07:36:20 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2025/10/14 07:36:20 [notice] 30#30: gracefully shutting down
+2025/10/14 07:36:20 [notice] 30#30: exiting
+2025/10/14 07:36:20 [notice] 29#29: gracefully shutting down
+2025/10/14 07:36:20 [notice] 29#29: exiting
+2025/10/14 07:36:20 [notice] 29#29: exit
+2025/10/14 07:36:20 [notice] 30#30: exit
+2025/10/14 07:36:20 [notice] 1#1: signal 17 (SIGCHLD) received from 29
+2025/10/14 07:36:20 [notice] 1#1: worker process 29 exited with code 0
+2025/10/14 07:36:20 [notice] 1#1: signal 29 (SIGIO) received
+2025/10/14 07:36:20 [notice] 1#1: signal 17 (SIGCHLD) received from 30
+2025/10/14 07:36:20 [notice] 1#1: worker process 30 exited with code 0
+2025/10/14 07:36:20 [notice] 1#1: exit
+2025/10/14 07:36:45 [notice] 1#1: using the "epoll" event method
+2025/10/14 07:36:45 [notice] 1#1: nginx/1.29.2
+2025/10/14 07:36:45 [notice] 1#1: built by gcc 14.2.0 (Alpine 14.2.0) 
+2025/10/14 07:36:45 [notice] 1#1: OS: Linux 6.6.96-0-virt
+2025/10/14 07:36:45 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2025/10/14 07:36:45 [notice] 1#1: start worker processes
+2025/10/14 07:36:45 [notice] 1#1: start worker process 28
+2025/10/14 07:36:45 [notice] 1#1: start worker process 29
+2025/10/14 07:39:42 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2025/10/14 07:39:42 [notice] 28#28: gracefully shutting down
+2025/10/14 07:39:42 [notice] 29#29: gracefully shutting down
+2025/10/14 07:39:42 [notice] 29#29: exiting
+2025/10/14 07:39:42 [notice] 29#29: exit
+2025/10/14 07:39:42 [notice] 1#1: signal 17 (SIGCHLD) received from 29
+2025/10/14 07:39:42 [notice] 1#1: worker process 29 exited with code 0
+2025/10/14 07:39:42 [notice] 1#1: signal 29 (SIGIO) received

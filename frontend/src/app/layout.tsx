@@ -3,6 +3,7 @@ import LibraryNavBar from '../baseComponents/libraryNavBar/libraryNavBar';
 import 'bootstrap/dist/css/bootstrap.css';
 import './styles/globals.scss';
 import { ReduxProvider, ClientOnly, ThemeInitializer } from '../provider/ReduxThemeProvider';
+import { AuthProvider } from '@/provider/AuthChekerProvidef';
 
 export const metadata: Metadata = {
   title: 'Library Manager',
@@ -20,8 +21,10 @@ export default function RootLayout({
         <ReduxProvider>
           <ClientOnly>
             <ThemeInitializer />
-            <LibraryNavBar />
-            {children}
+            <AuthProvider>
+              <LibraryNavBar />
+              {children}
+            </AuthProvider>
           </ClientOnly>
         </ReduxProvider>
       </body>

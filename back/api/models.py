@@ -53,6 +53,16 @@ class Publisher(models.Model):
         return self.name
 
 
+class Genre(models.Model):
+    name = models.CharField(max_length=100, unique=True)
+    description = models.TextField(blank=True, null=True)
+    
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        ordering = ['name']
+
 class Book(models.Model):
     title = models.CharField(max_length=255, default="Untitled Book")
     # publish_date = models.DateField(default=now)
@@ -81,3 +91,7 @@ class Book(models.Model):
     #     help_text="Book cover picture"
     # )
     book_image = models.BinaryField(null=True, blank=True)
+    
+    genres = models.ManyToManyField(Genre, related_name='genres')
+
+    

@@ -1,11 +1,13 @@
 import { configureStore } from "@reduxjs/toolkit";
 import themeSlice from './themeSlice';
 import buttonSlice from './buttonSlice'
+import authSlice from './authSlice'
 
 const store = configureStore({
     reducer: {
         themeSwitcher: themeSlice,
         buttonClick: buttonSlice,
+        authCheker: authSlice,
     }
 });
 

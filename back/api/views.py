@@ -3,21 +3,24 @@ from rest_framework.exceptions import ValidationError
 from rest_framework.response import Response
 from django_filters.rest_framework import DjangoFilterBackend
 from .filtters import AuthorFilter, BookFilter
-from .models import Author, AuthorProfile, Book, Publisher
+from .models import Author, AuthorProfile, Book, Publisher, Genre
 from .serializers import (
     AuthorProfileSerializer,
     AuthorSerializer,
     BookSerializer,
     PublisherSerializer,
+    GenreSerializer,
 )
 from rest_framework.decorators import action
 from .services.search import search_authors 
+from .permissions import IsAdministrator, ReadOnly, IsAdministratorOrReadOnly
+from django.db.models import Count
 
 
 class PublisherViewSet(viewsets.ModelViewSet):
     queryset = Publisher.objects.all()
     serializer_class = PublisherSerializer
-
+    permission_classes = [IsAdministratorOrReadOnly]
 
 class AuthorViewSet(viewsets.ModelViewSet):
     queryset = Author.objects.all()
@@ -25,6 +28,9 @@ class AuthorViewSet(viewsets.ModelViewSet):
     filter_backends = [DjangoFilterBackend]
     # filterset_fields = ['^name'] # ^ means finding from the begining
     filterset_class = AuthorFilter
+    permission_classes = [IsAdministratorOrReadOnly]
+    pagination_class = None
+
 
     @action(
         detail=False,
@@ -60,15 +66,14 @@ class AuthorProfileViewSet(viewsets.ModelViewSet):
     queryset = AuthorProfile.objects.select_related("author").all()
     # select_related: for 1-1 and FK., SQL join without additional requests
     serializer_class = AuthorProfileSerializer
+    permission_classes = [IsAdministratorOrReadOnly]
 
     def get_queryset(self):
-        """
-        filter by author_id if author_id
-        """
+        queryset = AuthorProfile.objects.select_related("author").annotate(books_count=Count('author__books'))
         author_id = self.request.query_params.get('author_id')
         if author_id:
-            return AuthorProfile.objects.filter(author_id=author_id)
-        return AuthorProfile.objects.all()
+            queryset = queryset.filter(author_id=author_id)
+        return queryset
     
     def create(self, request, *args, **kwargs):
         author_id = request.data.get("author_id")
@@ -99,11 +104,18 @@ class AuthorProfileViewSet(viewsets.ModelViewSet):
             serializer.data, status=status.HTTP_201_CREATED, headers=headers
         )
 
+class GenreViewSet(viewsets.ModelViewSet):
+    queryset = Genre.objects.all()
+    serializer_class = GenreSerializer
+    pagination_class = None 
+    permission_classes = [IsAdministratorOrReadOnly]
+
 
 class BookViewSet(viewsets.ModelViewSet):
+
     queryset = (
         Book.objects.select_related("publisher")
-        .prefetch_related("authors")
+        .prefetch_related("authors", "genres")
         .all()
     )  # prefetch_related for n-n relations
     serializer_class = BookSerializer
@@ -111,5 +123,5 @@ class BookViewSet(viewsets.ModelViewSet):
     filter_backends = [DjangoFilterBackend]
     # filterset_fields = ['^name'] # ^ means finding from the begining
     filterset_class = BookFilter
+    permission_classes = [IsAdministratorOrReadOnly]
 
-    

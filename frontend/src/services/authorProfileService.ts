@@ -10,16 +10,28 @@ const getApiBaseUrl = () => {
     }
 };
 
-const apiClient = axios.create({
-    baseURL: `${getApiBaseUrl()}/authorprofiles/`,
-    headers: {
+// Функция для получения заголовков с токеном
+const getAuthHeaders = () => {
+    if (typeof window === 'undefined') {
+        return {
+            'Content-Type': 'application/json',
+        };
+    }
+
+    const token = localStorage.getItem('access_token');
+    return {
+        'Authorization': `Bearer ${token}`,
         'Content-Type': 'application/json',
-    },
-});
+    };
+};
+
+const API_URL = `${getApiBaseUrl()}/authorprofiles/`;
 
 export const fetchAuthorProfile = async (authorId: number): Promise<AuthorProfile | null> => {
     try {
-        const response = await apiClient.get<AuthorProfile>(`${authorId}/`);
+        const response = await axios.get<AuthorProfile>(`${API_URL}${authorId}/`, {
+            headers: getAuthHeaders()
+        });
         return response.data;
     } catch (error) {
         console.error('Failed to fetch author profile:', error);
@@ -29,7 +41,9 @@ export const fetchAuthorProfile = async (authorId: number): Promise<AuthorProfil
 
 export const fetchAllAuthorProfiles = async (): Promise<AuthorProfile[]> => {
     try {
-        const response = await apiClient.get<AuthorProfile[]>('');
+        const response = await axios.get<AuthorProfile[]>(API_URL, {
+            headers: getAuthHeaders()
+        });
         return response.data;
     } catch (error) {
         console.error('Failed to fetch author profiles:', error);
@@ -39,7 +53,9 @@ export const fetchAllAuthorProfiles = async (): Promise<AuthorProfile[]> => {
 
 export const fetchAuthorProfileByAuthorId = async (authorId: number): Promise<AuthorProfile | null> => {
     try {
-        const response = await apiClient.get<AuthorProfile[]>(`?author_id=${authorId}`);
+        const response = await axios.get<AuthorProfile[]>(`${API_URL}?author_id=${authorId}`, {
+            headers: getAuthHeaders()
+        });
 
         if (response.data.length > 0) {
             console.log('RESPONSE DATA:', response.data)

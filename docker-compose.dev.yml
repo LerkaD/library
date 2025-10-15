@@ -35,6 +35,7 @@ services:
   django:
     build:
       context: ./back
+      dockerfile: Dockerfile
     volumes:
       - ./back:/app
     ports:
@@ -49,9 +50,10 @@ services:
       redis:
         condition: service_healthy
     command: >
-      sh -c "python manage.py makemigrations &&
-             python manage.py migrate &&
-             python manage.py runserver 0.0.0.0:8000"
+      sh -c "python manage.py migrate &&
+             python manage.py runserver 0.0.0.0:8000 &&
+             python manage.py load_genres &&
+             python manage.py load_sample_data"
 
   nextjs:
     build:

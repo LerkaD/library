@@ -15,23 +15,6 @@ const getStoredTheme = (): 'light' | 'dark' => {
     return 'light';
 };
 
-
-// const themeSlice = createSlice({
-//     name: 'theme',
-//     initialState: {
-//         mode: getStoredTheme(),
-//     },
-//     reducers: {
-//         setTheme: (state, action: { payload: 'light' | 'dark' }) => {
-//             state.mode = action.payload;
-//             if (typeof window !== 'undefined') {
-//                 localStorage.setItem('savedTheme', action.payload);
-//                 document.documentElement.setAttribute('data-bs-theme', action.payload);
-//             }
-//         },
-//     },
-// });
-
 const themeSlice = createSlice({
     name: 'theme',
     initialState: {

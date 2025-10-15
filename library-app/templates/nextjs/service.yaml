@@ -1,11 +1,19 @@
+{{- if .Values.nextjs.enabled }}
 apiVersion: v1
 kind: Service
 metadata:
-  name: nextjs
-  namespace: library
+  name: {{ include "library-app.fullname" . }}-nextjs
+  namespace: {{ include "library-app.namespace" . }}
+  labels:
+    {{- include "library-app.labels" . | nindent 4 }}
+    component: nextjs
 spec:
-  selector:
-    app: nextjs
+  type: {{ .Values.nextjs.service.type }}
   ports:
-  - port: 3000
-    targetPort: 3000
+    - port: {{ .Values.nextjs.service.port }}
+      targetPort: 3000
+      protocol: TCP
+  selector:
+    {{- include "library-app.selectorLabels" . | nindent 4 }}
+    component: nextjs
+{{- end }}

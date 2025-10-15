@@ -4,13 +4,13 @@ import { Author } from '../../../basic_types';
 import styles from './AuthorListComponent.module.css';
 
 type Props = {
-  publishers: Author[];
+  authors: Author[];
   onEdit: (p: Author) => void;
   onDelete: (p: Author) => void;
 };
 
-export default function AuthorList({ publishers, onEdit, onDelete }: Props) {
-  if (publishers.length === 0) {
+export default function AuthorList({ authors, onEdit, onDelete }: Props) {
+  if (authors.length === 0) {
     return (
       <Alert className={`${styles.alert} ${styles.info}`}>
         No authors found
@@ -20,28 +20,28 @@ export default function AuthorList({ publishers, onEdit, onDelete }: Props) {
 
   return (
     <ListGroup className={styles.listGroup}>
-      {publishers.map((publisher) => (
-        <ListGroup.Item key={publisher.id} className={styles.listItem}>
+      {authors.map((authors) => (
+        <ListGroup.Item key={authors.id} className={styles.listItem}>
           <Card className={styles.card}>
             <Card.Body>
-              <Card.Title className={styles.title}>{publisher.name}</Card.Title>
+              <Card.Title className={styles.title}>{authors.name}</Card.Title>
 
               <Card.Subtitle className={styles.subtitle}>
-                {publisher.birthdate || 'No birthdate'}
+                {authors.birthdate || 'No birthdate'}
               </Card.Subtitle>
 
               <div className={styles.actions}>
                 <Button
                   variant="outline-primary"
                   className={`${styles.button} ${styles.editButton}`}
-                  onClick={() => onEdit(publisher)}
+                  onClick={() => onEdit(authors)}
                 >
                   Edit
                 </Button>
                 <Button
                   variant="outline-danger"
                   className={`${styles.button} ${styles.deleteButton}`}
-                  onClick={() => onDelete(publisher)}
+                  onClick={() => onDelete(authors)}
                 >
                   Delete
                 </Button>

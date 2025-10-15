@@ -64,7 +64,7 @@ export default function AuthorsPageClient({
         <Card>
           <Card.Body>
             <AuthorList
-              publishers={authors}
+              authors={authors}
               onEdit={setEditingAuthor}
               onDelete={setDeletingAuthor}
             />

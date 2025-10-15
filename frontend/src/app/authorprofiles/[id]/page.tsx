@@ -30,14 +30,3 @@ export default async function AuthorProfilePage({ params }: AuthorProfilePagePro
     notFound();
   }
 }
-
-// // Исправляем generateMetadata
-// export async function generateMetadata({ params }: AuthorProfilePageProps) {
-//   const { id } = await params; // ← Тоже добавляем await
-//   const authorProfile = await fetchAuthorProfileByAuthorId(Number(id));
-
-//   return {
-//     title: authorProfile?.author_name || 'Профиль автора',
-//     description: authorProfile?.biography?.substring(0, 160),
-//   };
-// }

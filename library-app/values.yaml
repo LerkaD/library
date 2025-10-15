@@ -3,7 +3,6 @@ nameOverride: "library-app"
 
 global:
   appName: "library-app"
-  namespace: "library"
 
 mysql:
   enabled: true 
@@ -46,6 +45,11 @@ django:
     limits:
       memory: "512Mi"
       cpu: "500m"
+  database:
+    host: "library-app-mysql"   
+    name: "lib_db"
+    user: "root"
+    password: "root"
 
 nextjs:
   enabled: true 

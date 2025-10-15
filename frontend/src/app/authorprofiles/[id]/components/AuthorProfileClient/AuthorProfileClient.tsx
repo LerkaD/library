@@ -22,7 +22,7 @@ const AuthorProfileClient: React.FC<AuthorProfileClientProps> = ({ authorProfile
                     <AuthorBiography biography={authorProfile.biography} />
                 </Col>
                 <Col lg={4}>
-                    <AuthorStats authorId={authorProfile.author_id} />
+                    <AuthorStats book_count={authorProfile.books_count} />
                 </Col>
             </Row>
             <AuthorBooks authorBooks={authorBooks} />

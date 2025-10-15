@@ -6,6 +6,7 @@ import { Container, Form, Button, Alert, Image } from 'react-bootstrap';
 import { PublisherSelectView } from './components/PublisherSelect/PublisherSelectView';
 import { AuthorSearchInput } from './components/AuthorSearchInput/AuthorSearchInput';
 import { SelectedAuthorsListView } from './components/SelectedAuthorsList/SelectedAuthorsListView';
+import { GenreSelector } from './components/GenresInput/GenresInput';
 import { usePublishers } from '../../hooks/usePublishers';
 import { useAuthors } from '../../hooks/useAuthors';
 import { useBook } from '../../hooks/useBook';
@@ -22,13 +23,14 @@ export default function AddBookPage() {
   const [coverImage, setCoverImage] = useState<File | null>(null);
   const [previewUrl, setPreviewUrl] = useState<string | null>(null);
   const [selectedAuthors, setSelectedAuthors] = useState<Author[]>([])
+  const [selectedGenreIds, setSelectedGenreIds] = useState<number[]>([]);
 
   const [formError, setFormError] = useState<string | null>(null);
   const [successMessage, setSuccessMessage] = useState<string | null>(null);
 
   const { publishers } = usePublishers();
   const { authors } = useAuthors();
-  const { handlecreateBook } = useBook();
+  const { handleCreateBook } = useBook();
 
   const handleImageChange = (e: ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
@@ -91,6 +93,10 @@ export default function AddBookPage() {
     });
   };
 
+  const handleGenresChange = (genres_ids: number[]) => {
+    setSelectedGenreIds(genres_ids);
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setFormError(null);
@@ -100,15 +106,16 @@ export default function AddBookPage() {
       setFormError('Enter book name');
       return;
     }
-
     try {
-      // Создаем объект с данными книги
+      //  объект с данными книги
       const bookData: CreateBookData = {
         title: title.trim(),
         publisher_id: selectedPublisherId === '' ? null : Number(selectedPublisherId),
         authors_ids: selectedAuthorIds,
         publish_year: year === '' ? null : Number(year),
         description: description || null,
+        genres_ids: selectedGenreIds,
+        book_image: null,
       };
 
       // Конвертируем изображение в base64 если есть
@@ -117,7 +124,7 @@ export default function AddBookPage() {
         bookData.book_image = base64Image;
       }
 
-      await handlecreateBook(bookData);
+      await handleCreateBook(bookData);
 
       setSuccessMessage('Book successfully created!');
 
@@ -131,6 +138,7 @@ export default function AddBookPage() {
       setAuthorNameInput('');
       setCoverImage(null);
       setPreviewUrl(null);
+      setSelectedGenreIds([]);
 
     } catch (error) {
       setFormError('Failed to create book');
@@ -207,6 +215,17 @@ export default function AddBookPage() {
             onChange={(e) => setDescription(e.target.value)}
             placeholder="Enter book description"
           />
+        </Form.Group>
+
+        <Form.Group className="mb-3">
+          <Form.Label>Genres</Form.Label>
+          <GenreSelector
+            selectedGenres={selectedGenreIds}
+            onGenresChange={handleGenresChange}
+          />
+          <Form.Text className="text-muted">
+            Select one or multiple genres for the book
+          </Form.Text>
         </Form.Group>
 
         <Form.Group className="mb-3">

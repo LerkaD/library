@@ -2,6 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: {{ include "library-app.fullname" . }}-django
+  namespace: {{ include "library-app.namespace" . }}
   labels:
     {{- include "library-app.labels" . | nindent 4 }}
     component: django
@@ -20,6 +21,8 @@ spec:
       containers:
       - name: django
         image: "{{ .Values.django.image.repository }}:{{ .Values.django.image.tag }}"
+        command: ['sh', '-c', 
+          'until nc -z library-app-mysql 3306; do echo "Waiting for MySQL..."; sleep 5; done; echo "MySQL is ready!"']
         imagePullPolicy: {{ .Values.django.image.pullPolicy }}
         ports:
         - containerPort: 8000
@@ -27,11 +30,31 @@ spec:
         - name: DATABASE_HOST
           value: "library-app-mysql"
         - name: DATABASE_NAME
-          value: "lib_db"  # прямое значение
+          value: "lib_db"
         - name: DATABASE_USER
-          value: "root"        # прямое значение
+          value: "root"
         - name: DATABASE_PASSWORD
-          value: "root"    # прямое значение
+          value: "root"
+        # - name: DATABASE_HOST
+        #   valueFrom:
+        #     secretKeyRef:
+        #       name: {{ include "library-app.fullname" . }}-django
+        #       key: database-host
+        # - name: DATABASE_NAME
+        #   valueFrom:
+        #     secretKeyRef:
+        #       name: {{ include "library-app.fullname" . }}-django
+        #       key: database-name
+        # - name: DATABASE_USER
+        #   valueFrom:
+        #     secretKeyRef:
+        #       name: {{ include "library-app.fullname" . }}-django
+        #       key: database-user
+        # - name: DATABASE_PASSWORD
+        #   valueFrom:
+        #     secretKeyRef:
+        #       name: {{ include "library-app.fullname" . }}-django
+        #       key: database-password
         - name: DJANGO_SETTINGS_MODULE
           value: {{ .Values.django.environment.DJANGO_SETTINGS_MODULE | quote }}
         - name: DJANGO_DEBUG

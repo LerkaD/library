@@ -1,5 +1,5 @@
 /* eslint-disable*/
-import { useState, useCallback, useEffect } from 'react';
+import { useState, useCallback } from 'react';
 import {
     createAuthor,
     updateAuthor,
@@ -27,12 +27,6 @@ export const useAuthors = (initialAuthors: Author[] = []) => {
             setLoading(false);
         }
     }, []);
-
-    // useEffect(() => {
-    //     if (initialAuthors.length === 0) {
-    //         loadAuthors();
-    //     }
-    // }, [initialAuthors, loadAuthors]);
 
     const handleCreate = useCallback(
         async (data: { name: string; birthdate: string }) => {

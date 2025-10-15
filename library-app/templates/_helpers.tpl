@@ -1,13 +1,10 @@
 {{/*
-Expand the name of the chart.
+Вспомогательные функции для именования
 */}}
 {{- define "library-app.name" -}}
 {{- default .Chart.Name .Values.nameOverride | trunc 63 | trimSuffix "-" }}
 {{- end }}
 
-{{/*
-Create a default fully qualified app name.
-*/}}
 {{- define "library-app.fullname" -}}
 {{- if .Values.fullnameOverride }}
 {{- .Values.fullnameOverride | trunc 63 | trimSuffix "-" }}
@@ -21,11 +18,16 @@ Create a default fully qualified app name.
 {{- end }}
 {{- end }}
 
-{{/*
-Common labels
-*/}}
+{{- define "library-app.chart" -}}
+{{- printf "%s-%s" .Chart.Name .Chart.Version | replace "+" "_" | trunc 63 | trimSuffix "-" }}
+{{- end }}
+
+{{- define "library-app.namespace" -}}
+{{- .Release.Namespace -}}
+{{- end -}}
+
 {{- define "library-app.labels" -}}
-helm.sh/chart: {{ include "library-app.name" . }}
+helm.sh/chart: {{ include "library-app.chart" . }}
 {{ include "library-app.selectorLabels" . }}
 {{- if .Chart.AppVersion }}
 app.kubernetes.io/version: {{ .Chart.AppVersion | quote }}
@@ -33,17 +35,7 @@ app.kubernetes.io/version: {{ .Chart.AppVersion | quote }}
 app.kubernetes.io/managed-by: {{ .Release.Service }}
 {{- end }}
 
-{{/*
-Selector labels
-*/}}
 {{- define "library-app.selectorLabels" -}}
 app.kubernetes.io/name: {{ include "library-app.name" . }}
 app.kubernetes.io/instance: {{ .Release.Name }}
-{{- end }}
-
-{{/*
-Create chart name and version as used by the chart label.
-*/}}
-{{- define "library-app.chart" -}}
-{{- printf "%s-%s" .Chart.Name .Chart.Version | replace "+" "_" | trunc 63 | trimSuffix "-" }}
 {{- end }}

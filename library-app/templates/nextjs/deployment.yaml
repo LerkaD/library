@@ -1,21 +1,37 @@
+{{- if .Values.nextjs.enabled }}
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nextjs
-  namespace: library
+  name: {{ include "library-app.fullname" . }}-nextjs
+  namespace: {{ include "library-app.namespace" . }}
+  labels:
+    {{- include "library-app.labels" . | nindent 4 }}
+    component: nextjs
 spec:
-  replicas: 1
+  replicas: {{ .Values.nextjs.replicas }}
   selector:
     matchLabels:
-      app: nextjs
+      {{- include "library-app.selectorLabels" . | nindent 6 }}
+      component: nextjs
   template:
     metadata:
       labels:
-        app: nextjs
+        {{- include "library-app.selectorLabels" . | nindent 8 }}
+        component: nextjs
     spec:
       containers:
       - name: nextjs
-        image: library-nextjs:latest
-        imagePullPolicy: Never
+        image: "{{ .Values.nextjs.image.repository }}:{{ .Values.nextjs.image.tag }}"
+        imagePullPolicy: {{ .Values.nextjs.image.pullPolicy }}
         ports:
         - containerPort: 3000
+        env:
+        - name: NODE_ENV
+          value: {{ .Values.nextjs.environment.NODE_ENV | quote }}
+        - name: NEXT_PUBLIC_API_URL
+          value: {{ .Values.nextjs.environment.NEXT_PUBLIC_API_URL | quote }}
+        - name: WATCHPACK_POLLING
+          value: {{ .Values.nextjs.environment.WATCHPACK_POLLING | quote }}
+        resources:
+          {{- toYaml .Values.nextjs.resources | nindent 12 }}
+{{- end }}
